@@ -1,0 +1,11 @@
+public class alternant 
+{
+ float salaire;
+
+ 
+ public alternant (float salaire)
+ {
+ 	 this.salaire = salaire;
+ }
+
+}
