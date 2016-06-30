@@ -5,7 +5,7 @@ public class etablissement
  String adr;
 
  
- public employe (int idEmp, String adr)
+ public etablissement (int idEmp, String adr)
  {
  	 this.idEmp = idEmp;
 	 this.adr = adr;
