@@ -1,12 +1,24 @@
-public class ficheDePaie
+public class CalculPaie implements hisFicheDePaie
 {
- float salaireVariable;
- float salaireFixe;
- 
- public ficheDePaie (float salaireVariable, float salaireFixe)
+ public float salaireVariable;
+ public float salaireFixe;
+ public String dateDeb;
+ public String dateDeb;
+
+ //constructeur
+ public CalculPaie (String dateDeb, String dateFin, float salaireVariable, float salaireFixe)
  {
+	 this.dateDeb = dateDeb;
+	 this.datFin = dateFin;
  	 this.salaireVariable = salaireVariable;
  	 this.salaireFixe = salaireFixe;
  }
 
+ //calcul de la paie
+ public float calculpaie (String float salaireVariable, float salaireFixe)
+ {
+	return paie = this.salaireVariable + this.salaireFixe;
+ }
+ 
+ 
 }

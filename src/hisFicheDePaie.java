@@ -1,14 +1,5 @@
-public class hisFicheDePaie
+public interface hisFicheDePaie
 {
- String dateCreation;
- String dateDeb;
- String dateFin;
- 
- public hisFicheDePaie (String dateCreation, String dateDeb, String dateFin)
- {
- 	 this.dateCreation = dateCreation;
- 	 this.dateDeb = dateDeb;
- 	 this.dateFin = dateFin;
- }
-
+ public void dateDeb();
+ public void dateFin();
 }
