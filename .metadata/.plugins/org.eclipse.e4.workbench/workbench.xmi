@@ -256,7 +256,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_E9T5IDx6Eear342I3wW27A" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_E9v-ADx6Eear342I3wW27A" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" enabled="false" command="_Ee8iMDx6Eear342I3wW27A"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_P1W3sEdlEea68MqyTWO5Bg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_Ee8iMDx6Eear342I3wW27A"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_E9UgMDx6Eear342I3wW27A" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -277,7 +277,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_E9VHQjx6Eear342I3wW27A" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_E9yaQDx6Eear342I3wW27A" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_Ee6F_Dx6Eear342I3wW27A"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_P1bJIEdlEea68MqyTWO5Bg" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_Ee6F_Dx6Eear342I3wW27A"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_E9VHQzx6Eear342I3wW27A" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -684,7 +684,7 @@
     <bindings xmi:id="_EgZ6uDx6Eear342I3wW27A" keySequence="ALT+COMMAND+X A" command="_Ee1NZjx6Eear342I3wW27A">
       <tags>platform:cocoa</tags>
     </bindings>
-    <bindings xmi:id="_EgzjUTx6Eear342I3wW27A" keySequence="COMMAND+CTRL+F" command="_Egy8Qjx6Eear342I3wW27A"/>
+    <bindings xmi:id="_PJIq4EdlEea68MqyTWO5Bg" keySequence="COMMAND+CTRL+F" command="_Egy8Qjx6Eear342I3wW27A"/>
   </bindingTables>
   <bindingTables xmi:id="_Ef3vMzx6Eear342I3wW27A" elementId="org.eclipse.ui.textEditorScope" bindingContext="_EfFFAjx6Eear342I3wW27A">
     <bindings xmi:id="_Ef3vNDx6Eear342I3wW27A" keySequence="COMMAND+SHIFT+ARROW_LEFT" command="_Ee9wRzx6Eear342I3wW27A">
@@ -871,7 +871,7 @@
     <bindings xmi:id="_EgUbJTx6Eear342I3wW27A" keySequence="COMMAND+1" command="_Ee_lejx6Eear342I3wW27A"/>
   </bindingTables>
   <bindingTables xmi:id="_Eg0KYjx6Eear342I3wW27A" contributorURI="platform:/fragment/org.eclipse.e4.ui.workbench.renderers.swt.cocoa" bindingContext="_Ed1H1zx6Eear342I3wW27A">
-    <bindings xmi:id="_Eg0KYzx6Eear342I3wW27A" keySequence="M1+W" command="_Eg0KYDx6Eear342I3wW27A"/>
+    <bindings xmi:id="_PJJR8EdlEea68MqyTWO5Bg" keySequence="M1+W" command="_Eg0KYDx6Eear342I3wW27A"/>
   </bindingTables>
   <bindingTables xmi:id="_FSrFITx6Eear342I3wW27A" bindingContext="_FSrFIDx6Eear342I3wW27A"/>
   <bindingTables xmi:id="_FSrsMTx6Eear342I3wW27A" bindingContext="_FSrsMDx6Eear342I3wW27A"/>
@@ -2191,6 +2191,23 @@
   <commands xmi:id="_E47IYTx6Eear342I3wW27A" elementId="AUTOGEN:::org.eclipse.mylyn.tasks.ui.actions.view/org.eclipse.mylyn.tasks.ui.open.repositories.view" commandName="Show Task Repositories View" description="Show Task Repositories View" category="_EevG2Tx6Eear342I3wW27A"/>
   <commands xmi:id="_E47vcDx6Eear342I3wW27A" elementId="AUTOGEN:::org.eclipse.mylyn.tasks.ui.actions.view/org.eclipse.mylyn.doc.legend.show.action" commandName="Show UI Legend" description="Show Tasks UI Legend" category="_EevG2Tx6Eear342I3wW27A"/>
   <commands xmi:id="_E47vcTx6Eear342I3wW27A" elementId="AUTOGEN:::org.eclipse.mylyn.tasks.ui.actions.view/org.eclipse.mylyn.context.ui.actions.tasklist.focus" commandName="Focus on Workweek" description="Focus on Workweek" category="_EevG2Tx6Eear342I3wW27A"/>
+  <commands xmi:id="_PGowgUdlEea68MqyTWO5Bg" elementId="org.eclipse.egit.gitflow.ui.command.hotfixPublish" commandName="Publish Hotfix" category="_EevG2Tx6Eear342I3wW27A"/>
+  <commands xmi:id="_PGpXkEdlEea68MqyTWO5Bg" elementId="org.eclipse.egit.gitflow.ui.command.replaceWithDevelop" commandName="Replace with develop branch" category="_EevG2Tx6Eear342I3wW27A"/>
+  <commands xmi:id="_PGpXkUdlEea68MqyTWO5Bg" elementId="org.eclipse.egit.gitflow.ui.command.featurePublish" commandName="Publish Feature" category="_EevG2Tx6Eear342I3wW27A"/>
+  <commands xmi:id="_PGpXkkdlEea68MqyTWO5Bg" elementId="org.eclipse.egit.gitflow.ui.command.featureCheckout" commandName="Checkout Feature" category="_EevG2Tx6Eear342I3wW27A"/>
+  <commands xmi:id="_PGpXk0dlEea68MqyTWO5Bg" elementId="org.eclipse.egit.gitflow.ui.command.featureFinish" commandName="Finish Feature" category="_EevG2Tx6Eear342I3wW27A"/>
+  <commands xmi:id="_PGpXlEdlEea68MqyTWO5Bg" elementId="org.eclipse.egit.gitflow.ui.command.developCheckout" commandName="Checkout Develop" category="_EevG2Tx6Eear342I3wW27A"/>
+  <commands xmi:id="_PGpXlUdlEea68MqyTWO5Bg" elementId="org.eclipse.egit.gitflow.ui.command.hotfixFinish" commandName="Finish Hotfix" category="_EevG2Tx6Eear342I3wW27A"/>
+  <commands xmi:id="_PGpXlkdlEea68MqyTWO5Bg" elementId="org.eclipse.egit.ui.team.PullWithOptions" commandName="Pull..." category="_EevG0jx6Eear342I3wW27A"/>
+  <commands xmi:id="_PGp-oEdlEea68MqyTWO5Bg" elementId="org.eclipse.egit.gitflow.ui.command.releasePublish" commandName="Publish Release" category="_EevG2Tx6Eear342I3wW27A"/>
+  <commands xmi:id="_PGp-oUdlEea68MqyTWO5Bg" elementId="org.eclipse.egit.gitflow.ui.command.releaseFinish" commandName="Finish Release" category="_EevG2Tx6Eear342I3wW27A"/>
+  <commands xmi:id="_PGp-okdlEea68MqyTWO5Bg" elementId="org.eclipse.egit.gitflow.ui.command.hotfixStart" commandName="Start Hotfix" category="_EevG2Tx6Eear342I3wW27A"/>
+  <commands xmi:id="_PGp-o0dlEea68MqyTWO5Bg" elementId="org.eclipse.egit.gitflow.ui.command.featureTrack" commandName="Track Feature" category="_EevG2Tx6Eear342I3wW27A"/>
+  <commands xmi:id="_PGp-pEdlEea68MqyTWO5Bg" elementId="org.eclipse.egit.gitflow.ui.command.init" commandName="Init Git Flow" category="_EevG0jx6Eear342I3wW27A"/>
+  <commands xmi:id="_PGp-pUdlEea68MqyTWO5Bg" elementId="org.eclipse.egit.gitflow.ui.command.releaseStart" commandName="Start Release" category="_EevG2Tx6Eear342I3wW27A"/>
+  <commands xmi:id="_PGp-pkdlEea68MqyTWO5Bg" elementId="org.eclipse.egit.gitflow.ui.command.compareWithDevelop" commandName="Compare with develop branch" category="_EevG2Tx6Eear342I3wW27A"/>
+  <commands xmi:id="_PGp-p0dlEea68MqyTWO5Bg" elementId="org.eclipse.egit.gitflow.ui.command.featureStart" commandName="Start Feature" category="_EevG2Tx6Eear342I3wW27A"/>
+  <commands xmi:id="_PGp-qEdlEea68MqyTWO5Bg" elementId="org.eclipse.egit.gitflow.ui.command.featureRebase" commandName="Rebase Feature" category="_EevG2Tx6Eear342I3wW27A"/>
   <addons xmi:id="_Ed1H2Dx6Eear342I3wW27A" elementId="org.eclipse.e4.core.commands.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.core.commands/org.eclipse.e4.core.commands.CommandServiceAddon"/>
   <addons xmi:id="_Ed1H2Tx6Eear342I3wW27A" elementId="org.eclipse.e4.ui.contexts.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.services/org.eclipse.e4.ui.services.ContextServiceAddon"/>
   <addons xmi:id="_Ed1H2jx6Eear342I3wW27A" elementId="org.eclipse.e4.ui.bindings.service" contributorURI="platform:/plugin/org.eclipse.platform" contributionURI="bundleclass://org.eclipse.e4.ui.bindings/org.eclipse.e4.ui.bindings.BindingServiceAddon"/>
