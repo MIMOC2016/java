@@ -6,6 +6,7 @@ public class cadre extends employe
  
  public cadre (int tauxJour, int jourPresence)
  {
+   super();
  	 this.tauxJour = tanxJour;
  	 this.jourPresence = jourPresence;
  }
