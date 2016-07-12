@@ -1,5 +1,5 @@
 
-public class cadre
+public class cadre extends employe
 {
  int tauxJour;
  int jourPresence
