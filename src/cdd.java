@@ -6,6 +6,7 @@ public class cdd extends employe
  
  public cdd (String dateFinContrat, String typeContrat)
  {
+   super();
  	 this.dateFinContrat = dateFinContrat;
  	 this.typeContrat = typeContrat;
  }
