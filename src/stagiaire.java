@@ -5,6 +5,7 @@ public class stagiaire extends etudiant
  
  public stagiaire (float gratification)
  {
+   super();
  	 this.gratification = gratification;
  }
 
