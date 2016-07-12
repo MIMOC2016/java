@@ -1,10 +1,10 @@
 
-public class cadre extends employe
+public class Cadre extends Employe
 {
  int tauxJour;
  int jourPresence
  
- public cadre (int tauxJour, int jourPresence)
+ public Cadre (int tauxJour, int jourPresence)
  {
    super();
  	 this.tauxJour = tanxJour;
