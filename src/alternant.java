@@ -1,4 +1,4 @@
-public class alternant 
+public class alternant extends Employe 
 {
  float salaire;
 
