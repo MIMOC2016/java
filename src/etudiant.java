@@ -9,6 +9,7 @@ public class etudiant extends employe
  
  public etudiant (String ecole, String dateDebContrat, String dateFinContrat, String cursus)
  {
+   super();
  	 this.ecole = ecole;
  	 this.dateDebContrat = dateDebContrat;
  	 this.dateFinContrat = dateFinContrat;
