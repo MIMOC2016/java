@@ -1,5 +1,5 @@
 
-public class etudiant
+public class etudiant extends employe
 {
  String ecole;
  String dateDebContrat;
