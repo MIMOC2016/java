@@ -1,9 +1,9 @@
-public class alternant extends etudiant 
+public class Alternant extends Etudiant 
 {
  float salaire;
 
  
- public alternant (float salaire)
+ public Alternant (float salaire)
  {
    super();
  	 this.salaire = salaire;
