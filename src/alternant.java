@@ -5,6 +5,7 @@ public class alternant extends etudiant
  
  public alternant (float salaire)
  {
+   super();
  	 this.salaire = salaire;
  }
 
