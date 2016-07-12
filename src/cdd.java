@@ -1,4 +1,4 @@
-public class cdd 
+public class cdd extends employe
 {
  String datFinContrat;
  String typeContrat;
