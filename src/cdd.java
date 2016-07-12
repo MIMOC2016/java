@@ -1,6 +1,6 @@
 public class cdd extends employe
 {
- String datFinContrat;
+ String dateFinContrat;
  String typeContrat;
 
  
@@ -10,5 +10,17 @@ public class cdd extends employe
  	 this.dateFinContrat = dateFinContrat;
  	 this.typeContrat = typeContrat;
  }
+public String getDateFinContrat(){
+   return dateFinContrat;
+}
+public String getTypeContrat(){
+   return typeContrat;
+}
+public void setDateFinContrat(String df){
+ this.dateFinContrat = df;
+}
 
+public void setTypeContrat(String tf){
+ this.typeContrat = tf;
+}
 }
