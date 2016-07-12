@@ -1,4 +1,4 @@
-public class stagiaire extends Etudiant
+public class stagiaire extends etudiant
 {
  float gratification;
 
