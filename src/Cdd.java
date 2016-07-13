@@ -1,7 +1,7 @@
 public class Cdd extends Employe implements Conge
 {
- String dateFinContrat;
- String typeContrat;
+ Private String dateFinContrat;
+ Private String typeContrat;
  Private boolean enCong;
 
  
