@@ -1,6 +1,6 @@
 public class Stagiaire extends Etudiant
 {
- float gratification;
+ private float gratification;
 
  
  public Stagiaire (float gratification)
