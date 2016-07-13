@@ -1,6 +1,7 @@
-public class Alternant extends Etudiant 
+public class Alternant extends Etudiant implements Conge
 {
- float salaire;
+ private float salaire;
+ private boolean enCong;
 
  
  public Alternant (float salaire)
@@ -15,4 +16,17 @@ public float getSalaire(){
 public void setSalaire(float s){
  this.salaire = s;
 }
+
+ public void debutConge() {
+   this.enCong=true;
+}
+
+ public void finConge() {
+   this.enCong=false;
+}
+
+public boolean enConge() {
+   return this.enCong;
+}
+
 }
