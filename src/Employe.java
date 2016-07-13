@@ -1,5 +1,5 @@
 
-public class Employe 
+public class Employe implements Conge
 {
  int idEmp;
  private static int cpt=0;
