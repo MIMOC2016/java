@@ -5,9 +5,9 @@ public class Etablissement
  private String adr;
 
  
- public Etablissement (int idEmp, String adr)
+ public Etablissement (int idEtab, String adr)
  {
- 	 this.idEmp = idEmp;
+ 	 this.idEtab = idEtab;
 	 this.adr = adr;
  }
 
