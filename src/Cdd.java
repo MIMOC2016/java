@@ -3,13 +3,12 @@ public class Cdd extends Employe implements Conge
  private String dateFinContrat;
  private boolean enCong;
 
- 
- public Cdd (String dateFinContrat)
+ public Cdd (String nom, String prenom, String dateEmbauche, String dateNaissance, String tel, String email, String dateFinContrat)
  {
-   super();
+	 super(nom,prenom,dateEmbauche,dateNaissance,tel,email);
  	 this.dateFinContrat = dateFinContrat;
- 	 this.typeContrat = typeContrat;
  }
+ 
 public String getDateFinContrat(){
    return dateFinContrat;
 }
