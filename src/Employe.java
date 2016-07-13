@@ -1,7 +1,7 @@
 
 public class Employe 
 {
- int idEmp;
+ private int idEmp;
  private static int cpt=0;
  private String nom;
  private String prenom;
