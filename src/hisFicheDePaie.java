@@ -1,5 +1,4 @@
 public interface hisFicheDePaie
 {
- public void dateDeb();
- public void dateFin();
+ public void perpaie();
 }
