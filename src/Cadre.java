@@ -1,8 +1,9 @@
 
-public class Cadre extends Employe
+public class Cadre extends Employe implements Conge
 {
  int tauxJour;
- int jourPresence
+ int jourPresence;
+ private boolean enCong;
  
  public Cadre (int tauxJour, int jourPresence)
  {
@@ -25,4 +26,15 @@ public class Cadre extends Employe
  public void setJourPresence(int jp){
    this.jourPresence = jp;
 }
+
+	public void debutConge() {
+		this.enCong=true;
+	}
+	public void finConge() {
+		this.enCong=false;
+	}
+	public boolean enConge() {
+		return this.enCong;
+	}
+
 }
