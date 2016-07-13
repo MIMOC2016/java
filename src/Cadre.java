@@ -27,14 +27,16 @@ public class Cadre extends Employe implements Conge
    this.jourPresence = jp;
 }
 
-	public void debutConge() {
-		this.enCong=true;
-	}
-	public void finConge() {
-		this.enCong=false;
-	}
-	public boolean enConge() {
-		return this.enCong;
-	}
+ public void debutConge() {
+   this.enCong=true;
+}
+
+ public void finConge() {
+   this.enCong=false;
+}
+
+public boolean enConge() {
+   return this.enCong;
+}
 
 }
