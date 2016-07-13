@@ -1,14 +1,13 @@
 public class Etudiant extends Employe
 {
- String ecole;
- String dateDebContrat;
- String dateFinContrat;
- String cursus;
+ private String ecole;
+ private String dateDebContrat;
+ private String dateFinContrat;
+ private String cursus;
 
  
  public Etudiant (String ecole, String dateDebContrat, String dateFinContrat, String cursus)
  {
-   super();
  	 this.ecole = ecole;
  	 this.dateDebContrat = dateDebContrat;
  	 this.dateFinContrat = dateFinContrat;
@@ -43,4 +42,5 @@ public void setDateFinContrat(String df){
 public void setCursus(String c){
  this.cursus = c;
 }
+
 }
