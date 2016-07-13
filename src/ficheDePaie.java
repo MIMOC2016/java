@@ -15,7 +15,7 @@ public class CalculPaie implements hisFicheDePaie
  }
 
  //calcul de la paie
- public float calculpaie (String float salaireVariable, float salaireFixe)
+ public float somme (String float salaireVariable, float salaireFixe)
  {
 	return paie = this.salaireVariable + this.salaireFixe;
  }
