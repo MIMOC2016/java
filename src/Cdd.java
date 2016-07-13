@@ -1,11 +1,10 @@
 public class Cdd extends Employe implements Conge
 {
  private String dateFinContrat;
- private String typeContrat;
  private boolean enCong;
 
  
- public Cdd (String dateFinContrat, String typeContrat)
+ public Cdd (String dateFinContrat)
  {
    super();
  	 this.dateFinContrat = dateFinContrat;
@@ -14,15 +13,8 @@ public class Cdd extends Employe implements Conge
 public String getDateFinContrat(){
    return dateFinContrat;
 }
-public String getTypeContrat(){
-   return typeContrat;
-}
 public void setDateFinContrat(String df){
  this.dateFinContrat = df;
-}
-
-public void setTypeContrat(String tf){
- this.typeContrat = tf;
 }
 
 public void debutConge() {
