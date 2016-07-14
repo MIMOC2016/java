@@ -12,11 +12,11 @@ public class Cadre extends EmployeConge {
 		this.salaireMensuel = this.salaireFixe + this.salaireVariable;
 	}
  
-	public int getSalaireVariable(){
+	public float getSalaireVariable(){
 		return salaireVariable;
 	}
  
-	public int getSalaireFixe(){
+	public float getSalaireFixe(){
 		return salaireFixe;
 	}
 
