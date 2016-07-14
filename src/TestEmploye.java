@@ -10,7 +10,7 @@ public class TestEmploye {
 //--------------saisir une paie---------------------------//
 
 		CalculPaie paiefev = new CalculPaie();
-		String paie = paiefev.ToString();
+		String paie = paiefev.toString();
 		System.out.println(paie);
 
 }

@@ -30,6 +30,22 @@ public class CalculPaie
 	 return this.perpaie +" "+ this.paie;
  }
 
-
+ public String setperpaie()
+ {
+	 System.out.println("Veuillez saisir une nouvelle periode de paie, format AAAA/MM : ");
+		return this.perpaie = sc.next(); 
+ }
+ 
+ public float setsalaireFixe()
+ {
+	 System.out.println("Veuillez saisir un nouveau montant pour le salaire fixe: ");
+		return this.salaireFixe = sc.nextInt(); 
+ }
+ 
+ public float setsalaireVariable()
+ {
+	 System.out.println("Veuillez saisir un nouveau montant pour le salaire variable: ");
+		return this.salaireVariable = sc.nextInt(); 
+ }
  
 }

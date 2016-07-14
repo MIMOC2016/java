@@ -6,7 +6,7 @@ import java.sql.*;
 public class Driver {
    //JDBC diver nom et database URL
    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-   static final String DB_URL = "jdbc:mysql://localhost/RH";
+   static final String DB_URL = "jdbc:mysql://localhost:8889/RH";
 
    //BDD IDs
    static final String USER = "root";
@@ -28,7 +28,7 @@ public class Driver {
       System.out.println("Insertion en cours...");
       stmt = conn.createStatement();
       
-      String sql = "INSERT INTO Employe " +
+      String sql = "INSERT INTO Employes " +
                    "VALUES ('TOTO', 'Mickey', '14/08/86')";
       stmt.executeUpdate(sql);
       
