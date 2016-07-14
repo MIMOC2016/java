@@ -24,7 +24,7 @@ public class Cadre extends EmployeConge {
 		this.salaireFixe = salaireFixe;
 	}
 
-	public void setSalaireVariable(int salaireVariable){
+	public void setSalaireVariable(float salaireVariable){
 		this.salaireVariable = salaireVariable;
 	}
 	
