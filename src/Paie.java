@@ -5,7 +5,7 @@ public class Paie
 	 public float salaireFixe;
 	 public String perpaie;
 	 
-	 public Paie()
+	 public Paie( )
 		{
 			perpaie = "";
 			salaireFixe = 0;
@@ -19,11 +19,34 @@ public class Paie
 		 this.salaireVariable = salaireVariable;
 	 }
 
-	 
+	
 	 public String ToString ()
 	 {
-		 return this.perpaie +" "+ (this.salaireFixe + this.salaireVariable);
+		 return this.perpaie +" "+ this.salaireFixe +" "+ this.salaireVariable;
 	 }
 	 
+	 
+	 public Paie somme(Paie that){
+			return new Paie(this.perpaie,this.salaireFixe+that.salaireFixe, 
+					this.salaireVariable+that.salaireVariable);
+		}
+	 
+	 
+//-----------------------------Modifier l'objet Paie-----------------------//
+
+	 public void setperpaie(String Pperpaie)
+	 {
+		this.perpaie = Pperpaie ;
+	 }
+	 
+	 public void setsalaireFixe(float PsalaireFixe)
+	 {
+		this.salaireFixe = PsalaireFixe ; 
+	 }
+	 
+	 public void setsalaireVariable(float PsalaireVariable)
+	 {
+		this.salaireVariable = PsalaireVariable; 
+	 }
 
 }

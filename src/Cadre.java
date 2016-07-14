@@ -5,11 +5,19 @@ public class Cadre extends Employe implements Conge
  int jourPresence;
  private boolean enCong;
  
- public Cadre (int tauxJour, int jourPresence)
+//--------ATTRIBUTS CALCULPAIE--------//
+ 
+	private float salaireVariable;
+	private float salaireFixe;
+	private String perpaie;
+	private float salaireMensuel;
+
+ public Cadre (int tauxJour, int jourPresence, float salaireMensuel)
  {
    super();
- 	 this.tauxJour = tanxJour;
+ 	 this.tauxJour = tauxJour;
  	 this.jourPresence = jourPresence;
+ 	 this.setSalaireMensuel(this.salaireFixe + this.salaireVariable);
  }
  
  public int getTauxJour(){
@@ -37,6 +45,22 @@ public class Cadre extends Employe implements Conge
 
 public boolean enConge() {
    return this.enCong;
+}
+
+
+//----------------------------METHODE CALCUL PAIE CADRE---------------------------//
+
+public Paie calculPaie()
+{	
+	return new Paie(this.perpaie,this.salaireFixe , this.salaireVariable);
+}
+
+public float getSalaireMensuel() {
+	return salaireMensuel;
+}
+
+public void setSalaireMensuel(float salaireMensuel) {
+	this.salaireMensuel = salaireMensuel;
 }
 
 }
