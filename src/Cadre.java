@@ -1,14 +1,14 @@
 
 public class Cadre extends EmployeConge {
-
+ 	 
 		private float salaireVariable;
 		private float salaireFixe;
 		private String perpaie;
 		private float salaireMensuel;
 		
-	public Cadre(String nom, String prenom, String dateEmbauche, String dateNaissance, int tel, String email,float salaireFixe, float salaireVariable)
+	public Cadre(String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance, int tel, String email,float salaireFixe, float salaireVariable)
 	{
-		super(nom,prenom,dateEmbauche,dateNaissance,tel,email);
+		super(nom,prenom,dateEmbauche,etabAffectation, dateNaissance,tel,email);
 		this.salaireMensuel = this.salaireFixe + this.salaireVariable;
 	}
  
@@ -34,7 +34,7 @@ public class Cadre extends EmployeConge {
 				"tel: "+ tel + "\n"+
 				"email: "+email+ "\n"+
 				"date d'Embauche : " +dateEmbauche+ "\n"+
-				"salaire Mensuel (Fixe + Variable) : " salaireFixe + salaireVariable +" = "+ salaireMensuel+ "\n";
+				"salaire Mensuel (Fixe + Variable) : "+ salaireFixe + salaireVariable +" = "+ salaireMensuel+ "\n";
 	
 	}
 	
