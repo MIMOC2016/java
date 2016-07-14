@@ -1,14 +1,14 @@
 
 public abstract class Employe 
 {
- private int idEmp;
+ protected int idEmp;
  private static int cpt=0;
- private String nom;
- private String prenom;
- private String dateEmbauche;
- private String dateNaissance;
- private int tel;
- private String email;
+ protected String nom;
+ protected String prenom;
+ protected String dateEmbauche;
+ protected String dateNaissance;
+ protected int tel;
+ protected String email;
  
  public Employe (String nom, String prenom, String dateEmbauche, String dateNaissance, int tel, String email)
   {
