@@ -5,9 +5,9 @@ public abstract class Etudiant extends Employe
  protected String cursus;
 
  
- public Etudiant (String nom, String prenom, String dateEmbauche, String dateNaissance, int tel, String email, String ecole, String dateFinContrat, String cursus)
+ public Etudiant (String nom, String prenom, String dateEmbauche,int etabAffectation, String dateNaissance, int tel, String email, String ecole, String dateFinContrat, String cursus)
  {
-	 super(nom,prenom,dateEmbauche,dateNaissance,tel,email);
+	 super(nom,prenom,dateEmbauche, etabAffectation, dateNaissance,tel,email);
  	 this.ecole = ecole;
  	 this.dateFinContrat = dateFinContrat;
  	 this.cursus = cursus;
