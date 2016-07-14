@@ -1,10 +1,6 @@
 
 public class Cadre extends EmployeConge {
-	int tauxJour;
-	int jourPresence;
- 
-	//--------ATTRIBUTS CALCULPAIE--------//
-	 
+
 		private float salaireVariable;
 		private float salaireFixe;
 		private String perpaie;
