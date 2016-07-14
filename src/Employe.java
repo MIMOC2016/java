@@ -22,7 +22,7 @@ public abstract class Employe
 
  }
  
- public abstract Paie CalculPaie();
+ public abstract Paie calculPaie();
 
 
 }

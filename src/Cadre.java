@@ -17,7 +17,7 @@ public class Cadre extends Employe implements Conge
    super();
  	 this.tauxJour = tauxJour;
  	 this.jourPresence = jourPresence;
- 	 this.setSalaireMensuel(this.salaireFixe + this.salaireVariable);
+ 	 this.salaireMensuel = this.salaireFixe + this.salaireVariable;
  }
  
  public int getTauxJour(){
@@ -62,5 +62,6 @@ public float getSalaireMensuel() {
 public void setSalaireMensuel(float salaireMensuel) {
 	this.salaireMensuel = salaireMensuel;
 }
+
 
 }
