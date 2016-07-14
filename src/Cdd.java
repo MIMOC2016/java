@@ -6,9 +6,9 @@ public class Cdd extends EmployeConge
 	private String perpaie;
 	private float salaireMensuel;
 
-	public Cdd (String nom, String prenom, String dateEmbauche, String dateNaissance, int tel, String email, String dateFinContrat, float salaireFixe, float salaireVariable)
+	public Cdd (String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance, int tel, String email, String dateFinContrat, float salaireFixe, float salaireVariable)
 	{
-		super(nom,prenom,dateEmbauche,dateNaissance,tel,email);
+		super(nom,prenom,dateEmbauche, etabAffectation, dateNaissance,tel,email);
 		this.dateFinContrat = dateFinContrat;
 		this.salaireMensuel = this.salaireFixe + this.salaireVariable;
 	}
