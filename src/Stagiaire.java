@@ -3,9 +3,9 @@ public class Stagiaire extends Etudiant
 	private float gratification;
 	private String perpaie;
 
-	public Stagiaire(String nom, String prenom, String dateEmbauche, String dateNaissance, int tel, String email, String ecole, String dateFinContrat, String cursus, float gratification)
+	public Stagiaire(String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance, int tel, String email, String ecole, String dateFinContrat, String cursus, float gratification)
  		{
-	 		super(nom,prenom,dateEmbauche,dateNaissance,tel,email,ecole, dateFinContrat, cursus);
+	 		super(nom,prenom,dateEmbauche, etabAffectation, dateNaissance,tel,email,ecole, dateFinContrat, cursus);
 	 		this.gratification = gratification;
  		}
  
