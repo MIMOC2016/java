@@ -10,27 +10,26 @@ public class Cadre extends EmployeConge {
 		private String perpaie;
 		private float salaireMensuel;
 		
-	public Cadre(String nom, String prenom, String dateEmbauche, String dateNaissance, String tel, String email,int tauxJour, int jourPresence)
+	public Cadre(String nom, String prenom, String dateEmbauche, String dateNaissance, String tel, String email,float salaireFixe, float salaireVariable)
 	{
 		super(nom,prenom,dateEmbauche,dateNaissance,tel,email);
-		this.tauxJour = tanxJour;
-		this.jourPresence = jourPresence;
+		this.salaireMensuel = this.salaireFixe + this.salaireVariable;
 	}
  
-	public int getTauxJour(){
-		return tauxJour;
+	public int getSalaireVariable(){
+		return salaireVariable;
 	}
  
-	public int getJourPresence(){
-		return jourPresence;
+	public int getSalaireFixe(){
+		return salaireFixe;
 	}
 
-	public void setTauxJour(int tj){
-		this.tauxJour = tj;
+	public void setSalaireFixe(float salaireFixe){
+		this.salaireFixe = SalaireFixe;
 	}
 
-	public void setJourPresence(int jp){
-		this.jourPresence = jp;
+	public void setSalaireVariable(int salaireVariable){
+		this.salaireVariable = salaireVariable;
 	}
 	
 	public String toString(){
