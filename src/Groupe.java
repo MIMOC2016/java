@@ -7,15 +7,15 @@ public class Groupe {
 	public void ajoutEmploye(Employe a){
 		employes.add(a);
 	}
-	/*
-	public CalculPaie calculPaieTotale(){
-		CalculPaie p = new CalculPaie();
-		for(CalculPaie p : employes ){
-				p= p.somme(a.calculpaie());
+
+	public Paie calculPaieTotale(){
+		Paie p = new Paie();
+		for(Employe a : employes ){
+				p= p.somme(a.calculPaie());
 		}
-		return r;
+		return p;
 	}	
-	*/
+
 	
 	public String toString(){
 		String s = new String();
