@@ -1,8 +1,8 @@
 public abstract class Etudiant extends Employe
 {
- private String ecole;
- private String dateFinContrat;
- private String cursus;
+ protected String ecole;
+ protected String dateFinContrat;
+ protected String cursus;
 
  
  public Etudiant (String nom, String prenom, String dateEmbauche, String dateNaissance, int tel, String email, String ecole, String dateFinContrat, String cursus)
