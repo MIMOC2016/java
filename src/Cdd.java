@@ -1,56 +1,67 @@
-public class Cdd extends Employe implements Conge
+public class Cdd extends EmployeConge
 {
- private String dateFinContrat;
- private boolean enCong;
- 
-//--------ATTRIBUTS CALCULPAIE--------//
- 
+	private String dateFinContrat;
 	private float salaireVariable;
 	private float salaireFixe;
 	private String perpaie;
 	private float salaireMensuel;
 
- public Cdd (String nom, String prenom, String dateEmbauche, String dateNaissance, String tel, String email, String dateFinContrat,float salaireMensuel)
-{
-	 super(nom,prenom,dateEmbauche,dateNaissance,tel,email);
-	 this.dateFinContrat = dateFinContrat;
-	 this.salaireMensuel = this.salaireFixe + this.salaireVariable;
-
- }
+	public Cdd (String nom, String prenom, String dateEmbauche, String dateNaissance, int tel, String email, String dateFinContrat, float salaireFixe, float salaireVariable)
+	{
+		super(nom,prenom,dateEmbauche,dateNaissance,tel,email);
+		this.dateFinContrat = dateFinContrat;
+		this.salaireMensuel = this.salaireFixe + this.salaireVariable;
+	}
  
-public String getDateFinContrat(){
-   return dateFinContrat;
-}
-public void setDateFinContrat(String df){
- this.dateFinContrat = df;
-}
+	public float getSalaireVariable(){
+		return salaireVariable;
+	}
+ 
+	public float getSalaireFixe(){
+		return salaireFixe;
+	}
 
-public void debutConge() {
- this.enCong=true;
-}
+	public void setSalaireFixe(float salaireFixe){
+		this.salaireFixe = salaireFixe;
+	}
 
-public void finConge() {
- this.enCong=false;
-}
+	public void setSalaireVariable(float salaireVariable){
+		this.salaireVariable = salaireVariable;
+	}
+ 
+	public String getDateFinContrat(){
+		return dateFinContrat;
+	}
 
-public boolean enConge() {
- return this.enCong;
-}
+	public void setDateFinContrat(String dateFinContrat){
+		this.dateFinContrat = dateFinContrat;
+	}
 
-//----------------------------METHODE CALCUL PAIE CADRE---------------------------//
+	public String toString(){
+		return "n°" + idEmp+"\n"+
+				nom + prenom + "né le" + dateNaissance+ "\n"+
+				"tel: "+ tel + "\n"+
+				"email: "+email+ "\n"+
+				"date d'Embauche : " +dateEmbauche+ "\n"+
+				"salaire Mensuel (Fixe + Variable) : "+ salaireFixe + salaireVariable +" = "+ salaireMensuel+ "\n";
+	
+	}
+	
 
-public Paie calculPaie()
-{	
-	return new Paie(this.perpaie,this.salaireFixe , this.salaireVariable);
-}
+	//----------------------------METHODE CALCUL PAIE CDD---------------------------//
 
-public float getSalaireMensuel() 
-{
-	return salaireMensuel;
-}
+	public Paie calculPaie()
+	{	
+		return new Paie(this.perpaie,this.salaireFixe , this.salaireVariable);
+	}
 
-public void setSalaireMensuel(float salaireMensuel)
-{
-	this.salaireMensuel = salaireMensuel;
-}
+	public float getSalaireMensuel() {
+		return salaireMensuel;
+	}
+
+	public void setSalaireMensuel(float salaireMensuel) {
+		this.salaireMensuel = salaireMensuel;
+	}
+
+
 }
