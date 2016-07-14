@@ -1,7 +1,7 @@
 public class EmployeConge extends Employe implements Conge {
 	private boolean enCong=false;
 	
-	public EmployeConge(String nom, String prenom, String dateEmbauche, String dateNaissance, String tel, String email){
+	public EmployeConge(String nom, String prenom, String dateEmbauche, String dateNaissance, int tel, String email){
 		super(nom,prenom,dateEmbauche,dateNaissance,tel,email);
 	}
 	
@@ -21,4 +21,9 @@ public class EmployeConge extends Employe implements Conge {
 		  return super.toString()+ ( enConge() ? ", en congé" : "");
 					
 		}
+	/*a faire*/
+	public Paie calculPaie(){
+		return calculPaie();
+	}
+
 }
