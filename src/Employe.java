@@ -9,13 +9,15 @@ public abstract class Employe
  protected String dateNaissance;
  protected int tel;
  protected String email;
+ protected int etabAffectation;
  
- public Employe (String nom, String prenom, String dateEmbauche, String dateNaissance, int tel, String email)
+ public Employe (String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance, int tel, String email)
   {
 	 this.nom = nom;
 	 this.prenom = prenom;
 	 this.dateEmbauche = dateEmbauche;
 	 this.dateNaissance = dateNaissance;
+	 this.etabAffectation = etabAffectation;
 	 this.tel = tel;
 	 this.email = email;
  	 this.idEmp = cpt++;
