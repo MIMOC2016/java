@@ -1,5 +1,5 @@
 
-public class Employe 
+public abstract class Employe 
 {
  private int idEmp;
  private static int cpt=0;
@@ -21,5 +21,8 @@ public class Employe
  	 this.idEmp = cpt++;
 
  }
+ 
+ public abstract Paie CalculPaie();
+
 
 }

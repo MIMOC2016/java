@@ -1,51 +1,37 @@
-import java.util.Scanner;
 
 public class CalculPaie 
 {
- public float salaireVariable;
- public float salaireFixe;
- public String perpaie;
  public float paie;
- 
-	Scanner sc = new Scanner(System.in);
+
+	private float salaireVariable;
+	 private float salaireFixe;
+	 private String perpaie;
+
 
 
  //constructeur
- public CalculPaie ()
+	
+	
+	public Paie calculPaie(){
+		return new Paie(this.perpaie, this.salaireFixe, this.salaireVariable);
+	}
+	
+
+
+
+ public void setperpaie(String Pperpaie)
  {
-		System.out.println("Veuillez saisir une periode de paie, format AAAA/MM : ");
-		this.perpaie = sc.next();
-	 
-	 System.out.println("Veuillez saisir un montant pour le salaire fixe : ");
-	    this.salaireFixe = sc.nextInt();
-
-		System.out.println("Veuillez saisir un montant pour le salaire variable :  ");
-	    this.salaireVariable = sc.nextInt(); 
-
- 	 this.paie = salaireFixe + salaireVariable;
- }
-
- public String ToString ()
- {
-	 return this.perpaie +" "+ this.paie;
- }
-
- public String setperpaie()
- {
-	 System.out.println("Veuillez saisir une nouvelle periode de paie, format AAAA/MM : ");
-		return this.perpaie = sc.next(); 
+	this.perpaie = Pperpaie ;
  }
  
- public float setsalaireFixe()
+ public void setsalaireFixe(float salaireFixe)
  {
-	 System.out.println("Veuillez saisir un nouveau montant pour le salaire fixe: ");
-		return this.salaireFixe = sc.nextInt(); 
+	this.salaireFixe = salaireFixe ; 
  }
  
- public float setsalaireVariable()
+ public void setsalaireVariable(float salaireVariable)
  {
-	 System.out.println("Veuillez saisir un nouveau montant pour le salaire variable: ");
-		return this.salaireVariable = sc.nextInt(); 
+	this.salaireVariable = salaireVariable; 
  }
  
 }
