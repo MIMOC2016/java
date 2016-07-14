@@ -44,11 +44,13 @@ public Paie calculPaie()
 	return new Paie(this.perpaie,this.salaireFixe , this.salaireVariable);
 }
 
-public float getSalaireMensuel() {
+public float getSalaireMensuel() 
+{
 	return salaireMensuel;
 }
 
-public void setSalaireMensuel(float salaireMensuel) {
+public void setSalaireMensuel(float salaireMensuel)
+{
 	this.salaireMensuel = salaireMensuel;
 }
 }
