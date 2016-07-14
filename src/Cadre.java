@@ -1,67 +1,60 @@
 
-public class Cadre extends Employe implements Conge
-{
- int tauxJour;
- int jourPresence;
- private boolean enCong;
+public class Cadre extends EmployeConge {
+	int tauxJour;
+	int jourPresence;
  
-//--------ATTRIBUTS CALCULPAIE--------//
+	//--------ATTRIBUTS CALCULPAIE--------//
+	 
+		private float salaireVariable;
+		private float salaireFixe;
+		private String perpaie;
+		private float salaireMensuel;
+		
+	public Cadre(String nom, String prenom, String dateEmbauche, String dateNaissance, String tel, String email,int tauxJour, int jourPresence)
+	{
+		super(nom,prenom,dateEmbauche,dateNaissance,tel,email);
+		this.tauxJour = tanxJour;
+		this.jourPresence = jourPresence;
+	}
  
-	private float salaireVariable;
-	private float salaireFixe;
-	private String perpaie;
-	private float salaireMensuel;
-
- public Cadre (int tauxJour, int jourPresence, float salaireMensuel)
- {
-   super();
- 	 this.tauxJour = tauxJour;
- 	 this.jourPresence = jourPresence;
- 	 this.salaireMensuel = this.salaireFixe + this.salaireVariable;
- }
+	public int getTauxJour(){
+		return tauxJour;
+	}
  
- public int getTauxJour(){
-  return tauxJour;
- }
- 
-  public int getJourPresence(){
-  return jourPresence;
- }
- public void setTauxJour(int tj){
-   this.tauxJour = tj;
-}
+	public int getJourPresence(){
+		return jourPresence;
+	}
 
- public void setJourPresence(int jp){
-   this.jourPresence = jp;
-}
+	public void setTauxJour(int tj){
+		this.tauxJour = tj;
+	}
 
- public void debutConge() {
-   this.enCong=true;
-}
+	public void setJourPresence(int jp){
+		this.jourPresence = jp;
+	}
+	
+	public String toString(){
+		return "n°" + idEmp+"\n"+
+				nom + prenom + "né le" + dateNaissance+ "\n"+
+				"tel: "+ tel + "\n"+
+				"email: "+email+ "\n"+
+				"date d'Embauche : " +dateEmbauche+ "\n"+
+				"taux jour : "+ tauxJour+ "jour présence : "+ jourPresence +"\n";
+	}
+	
 
- public void finConge() {
-   this.enCong=false;
-}
+	//----------------------------METHODE CALCUL PAIE CADRE---------------------------//
 
-public boolean enConge() {
-   return this.enCong;
-}
+	public Paie calculPaie()
+	{	
+		return new Paie(this.perpaie,this.salaireFixe , this.salaireVariable);
+	}
 
+	public float getSalaireMensuel() {
+		return salaireMensuel;
+	}
 
-//----------------------------METHODE CALCUL PAIE CADRE---------------------------//
-
-public Paie calculPaie()
-{	
-	return new Paie(this.perpaie,this.salaireFixe , this.salaireVariable);
-}
-
-public float getSalaireMensuel() {
-	return salaireMensuel;
-}
-
-public void setSalaireMensuel(float salaireMensuel) {
-	this.salaireMensuel = salaireMensuel;
-}
-
-
+	public void setSalaireMensuel(float salaireMensuel) {
+		this.salaireMensuel = salaireMensuel;
+	}
 }
