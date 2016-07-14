@@ -1,47 +1,42 @@
 public class Alternant extends Etudiant implements Conge
 {
- private boolean enCong;
-
-//--------ATTRIBUTS CALCULPAIE--------//
- 
-	private float salaireVariable;
-	private float salaireFixe;
+	private float salaire;
 	private String perpaie;
-	private float salaireMensuel;
-
- 
- public Alternant (String nom, String prenom, String dateEmbauche, String dateNaissance, String tel, String email, String ecole, String dateFinContrat, String cursus, float salaireMensuel)
- {
-   super(nom,prenom,dateEmbauche,dateNaissance,tel,email,ecole,dateFinContrat,cursus);
- 	 this.salaireMensuel = this.salaireFixe + this.salaireVariable;
- }
+	private boolean enCong=false;
 
 
- public void debutConge() {
-   this.enCong=true;
-}
+	public Alternant (String nom, String prenom, String dateEmbauche, String dateNaissance,int tel, String email, String ecole, String dateFinContrat, String cursus, float salaire){
+		super(nom,prenom,dateEmbauche,dateNaissance,tel,email,ecole, dateFinContrat, cursus);		
+		this.salaire = salaire;
+	}
 
- public void finConge() {
-   this.enCong=false;
-}
+	public float getSalaire(){
+		return salaire;
+	}
 
-public boolean enConge() {
-   return this.enCong;
-}
+	public void setSalaire(float salaire){
+		this.salaire = salaire;
+	}
 
-//----------------------------METHODE CALCUL PAIE CADRE---------------------------//
+	 public void debutConge() {
+		   this.enCong=true;
+		}
 
-public Paie calculPaie()
-{	
-	return new Paie(this.perpaie,this.salaireFixe , this.salaireVariable);
-}
+	public void finConge() {
+		   this.enCong=false;
+		}
 
-public float getSalaireMensuel() {
-	return salaireMensuel;
-}
-
-public void setSalaireMensuel(float salaireMensuel) {
-	this.salaireMensuel = salaireMensuel;
-}
-
+	public boolean enConge() {
+		   return this.enCong;
+		}
+		
+	public String toString(){
+		  return super.toString()+ ( enConge() ? ", en congé" : "");
+					
+		}
+	
+	public Paie calculPaie()
+	{	
+		return new Paie(this.perpaie,this.salaire);
+	}
 }
