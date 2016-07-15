@@ -1,6 +1,19 @@
+import java.util.ArrayList;
+
 public class Alternant extends Etudiant implements Conge
 {
+<<<<<<< Updated upstream
 	private float salaire;
+=======
+ private boolean enCong;
+
+//--------ATTRIBUTS CALCULPAIE--------//
+ 
+	private ArrayList<Paie> paies=new ArrayList<Paie>();
+ 
+	private float salaireVariable;
+	private float salaireFixe;
+>>>>>>> Stashed changes
 	private String perpaie;
 	private boolean enCong=false;
 

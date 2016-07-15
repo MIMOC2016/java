@@ -44,6 +44,7 @@ public abstract class Employe
 		return dateEmbauche;
 	}
 
+<<<<<<< Updated upstream
 	public void setDateEmbauche(String dateEmbauche){
 		this.dateEmbauche = dateEmbauche;
 	}
@@ -51,6 +52,10 @@ public abstract class Employe
 	public String getDateNaissance(){
 		return dateNaissance;
 	}
+=======
+public abstract String getNom();
+
+>>>>>>> Stashed changes
 
 	public void setDateNaissance(String dateNaissance){
 		this.dateNaissance = dateNaissance;

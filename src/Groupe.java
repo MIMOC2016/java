@@ -7,6 +7,7 @@ public class Groupe {
 	public void ajoutEmploye(Employe a){
 		employes.add(a);
 	}
+<<<<<<< Updated upstream
 
 	public Paie calculPaieTotale(){
 		Paie p = new Paie();
@@ -16,6 +17,18 @@ public class Groupe {
 		return p;
 	}	
 
+=======
+	
+	public Paie calculPaieTotale(){
+		Paie p = new Paie();
+		for(Employe a : employes ){
+				p= p.somme(p.calculPaie());
+		}
+		return p;
+	}	
+	
+	
+>>>>>>> Stashed changes
 	
 	public String toString(){
 		String s = new String();

@@ -12,6 +12,7 @@ public abstract class Etudiant extends Employe
  	 this.dateFinContrat = dateFinContrat;
  	 this.cursus = cursus;
  }
+ 
 
 public String getEcole(){
    return ecole;
@@ -47,6 +48,12 @@ public String toString(){
 			"cursus : "+cursus+"\n";
 }
 
+<<<<<<< Updated upstream
 public abstract Paie calculPaie();
+=======
+
+
+
+>>>>>>> Stashed changes
 }
 

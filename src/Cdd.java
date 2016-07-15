@@ -1,6 +1,19 @@
+<<<<<<< Updated upstream
 public class Cdd extends EmployeConge
 {
 	private String dateFinContrat;
+=======
+import java.util.ArrayList;
+
+public class Cdd extends Employe implements Conge
+{
+ private String dateFinContrat;
+ private boolean enCong;
+ 
+//--------ATTRIBUTS CALCULPAIE--------/
+	private ArrayList<Paie> paies=new ArrayList<Paie>();
+ 
+>>>>>>> Stashed changes
 	private float salaireVariable;
 	private float salaireFixe;
 	private String perpaie;

@@ -12,10 +12,11 @@ public class TestEmploye {
 		Scanner sc = new Scanner(System.in);
 
 //--------------saisir une paie---------------------------//
-		CalculPaie paiefev = new CalculPaie("2016/02", 1000, 200);
-		String paie = paiefev.toString();
+		Paie paiefev = new Paie("2016/02", 1000, 200);
+		String paie = paiefev.ToString();
 		System.out.println(paie);
-		paiefev.setperpaie("2017/02");
+		paiefev.setperpaie("2018/02");
+		paie = paiefev.ToString();
 		System.out.println(paie);
 
 }
