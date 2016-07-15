@@ -48,12 +48,9 @@ public String toString(){
 			"cursus : "+cursus+"\n";
 }
 
-<<<<<<< Updated upstream
 public abstract Paie calculPaie();
-=======
 
 
 
->>>>>>> Stashed changes
 }
 

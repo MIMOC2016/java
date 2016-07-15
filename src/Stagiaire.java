@@ -1,23 +1,16 @@
 
 public class Stagiaire extends Etudiant
 {
-	private float gratification;
+	private float salaireFixe;
 	private String perpaie;
 
-<<<<<<< Updated upstream
-	public Stagiaire(String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance, int tel, String email, String ecole, String dateFinContrat, String cursus, float gratification)
+	public Stagiaire(String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance, int tel, String email, String ecole, String dateFinContrat, String cursus, float salaireFixe)
  		{
 	 		super(nom,prenom,dateEmbauche, etabAffectation, dateNaissance,tel,email,ecole, dateFinContrat, cursus);
-	 		this.gratification = gratification;
+	 		this.salaireFixe = salaireFixe;
  		}
  
-	public float getGratification(){
-		return gratification;
-	}
 
-	public void setGratification(float g){
-		this.gratification = g;
-	}
 	
 	public String toString(){
 		return "n°" + idEmp+"\n"+
@@ -28,31 +21,29 @@ public class Stagiaire extends Etudiant
 				"date Fin Contrat : "+ dateFinContrat +"\n"+
 				"école : "+ ecole+"\n"+
 				"cursus : "+cursus+"\n"+
-				"gratification : "+gratification+"\n";
+				"gratification : "+salaireFixe+"\n";
 		
 	}
 	
-	//----------------------------METHODE CALCUL PAIE CADRE---------------------------//
+	//----------------------------METHODE CALCUL PAIE STAGIAIRE---------------------------//
 
-		public Paie calculPaie()
-		{	
-			return new Paie(this.perpaie,this.gratification);
-		}
+	//le stagiaire n'a qu'un salaire fixe : c'est sa gratification
 	
-=======
- public Stagiaire (float gratification)
- {
-   super();
- 	 this.gratification = gratification;
- }
-public float getGratification(){
-   return gratification;
-}
+         public float getGratification()
+         {
+            return salaireFixe;
+         }
 
-public void setGratification(float g){
- this.gratification = g;
-}
+         public void setGratification(float g)
+         {
+            this.salaireFixe = g;
+         }
+
+		public Paie calculPaie() 
+		{
+			return new Paie(this.perpaie, this.salaireFixe,0);
+		}
 
 
->>>>>>> Stashed changes
+
 }

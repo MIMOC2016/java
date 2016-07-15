@@ -1,19 +1,14 @@
-<<<<<<< Updated upstream
-public class Cdd extends EmployeConge
-{
-	private String dateFinContrat;
-=======
 import java.util.ArrayList;
+
 
 public class Cdd extends Employe implements Conge
 {
  private String dateFinContrat;
- private boolean enCong;
+ private boolean enCong = false;
  
 //--------ATTRIBUTS CALCULPAIE--------/
 	private ArrayList<Paie> paies=new ArrayList<Paie>();
  
->>>>>>> Stashed changes
 	private float salaireVariable;
 	private float salaireFixe;
 	private String perpaie;
@@ -74,6 +69,21 @@ public class Cdd extends Employe implements Conge
 
 	public void setSalaireMensuel(float salaireMensuel) {
 		this.salaireMensuel = salaireMensuel;
+	}
+
+	//Mettre un employé en congé
+	public void debutConge() {
+      this.enCong = true;		
+	}
+
+	//Sortir un employé de congé
+	public void finConge() {
+      this.enCong = false;		
+	}
+
+	//Savoir qui sont les employés en congés
+	public boolean enConge() {
+		return this.enCong;
 	}
 
 
