@@ -166,6 +166,146 @@ import java.util.Scanner;
 								}
 								
 							} /*fin case 1*/
+							
+							case 2:
+							{
+								int choix = 0;		
+									System.out.println("-1- Modifier les informations personnelles d'un cadre CDI");
+									System.out.println("-2- Modifier les informations personnelles d'un CDD");
+									System.out.println("-3- Modifier les informations personnelles d'un stagiaire");
+									System.out.println("-4- Modifier les informations personnelles d'un alternant");
+								choix = sc.nextInt();
+								
+								switch (choix)
+								{
+								  case 1:
+								  {
+
+									System.out.println("Modifier les informations personnelles d'un cadre CDI: ");
+									Scanner id = new Scanner(System.in);
+									System.out.println("Saisir l'identifiant du salarié : ");
+									idEmp = id.nextInt();	
+									System.out.print("Nom : ");
+									String nom = sc.nextLine();
+									System.out.print("Prenom : ");
+									String prenom = sc.nextLine();
+									System.out.print("Date Embauche : ");
+									String dateEmbauche = sc.nextLine();
+									System.out.print("Etablissement d'affectation (identifiant) : ");
+									int etabAffectation = sc.nextInt();
+									System.out.print("Date de naissance : ");
+									String dateNaissance = sc.nextLine();
+									System.out.print("Tel : ");
+									int tel = sc.nextInt();
+									System.out.print(" Email : ");
+									String email = sc.nextLine();
+									System.out.print("Salaire fixe : ");
+									float salaireFixe = sc.nextFloat();
+									System.out.print("Salaire variable : ");
+									float salaireVariable = sc.nextFloat();
+									
+									Cadre cadr = new Cadre(nom,prenom,dateEmbauche,etabAffectation, dateNaissance, tel, email, salaireFixe, salaireVariable); 
+									break;
+								   }
+								
+								   case 2 :
+								   {
+									   
+									System.out.println("Modifier les informations personnelles d'un CDD: ");
+									System.out.print("Nom : ");
+									String nom = sc.nextLine();
+									System.out.print("Prenom : ");
+									String prenom = sc.nextLine();
+									System.out.print("Date Embauche : ");
+									String dateEmbauche = sc.nextLine();
+									System.out.print("Etablissement d'affectation (identifiant) : ");
+									int etabAffectation = sc.nextInt();
+									System.out.print("Date de naissance : ");
+									String dateNaissance = sc.nextLine();
+									System.out.print("Tel : ");
+									int tel = sc.nextInt();
+									System.out.print(" Email : ");
+									String email = sc.nextLine();
+									System.out.print("Date Fin de Contrat : ");
+									String dateFinContrat = sc.nextLine();
+									System.out.print("Salaire fixe : ");
+									float salaireFixe = sc.nextFloat();
+									System.out.print("Salaire variable : ");
+									float salaireVariable = sc.nextFloat();
+										
+									Cdd cd = new Cdd(nom,prenom,dateEmbauche,etabAffectation, dateNaissance, tel, email, dateFinContrat, salaireFixe, salaireVariable); 
+									break;
+										   
+								   }
+								   
+								   case 3 : 
+									   
+								   {
+									   
+									System.out.println("Modifier les informations personnelles d'un stagiaire : ");
+									System.out.print("Nom : ");
+									String nom = sc.nextLine();
+									System.out.print("Prenom : ");
+									String prenom = sc.nextLine();
+									System.out.print("Date Embauche : ");
+									String dateEmbauche = sc.nextLine();
+									System.out.print("Etablissement d'affectation (identifiant) : ");
+									int etabAffectation = sc.nextInt();
+									System.out.print("Date de naissance : ");
+									String dateNaissance = sc.nextLine();
+									System.out.print("Tel : ");
+									int tel = sc.nextInt();
+									System.out.print(" Email : ");
+									String email = sc.nextLine();
+									System.out.print("Ecole : ");
+									String ecole = sc.nextLine(); 
+									System.out.print("Cursus : ");
+									String cursus = sc.nextLine();
+									System.out.print("Date Fin de Contrat : ");
+									String dateFinContrat = sc.nextLine();
+									System.out.print("Salaire fixe : ");
+									float salaireFixe = sc.nextFloat();
+										
+									Stagiaire Stag = new Stagiaire(nom,prenom,dateEmbauche,etabAffectation, dateNaissance, tel, email, ecole, cursus, dateFinContrat, salaireFixe); 
+									break;
+										   
+								   }
+								   
+								   case 4 : 
+									   
+								   {
+									   
+									System.out.println("Modifier les informations personnelles d'un alternant : ");
+									System.out.print("Nom : ");
+									String nom = sc.nextLine();
+									System.out.print("Prenom : ");
+									String prenom = sc.nextLine();
+									System.out.print("Date Embauche : ");
+									String dateEmbauche = sc.nextLine();
+									System.out.print("Etablissement d'affectation (identifiant) : ");
+									int etabAffectation = sc.nextInt();
+									System.out.print("Date de naissance : ");
+									String dateNaissance = sc.nextLine();
+									System.out.print("Tel : ");
+									int tel = sc.nextInt();
+									System.out.print(" Email : ");
+									String email = sc.nextLine();
+									System.out.print("Ecole : ");
+									String ecole = sc.nextLine(); 
+									System.out.print("Date Fin de Contrat : ");
+									String dateFinContrat = sc.nextLine();
+									System.out.print("Cursus : ");
+									String cursus = sc.nextLine();
+									System.out.print("Salaire fixe : ");
+									float salaireFixe = sc.nextFloat();
+										
+									Alternant altern = new Alternant(nom,prenom,dateEmbauche, etabAffectation, dateNaissance,tel, email, ecole, dateFinContrat,cursus, salaireFixe); 
+									break;
+										   
+								   }
+								}
+								
+							} /*fin case 2*/
 							case 2: 
 							{
 									Scanner id = new Scanner(System.in);
