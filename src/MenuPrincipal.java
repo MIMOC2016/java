@@ -292,27 +292,27 @@ import java.util.Scanner;
 
 
 									
-							}
+							}/*fin case 3*/
 							case 4: 
 							{
-								System.out.println("-0- Retour au menu principal ");
+								System.out.println("Retour au menu principal ");
 
 									
-							}
-						}
+							}/*fin case 4*/
+						}/*fin case Gestion des salariés*/
 					case 2:
 						{
 						System.out.println(" Gestion des congés ");	
-						}
+						}/*fin case Gestion des congés*/
 					
 					case 3:
 						{
 						System.out.println("Gestion de la paie ");	
-						}
+						}/*fin case Gestion de la paie*/
 					case 4:
 						{
 						System.out.println("Consultation ");	
-						}
+						}/*fin case Consultation*/
 					}
 				}
 			}
