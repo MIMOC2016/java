@@ -223,7 +223,7 @@ import java.util.Scanner;
 												{
 												System.out.print("Modifier l'etablissement d'affectation : ");
 												System.out.print("Etablissement d'affectation : ");
-												String etabAffectation = sc.nextLine();
+												int etabAffectation = sc.nextLine();
 												break;
 												}
 											case 5:
@@ -237,7 +237,7 @@ import java.util.Scanner;
 												{
 												System.out.print("Modifier le tel : ");
 												System.out.print("Tel : ");
-												String tel = sc.nextLine();
+												int tel = sc.nextLine();
 												break;
 												}
 											case 7:
@@ -251,14 +251,14 @@ import java.util.Scanner;
 												{
 												System.out.print("Modifier le salaire fixe : ");
 												System.out.print("Salaire fixe : ");
-												String salaireFixe = sc.nextLine();
+												int salaireFixe = sc.nextLine();
 												break;
 												}
-											case 8:
+											case 9:
 												{
 												System.out.print("Modifier le salaire variable : ");
 												System.out.print("Salaire variable : ");
-												String salaireVariable = sc.nextLine();
+												int salaireVariable = sc.nextLine();
 												break;
 												}
 								  			}
@@ -310,7 +310,7 @@ import java.util.Scanner;
 												{
 												System.out.print("Modifier l'etablissement d'affectation : ");
 												System.out.print("Etablissement d'affectation : ");
-												String etabAffectation = sc.nextLine();
+												int etabAffectation = sc.nextLine();
 												break;
 												}
 											case 5:
@@ -324,7 +324,7 @@ import java.util.Scanner;
 												{
 												System.out.print("Modifier le tel : ");
 												System.out.print("Tel : ");
-												String tel = sc.nextLine();
+												int tel = sc.nextLine();
 												break;
 												}
 											case 7:
@@ -338,14 +338,14 @@ import java.util.Scanner;
 												{
 												System.out.print("Modifier le salaire fixe : ");
 												System.out.print("Salaire fixe : ");
-												String salaireFixe = sc.nextLine();
+												int salaireFixe = sc.nextLine();
 												break;
 												}
 											case 9:
 												{
 												System.out.print("Modifier le salaire variable : ");
 												System.out.print("Salaire variable : ");
-												String salaireVariable = sc.nextLine();
+												int salaireVariable = sc.nextLine();
 												break;
 												}
 											case 10:
