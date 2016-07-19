@@ -251,14 +251,14 @@ import java.util.Scanner;
 												{
 												System.out.print("Modifier le salaire fixe : ");
 												System.out.print("Salaire fixe : ");
-												int salaireFixe = sc.nextLine();
+												float salaireFixe = sc.nextLine();
 												break;
 												}
 											case 9:
 												{
 												System.out.print("Modifier le salaire variable : ");
 												System.out.print("Salaire variable : ");
-												int salaireVariable = sc.nextLine();
+												float salaireVariable = sc.nextLine();
 												break;
 												}
 								  			}
@@ -338,14 +338,14 @@ import java.util.Scanner;
 												{
 												System.out.print("Modifier le salaire fixe : ");
 												System.out.print("Salaire fixe : ");
-												int salaireFixe = sc.nextLine();
+												float salaireFixe = sc.nextLine();
 												break;
 												}
 											case 9:
 												{
 												System.out.print("Modifier le salaire variable : ");
 												System.out.print("Salaire variable : ");
-												int salaireVariable = sc.nextLine();
+												float salaireVariable = sc.nextLine();
 												break;
 												}
 											case 10:
