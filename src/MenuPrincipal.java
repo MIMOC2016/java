@@ -208,57 +208,57 @@ import java.util.Scanner;
 											case 2:
 												{
 												System.out.print("Modifier le prénom : ");
-												System.out.print("Nom : ");
-												String nom = sc.nextLine();
+												System.out.print("Prenom : ");
+												String prenom = sc.nextLine();
 												break;
 												}
 											case 3:
 												{
 												System.out.print("Modifier la date d'embauche : ");
-												System.out.print("Nom : ");
-												String nom = sc.nextLine();
+												System.out.print("Date d'embauche : ");
+												String dateEmbauche = sc.nextLine();
 												break;
 												}
 											case 4:
 												{
 												System.out.print("Modifier l'etablissement d'affectation : ");
-												System.out.print("Nom : ");
-												String nom = sc.nextLine();
+												System.out.print("Etablissement d'affectation : ");
+												String etabAffectation = sc.nextLine();
 												break;
 												}
 											case 5:
 												{
 												System.out.print("Modifier la date de naissance : ");
-												System.out.print("Nom : ");
-												String nom = sc.nextLine();
+												System.out.print("Date de naissance : ");
+												String dateNaissance = sc.nextLine();
 												break;
 												}
 											case 6:
 												{
 												System.out.print("Modifier le tel : ");
-												System.out.print("Nom : ");
-												String nom = sc.nextLine();
+												System.out.print("Tel : ");
+												String tel = sc.nextLine();
 												break;
 												}
 											case 7:
 												{
 												System.out.print("Modifier l'Email : ");
-												System.out.print("Nom : ");
-												String nom = sc.nextLine();
+												System.out.print("Email : ");
+												String email = sc.nextLine();
 												break;
 												}
 											case 8:
 												{
 												System.out.print("Modifier le salaire fixe : ");
-												System.out.print("Nom : ");
-												String nom = sc.nextLine();
+												System.out.print("Salaire fixe : ");
+												String salaireFixe = sc.nextLine();
 												break;
 												}
 											case 8:
 												{
 												System.out.print("Modifier le salaire variable : ");
-												System.out.print("Nom : ");
-												String nom = sc.nextLine();
+												System.out.print("Salaire variable : ");
+												String salaireVariable = sc.nextLine();
 												break;
 												}
 
