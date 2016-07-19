@@ -178,65 +178,90 @@ import java.util.Scanner;
 								
 								switch (choix)
 								{
-								  case 1:
-								  {
+								  	case 1:
+								  	{
+										System.out.println("Modifier les informations personnelles d'un cadre CDI: ");
+										Scanner id = new Scanner(System.in);
+										System.out.println("Saisir l'identifiant du salarié : ");
+										idEmp = id.nextInt();
+										int c = 0;	
+											System.out.println("-1- Modifier le nom");
+											System.out.println("-2- Modifier le prenom");
+											System.out.println("-3- Modifier la date d'embauche");
+											System.out.println("-4- Modifier l'établissement d'affectation");
+											System.out.println("-5- Modifier la date de naissance");
+											System.out.println("-6- Modifier le tel");
+											System.out.println("-7- Modifier l'Email");
+											System.out.println("-8- Modifier le salaire fixe");
+											System.out.println("-9- Modifier le salaire variable");
+										c = sc.nextInt();
+									
+										switch (c)
+								  			{
+											case 1:
+												{
+												System.out.print("Modifier le nom : ");
+												System.out.print("Nom : ");
+												String nom = sc.nextLine();
+												break;
+												}
+											case 2:
+												{
+												System.out.print("Modifier le prénom : ");
+												System.out.print("Nom : ");
+												String nom = sc.nextLine();
+												break;
+												}
+											case 3:
+												{
+												System.out.print("Modifier la date d'embauche : ");
+												System.out.print("Nom : ");
+												String nom = sc.nextLine();
+												break;
+												}
+											case 4:
+												{
+												System.out.print("Modifier l'etablissement d'affectation : ");
+												System.out.print("Nom : ");
+												String nom = sc.nextLine();
+												break;
+												}
+											case 5:
+												{
+												System.out.print("Modifier la date de naissance : ");
+												System.out.print("Nom : ");
+												String nom = sc.nextLine();
+												break;
+												}
+											case 6:
+												{
+												System.out.print("Modifier le tel : ");
+												System.out.print("Nom : ");
+												String nom = sc.nextLine();
+												break;
+												}
+											case 7:
+												{
+												System.out.print("Modifier l'Email : ");
+												System.out.print("Nom : ");
+												String nom = sc.nextLine();
+												break;
+												}
+											case 8:
+												{
+												System.out.print("Modifier le salaire fixe : ");
+												System.out.print("Nom : ");
+												String nom = sc.nextLine();
+												break;
+												}
+											case 8:
+												{
+												System.out.print("Modifier le salaire variable : ");
+												System.out.print("Nom : ");
+												String nom = sc.nextLine();
+												break;
+												}
 
-									System.out.println("Modifier les informations personnelles d'un cadre CDI: ");
-									Scanner id = new Scanner(System.in);
-									System.out.println("Saisir l'identifiant du salarié : ");
-									idEmp = id.nextInt();
-									int c = 0;	
-										System.out.println("-1- Modifier le nom");
-										System.out.println("-2- Modifier le prenom");
-										System.out.println("-3- Modifier la date d'embauche");
-										System.out.println("-4- Modifier l'établissement d'affectation");
-										System.out.println("-5- Modifier la date de naissance");
-										System.out.println("-6- Modifier le tel");
-										System.out.println("-7- Modifier l'Email");
-										System.out.println("-8- Modifier le salaire fixe");
-										System.out.println("-9- Modifier le salaire variable");
-									c = sc.nextInt();
-								
-									switch (c)
-									{
-									  case 1:
-									  	{
-									  											System.out.println("Ajout d'un alternant : ");
-										System.out.print("Modifier le nom : ");
-										System.out.print("Nom : ");
-										String nom = sc.nextLine();
-
-
-										
-										break;
-									   }
-								
-									  case 2 :
-										 {
-										Cdd cd = new Cdd(nom,prenom,dateEmbauche,etabAffectation, dateNaissance, tel, email, dateFinContrat, salaireFixe, salaireVariable); 
-										break;
-										   
-									   }
-								   
-									   case 3 : 
-									   
-									   {
-									   
-									Stagiaire Stag = new Stagiaire(nom,prenom,dateEmbauche,etabAffectation, dateNaissance, tel, email, ecole, cursus, dateFinContrat, salaireFixe); 
-									break;
-										   
-								   }
-								   
-								   case 4 : 
-									   
-								   {
-									   
-	
-									Alternant altern = new Alternant(nom,prenom,dateEmbauche, etabAffectation, dateNaissance,tel, email, ecole, dateFinContrat,cursus, salaireFixe); 
-									break;
-										   
-								   }
-								}
 								
 							} /*fin case 2*/
 							case 2: 
