@@ -29,12 +29,12 @@ public class Stagiaire extends Etudiant
 
 	//le stagiaire n'a qu'un salaire fixe : c'est sa gratification
 	
-         public float getGratification()
+         public float getSalaireFixe()
          {
             return salaireFixe;
          }
 
-         public void setGratification(float g)
+         public void setSalaireFixe(float g)
          {
             this.salaireFixe = g;
          }
