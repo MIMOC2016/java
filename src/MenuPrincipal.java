@@ -265,97 +265,19 @@ import java.util.Scanner;
 								  	}
 								 
 								  	case 2:
+ /*------------ a completer (même chose que CDI) ----------*/								  		
 								  	{
 										System.out.println("Modifier les informations personnelles d'un CDD: ");
-										Scanner id = new Scanner(System.in);
-										System.out.println("Saisir l'identifiant du salarié : ");
-										idEmp = id.nextInt();
-										int c = 0;	
-											System.out.println("-1- Modifier le nom");
-											System.out.println("-2- Modifier le prenom");
-											System.out.println("-3- Modifier la date d'embauche");
-											System.out.println("-4- Modifier l'établissement d'affectation");
-											System.out.println("-5- Modifier la date de naissance");
-											System.out.println("-6- Modifier le tel");
-											System.out.println("-7- Modifier l'Email");
-											System.out.println("-8- Modifier le salaire fixe");
-											System.out.println("-9- Modifier le salaire variable");
-											System.out.println("-10- Modifier la date de fin de contrat");
-										c = sc.nextInt();
-									
-										switch (c)
-								  			{
-											case 1:
-												{
-												System.out.print("Modifier le nom : ");
-												System.out.print("Nom : ");
-												String nom = sc.nextLine();
-												break;
-												}
-											case 2:
-												{
-												System.out.print("Modifier le prénom : ");
-												System.out.print("Prenom : ");
-												String prenom = sc.nextLine();
-												break;
-												}
-											case 3:
-												{
-												System.out.print("Modifier la date d'embauche : ");
-												System.out.print("Date d'embauche : ");
-												String dateEmbauche = sc.nextLine();
-												break;
-												}
-											case 4:
-												{
-												System.out.print("Modifier l'etablissement d'affectation : ");
-												System.out.print("Etablissement d'affectation : ");
-												int etabAffectation = sc.nextLine();
-												break;
-												}
-											case 5:
-												{
-												System.out.print("Modifier la date de naissance : ");
-												System.out.print("Date de naissance : ");
-												String dateNaissance = sc.nextLine();
-												break;
-												}
-											case 6:
-												{
-												System.out.print("Modifier le tel : ");
-												System.out.print("Tel : ");
-												int tel = sc.nextLine();
-												break;
-												}
-											case 7:
-												{
-												System.out.print("Modifier l'Email : ");
-												System.out.print("Email : ");
-												String email = sc.nextLine();
-												break;
-												}
-											case 8:
-												{
-												System.out.print("Modifier le salaire fixe : ");
-												System.out.print("Salaire fixe : ");
-												float salaireFixe = sc.nextLine();
-												break;
-												}
-											case 9:
-												{
-												System.out.print("Modifier le salaire variable : ");
-												System.out.print("Salaire variable : ");
-												float salaireVariable = sc.nextLine();
-												break;
-												}
-											case 10:
-												{
-												System.out.print("Modifier la date de fin de contrat : ");
-												System.out.print("La date de fin de contrat : ");
-												String dateFinContrat = sc.nextLine();
-												break;
-												}
-								  			}
+								  	}
+								  	case 3:
+ /*------------ a completer (même chose que CDI) ----------*/	
+								  	{
+										System.out.println("Modifier les informations personnelles d'un stagiaire: ");
+								  	}
+								  	case 4:
+ /*------------ a completer (même chose que CDI) ----------*/	
+								  	{
+										System.out.println("Modifier les informations personnelles d'un alternant: ");
 								  	}
 								}
 								
