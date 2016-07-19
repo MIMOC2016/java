@@ -23,6 +23,7 @@ import java.util.Scanner;
 				switch (sousmenu){
 					case 1:
 					{
+						System.out.println("Gestion des salariés ");
 						int sousmenu2 = 0;
 						System.out.println("-1- Ajouter un nouveau salarié ");
 						System.out.println("-2- Modifier les informations personnelles d'un salarié ");
@@ -33,6 +34,7 @@ import java.util.Scanner;
 						{
 							case 1:
 							{
+								System.out.println(" Ajouter un nouveau salarié ");
 								int choix = 0;		
 									System.out.println("-1- Ajouter un cadre CDI");
 									System.out.println("-2- Ajouter un CDD");
@@ -169,6 +171,7 @@ import java.util.Scanner;
  /*------------ a completer (comment acceder a un employe avec son idEmp????) ----------*/
 							case 2:
 							{
+								System.out.println("Modifier les informations personnelles d'un salarié ");
 								int choix = 0;		
 									System.out.println("-1- Modifier les informations personnelles d'un cadre CDI");
 									System.out.println("-2- Modifier les informations personnelles d'un CDD");
@@ -280,28 +283,40 @@ import java.util.Scanner;
 										System.out.println("Modifier les informations personnelles d'un alternant: ");
 								  	}
 								}
+							
 								
 							} /*fin case 2*/
-							case 2: 
+							case 3: 
 							{
-									Scanner id = new Scanner(System.in);
-									System.out.println("Saisir l'identifiant du salarié : ");
-									idEmp = id.nextInt();
+								System.out.println("Cloturer le dossier d'un salarié ");
+
+
 									
 							}
-							
-					
+							case 4: 
+							{
+								System.out.println("-0- Retour au menu principal ");
+
+									
+							}
 						}
-						
-
-						
-						
+					case 2:
+						{
+						System.out.println(" Gestion des congés ");	
+						}
+					
+					case 3:
+						{
+						System.out.println("Gestion de la paie ");	
+						}
+					case 4:
+						{
+						System.out.println("Consultation ");	
+						}
+					}
 				}
-
-			}
-
-
 			}
 		}
 	}
+	
 
