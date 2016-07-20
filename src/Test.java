@@ -18,6 +18,17 @@ public class Test{
     s1.toString;
     
     float salaire = a1.getSalaire;
+    System.out.println(salaire);
+    salaire = 100000.0;
+    a1.setSalaire(salaire);
+    a1.toString;
+    
+    c1.debutConge;
+    c1.toString;
+    c1.finConge;
+    System.out.println(c1.enConge);
+    c1.toString;
+    
     
     
   }
