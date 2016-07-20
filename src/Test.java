@@ -17,7 +17,8 @@ public class Test{
     a1.toString;
     s1.toString;
     
-    c1
+    float salaire = a1.getSalaire;
+    
     
   }
 }
