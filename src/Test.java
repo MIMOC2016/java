@@ -8,5 +8,16 @@ public class Test{
     Cdd cdd2= new Cdd("Sarah", "Tarram", "01/07/2016", 1, "07/08/1994", 0741254132, "st@gmail.com", "14/09/2017", 35000.0, 1700.0 );
     Alternant a1= new Alternant("Sophia", "Dephline", "09/09/2016", 2, "12/11/1997", 0666514201, "sd@gmail.com", "La Sorbonne", "14/09/2017", "ingenierie", 12000.0);
     Stagiaire s1= new Stagiaire("Alexandre", "Sylvie", "04/10/2016", 1, "04/07/1996", 0641052741, "as@gmail.com", "Paris 7 " "17/12/2017", "Marketing", 12000.0);
+    
+    
+    c1.toString;
+    c2.toString;
+    cdd1.toString;
+    cdd2.toString;
+    a1.toString;
+    s1.toString;
+    
+    c1
+    
   }
 }
