@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 
-<<<<<<< Updated upstream
 public class Cadre extends EmployeConge {
  	 
 		private float salaireVariable;
@@ -13,20 +12,17 @@ public class Cadre extends EmployeConge {
 		super(nom,prenom,dateEmbauche,etabAffectation, dateNaissance,tel,email);
 		this.salaireMensuel = this.salaireFixe + this.salaireVariable;
 	}
-=======
 public class Cadre extends Employe implements Conge
 {
  int tauxJour;
  int jourPresence;
  private boolean enCong;
 
->>>>>>> Stashed changes
  
 	public float getSalaireVariable(){
 		return salaireVariable;
 	}
  
-<<<<<<< Updated upstream
 	public float getSalaireFixe(){
 		return salaireFixe;
 	}
@@ -64,7 +60,7 @@ public class Cadre extends Employe implements Conge
 	public void setSalaireMensuel(float salaireMensuel) {
 		this.salaireMensuel = salaireMensuel;
 	}
-=======
+
 	private ArrayList<Paie> paies=new ArrayList<Paie>();
 
 	private float salaireVariable;
@@ -124,5 +120,5 @@ public void setSalaireMensuel(float salaireMensuel) {
 }
 
 
->>>>>>> Stashed changes
+}
 }
