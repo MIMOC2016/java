@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-	public class Menu {
+	public class MenuPrincipal {
 
 		public static void main(String[] args) 
 		{
@@ -226,7 +226,7 @@ import java.util.Scanner;
 												{
 												System.out.print("Modifier l'etablissement d'affectation : ");
 												System.out.print("Etablissement d'affectation : ");
-												int etabAffectation = sc.nextLine();
+												int etabAffectation = sc.nextInt();
 												break;
 												}
 											case 5:
@@ -240,7 +240,7 @@ import java.util.Scanner;
 												{
 												System.out.print("Modifier le tel : ");
 												System.out.print("Tel : ");
-												int tel = sc.nextLine();
+												int tel = sc.nextInt();
 												break;
 												}
 											case 7:
@@ -254,14 +254,14 @@ import java.util.Scanner;
 												{
 												System.out.print("Modifier le salaire fixe : ");
 												System.out.print("Salaire fixe : ");
-												float salaireFixe = sc.nextLine();
+												float salaireFixe = sc.nextInt();
 												break;
 												}
 											case 9:
 												{
 												System.out.print("Modifier le salaire variable : ");
 												System.out.print("Salaire variable : ");
-												float salaireVariable = sc.nextLine();
+												float salaireVariable = sc.nextInt();
 												break;
 												}
 								  			}
@@ -299,7 +299,8 @@ import java.util.Scanner;
 
 									
 							}/*fin case 4*/
-						}/*fin case Gestion des salariés*/
+						}
+					}/*fin case Gestion des salariés*/
 					case 2:
 						{
 						System.out.println(" Gestion des congés ");	
@@ -315,8 +316,8 @@ import java.util.Scanner;
 						}/*fin case Consultation*/
 					}
 				}
+	
 			}
-		}
 	}
 	
 
