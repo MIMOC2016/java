@@ -3,7 +3,6 @@ import java.util.ArrayList;
 
 public class Groupe {
 	private ArrayList<Employe> employes=new ArrayList<Employe>();
-	private ArrayList<Paie> paies=new ArrayList<Paie>();
 
 	public void ajoutEmploye(Employe a){
 		employes.add(a);

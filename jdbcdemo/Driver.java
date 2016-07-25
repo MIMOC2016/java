@@ -80,7 +80,7 @@ public class Driver {
 		      
 		    //Etape 3: Connexion BDD
 		      System.out.println("Connexion à la BDD...");
-		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
+		      conn = DriverManager.getConnection(DB_URL,USER, PASS);
 			  System.out.println("Connexion établie!");
 		      
 		    //Etape 4: Chercher les cadres
@@ -92,19 +92,21 @@ public class Driver {
 		      while(rs.next()){
 		    	  String nom = rs.getString("nom");
 		    	  String prenom = rs.getString("prenom");
+		    	  String dateEmbauche = rs.getString("dateEmabuche");
 		    	  String etabAffectation = rs.getString("etabAffectation");
 		    	  String dateNaissance = rs.getString("dateNaissance");
 		    	  int tel = rs.getInt("tel");
 		    	  String email = rs.getString("email");
 		    	  float tauxJour = rs.getFloat("tauxJour");
-				 // Cadre c1 = new Cadre (nom, prenom, etabAffectation, dateNaissance, tel, email, tauxJour);
+				 // Cadre c1 = new Cadre (nom, prenom,dateEmbauche, etabAffectation, dateNaissance, tel, email, tauxJour);
 				  //TODO add to class
 				  
 		    	  //affichage des valeurs de la BDD
 		    	  System.out.print("Nom: "+nom);
 		    	  System.out.print(", Prenom:"+prenom);
-		    	  System.out.print(", Date de Naissance: "+dateNaissance);
 		    	  System.out.print(", Etablissement: "+etabAffectation);
+		    	  System.out.print(", dateEmbauche:"+dateEmbauche);
+		    	  System.out.print(", Date de Naissance: "+dateNaissance);
 		    	  System.out.print(", DateNaissance: "+dateNaissance);
 		    	  System.out.println(", Numéro de téléphone: "+tel);
 		    	  System.out.println(", Contact: "+email);
