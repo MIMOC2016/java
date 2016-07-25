@@ -13,16 +13,7 @@ public class Stagiaire extends Etudiant
 
 	
 	public String toString(){
-		return "n°" + idEmp+"\n"+
-				nom + prenom + "né le " + dateNaissance+ "\n"+
-				"tel: "+ tel + "\n"+
-				"email: "+email+ "\n"+
-				"date d'Embauche" +dateEmbauche+ "\n"+
-				"date Fin Contrat : "+ dateFinContrat +"\n"+
-				"école : "+ ecole+"\n"+
-				"cursus : "+cursus+"\n"+
-				"gratification : "+salaireFixe+"\n";
-		
+		return super.toString()+ "gratification : "+gratification+"\n";
 	}
 	
 	//----------------------------METHODE CALCUL PAIE STAGIAIRE---------------------------//
