@@ -12,7 +12,61 @@ public class Driver {
    static final String USER = "root";
    static final String PASS = "root";
    
-   public static void main(String[] args) {
+   //---------------------------AJOUT CADRE--------------------------------------------//
+   public static void connexionAjoutCadre(String nom, String prenom, String dateEmbauche, int etabAffectation, 
+		   String dateNaissance, int tel, String email,float tauxJour)
+   {
+		Connection conn = null;
+		Statement stmt = null;
+		try {
+		    //Enregistrement JDBC Driver
+		      Class.forName("com.mysql.jdbc.Driver");
+		      System.out.println("Le driver est lancé");
+		      
+		    //Connexion BDD
+		      System.out.println("Connexion à la BDD...");
+		      conn = DriverManager.getConnection(DB_URL,USER, PASS);
+			  System.out.println("Connexion établie !");				  
+		
+			//Etape 4: Execution de la requête
+			System.out.println("Insertion des données dans la table en cours.");
+			stmt = conn.createStatement();
+     
+			String sql = "INSERT INTO Cadres " +
+						 "VALUES (" + nom + ",'" +prenom+"', '"+ dateEmbauche + "','"+etabAffectation+"', '"+dateNaissance+"', '"+dateNaissance+"', '"+tel+"', '"+email+"', '"+tauxJour+"')";
+			System.out.println("Requête : "+sql);
+			stmt.executeUpdate(sql);
+     
+			System.out.println("Les valeurs ont bien été ajoutées dans la table !");
+
+		}
+		catch(SQLException se){
+			//Gestion erreurs pour JDBC
+			se.printStackTrace();
+		}
+		catch(Exception e){
+			//Gestion erreurs pour Class.forName
+			e.printStackTrace();
+		}
+		finally{
+			//bloc finally utilisé pour fermer les ressources
+			try{
+				if(stmt!=null)
+				conn.close();
+			}
+			catch(SQLException se){
+			}// do nothing
+			try{
+				if(conn!=null)
+				conn.close();
+			}
+			catch(SQLException se){
+				se.printStackTrace();
+			}
+		}
+		System.out.println("Fin connexion BDD...");
+	}
+  /* public static void main(String[] args) {
    Connection conn = null;
    Statement stmt = null;
    try{
@@ -55,5 +109,5 @@ public class Driver {
       }
    }
    System.out.println("Au revoir!");
-}
+}*/
 }
