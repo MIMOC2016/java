@@ -2,10 +2,9 @@ import java.util.ArrayList;
 
 public class Alternant extends Etudiant implements Conge
 {
-<<<<<<< Updated upstream
+
 	private float salaire;
-=======
- private boolean enCong;
+	private boolean enCong;
 
 //--------ATTRIBUTS CALCULPAIE--------//
  
@@ -13,7 +12,6 @@ public class Alternant extends Etudiant implements Conge
  
 	private float salaireVariable;
 	private float salaireFixe;
->>>>>>> Stashed changes
 	private String perpaie;
 	private boolean enCong=false;
 
@@ -42,9 +40,9 @@ public class Alternant extends Etudiant implements Conge
 	public boolean enConge() {
 		   return this.enCong;
 		}
-		
+
 	public String toString(){
-		  return super.toString()+ ( enConge() ? ", en congé" : "");
+		  return ( enConge() ? " en congé" : "")+" "+ super.toString()+"salaire : "+salaire+"\n";
 					
 		}
 	
