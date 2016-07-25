@@ -2,6 +2,7 @@ public class Cdd extends EmployeConge implements Conge
 {
  private String dateFinContrat;
  private boolean enCong = false;
+ //private boolean salariesorti=false;
  
 //--------ATTRIBUTS CALCULPAIE--------/
 
@@ -25,9 +26,11 @@ public class Cdd extends EmployeConge implements Conge
 		return dateFinContrat;
 	}
 
-	public void setDateFinContrat(String dateFinContrat){
+/*	public void setDateFinContrat(String dateFinContrat){
 		this.dateFinContrat = dateFinContrat;
+		this.salariesorti = true;
 	}
+	*/
 
 	public String toString(){
 		return super.toString()+"\n"+ "salaire Mensuel (Fixe: "+salaireFixe+ " + Variable : "+salaireVariable+ ") = "+ salaireMensuel+ "\n";
@@ -40,6 +43,7 @@ public class Cdd extends EmployeConge implements Conge
 	public Paie calculPaie()
 	{	
 		return new Paie(this.perpaie,this.salaireMensuel = this.salaireFixe + this.salaireVariable, this.salaireFixe , this.salaireVariable);
+	
 	}
 
 	public float getSalaireMensuel() 

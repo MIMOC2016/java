@@ -27,7 +27,7 @@ import java.util.Scanner;
 						int sousmenu2 = 0;
 						System.out.println("-1- Ajouter un nouveau salarié ");
 						System.out.println("-2- Modifier les informations personnelles d'un salarié ");
-						System.out.println("-3- Cloturer le dossier d'un salarié "); /* Comment on va faire ?? Le plus simple : calcpaie =0 */
+						System.out.println("-3- Cloturer le dossier d'un salarié "); /* Comment on va faire ?? Le plus simple : calcpaie =0 si datefindecontrat supérieure à la date du jour */
 						System.out.println("-0- Retour au menu principal ");
 						sousmenu = sc.nextInt();
 						switch (sousmenu2)

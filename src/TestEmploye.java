@@ -29,10 +29,10 @@ public class TestEmploye {
 	    System.out.println(s1);
 	    
 	       /*------------ Changer le salaire de l'alternant  ----------*/
-	   float salaire = a1.getSalaire();
+	   float salaire = a1.getSalaireFixe();
 	    System.out.println(salaire);
-	    a1.setSalaire(2000);
-	    System.out.println(a1.getSalaire());
+	    a1.setSalaireFixe(2000);
+	    System.out.println(a1.getSalaireFixe());
 	         /*------------ Mettre le cadre c1 en congé et le faire revenir ----------*/
 	   c1.debutConge();
 	    System.out.println(c1);
