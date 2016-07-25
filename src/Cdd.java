@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-
 public class Cdd extends Employe implements Conge
 {
  private String dateFinContrat;
@@ -8,11 +5,9 @@ public class Cdd extends Employe implements Conge
  
 //--------ATTRIBUTS CALCULPAIE--------/
  
-=======
 public class Cdd extends EmployeConge
 {
 	private String dateFinContrat;
->>>>>>> origin/master
 	private float salaireVariable;
 	private float salaireFixe;
 	private String perpaie;
@@ -74,4 +69,5 @@ public class Cdd extends EmployeConge
 	}
 
 
+}
 }
