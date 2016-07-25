@@ -38,11 +38,7 @@ public void setCursus(String cursus){
 }
 
 public String toString(){
-	return "n°" + idEmp+"\n"+
-			nom + prenom + "né le " + dateNaissance+ "\n"+
-			"tel: "+ tel + "\n"+
-			"email: "+email+ "\n"+
-			"date d'Embauche" +dateEmbauche+ "\n"+
+	return super.toString()+"\n"+
 			"date Fin Contrat : "+ dateFinContrat +"\n"+
 			"école : "+ ecole+"\n"+
 			"cursus : "+cursus+"\n";
