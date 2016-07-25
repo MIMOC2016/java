@@ -18,7 +18,7 @@ public class EmployeConge extends Employe implements Conge {
 		}
 		
 	public String toString(){
-		  return super.toString()+ ( enConge() ? ", en congé" : "");
+		  return ( enConge() ? " en congé" : "")+" "+ super.toString();
 					
 		}
 	/*a faire*/
