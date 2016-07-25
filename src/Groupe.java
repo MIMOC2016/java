@@ -7,7 +7,6 @@ public class Groupe {
 	public void ajoutEmploye(Employe a){
 		employes.add(a);
 	}
-<<<<<<< Updated upstream
 
 	public Paie calculPaieTotale(){
 		Paie p = new Paie();
@@ -17,8 +16,6 @@ public class Groupe {
 		return p;
 	}	
 
-=======
-	
 	public Paie calculPaieTotale(){
 		Paie p = new Paie();
 		for(Employe a : employes ){
@@ -26,9 +23,6 @@ public class Groupe {
 		}
 		return p;
 	}	
-	
-	
->>>>>>> Stashed changes
 	
 	public String toString(){
 		String s = new String();
@@ -40,10 +34,11 @@ public class Groupe {
 	
 	public String employesEnConge(){
 		String s = new String();
+		s = "En congé : ";
 		for(Employe a : employes ){
 			if (a instanceof Conge)
 				if (((Conge) a).enConge())
-					s= s+"\n"+a;
+					s= s+"n°"+a.idEmp +" "+ a.nom+ a.prenom +" ; ";
 		}
 		return s;
 	}
