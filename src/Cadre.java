@@ -40,12 +40,11 @@ public class Cadre extends EmployeConge implements Conge{
 	
 	}
 	
-	public String getInfosConnexCadres()
+	public String getrequetesql()
 	{
-		
-		return null;
+	return "INSERT INTO Cadres " +
+			 "VALUES (" + nom + ",'" +prenom+"', '"+ dateEmbauche + "','"+etabAffectation+"', '"+dateNaissance+"', '"+dateNaissance+"', '"+tel+"', '"+email+"', '"+tauxJour+"')";
 	}
-
 	public Paie calculPaie(String Perpaie, int jourPresence)
 	{	
 		this.salaireFixe = tauxJour * jourPresence;

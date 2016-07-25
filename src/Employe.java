@@ -23,6 +23,7 @@ public abstract class Employe
  	 this.idEmp = cpt++;
 
   }
+ 
 
 	public String getNom(){
 		return nom;
@@ -52,8 +53,6 @@ public abstract class Employe
 		return dateNaissance;
 	}
 	
-public abstract String getNom();
-
 
 	public void setDateNaissance(String dateNaissance){
 		this.dateNaissance = dateNaissance;
@@ -86,4 +85,5 @@ public abstract String getNom();
 	}
 
  public abstract Paie calculPaie();
+ public abstract String getrequetesql();
 }

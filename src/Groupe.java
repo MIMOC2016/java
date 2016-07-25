@@ -4,10 +4,17 @@ import java.util.ArrayList;
 public class Groupe 
 {
 	private ArrayList<Employe> employes=new ArrayList<Employe>();
+	private ArrayList<Cadre> Cadres=new ArrayList<Cadre>();
+
 	
-	public void ajoutEmploye(Employe a)
+	public void ajoutEmploye(Employe E)
 	{
-		employes.add(a);
+		employes.add(E);
+	}
+
+	public void ajoutCadre(Cadre C)
+	{
+		Cadres.add(C);
 	}
 
 	public Paie calculPaieTotale(){

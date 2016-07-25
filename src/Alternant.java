@@ -58,4 +58,6 @@ public class Alternant extends Etudiant implements Conge
 		this.salaireMensuel = this.salaireFixe + this.salaireVariable;
 		return new Paie();
 	}
+
+
 }
