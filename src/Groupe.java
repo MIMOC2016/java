@@ -3,7 +3,8 @@ import java.util.ArrayList;
 
 public class Groupe {
 	private ArrayList<Employe> employes=new ArrayList<Employe>();
-	
+	private ArrayList<Paie> paies=new ArrayList<Paie>();
+
 	public void ajoutEmploye(Employe a){
 		employes.add(a);
 	}
@@ -15,14 +16,7 @@ public class Groupe {
 		}
 		return p;
 	}	
-
-	public Paie calculPaieTotale(){
-		Paie p = new Paie();
-		for(Employe a : employes ){
-				p= p.somme(p.calculPaie());
-		}
-		return p;
-	}	
+	
 	
 	public String toString(){
 		String s = new String();

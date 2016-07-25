@@ -66,6 +66,82 @@ public class Driver {
 		}
 		System.out.println("Fin connexion BDD...");
 	}
+   
+   //--------------voir tous les cadres-----------------//
+   
+   public static void AfficheTousCadres()
+   {
+		Connection conn = null;
+		Statement stmt = null;
+		    try {
+		    //Etape 2: DBC Driver
+		      Class.forName("com.mysql.jdbc.Driver");
+		      System.out.println("Le driver est lancé");
+		      
+		    //Etape 3: Connexion BDD
+		      System.out.println("Connexion à la BDD...");
+		      conn = DriverManager.getConnection(DB_URL,USER, PWD);
+			  System.out.println("Connexion établie!");
+		      
+		    //Etape 4: Chercher les cadres
+		      stmt = conn.createStatement();
+		      String sql;
+		      sql = "(SELECT nom, prenom, dateEmbauche, etabAffectation,dateNaissance, tel, email,tauxJour FROM Cadres)";
+		      ResultSet rs = stmt.executeQuery(sql);
+		   
+		      while(rs.next()){
+		    	  String nom = rs.getString("nom");
+		    	  String prenom = rs.getString("prenom");
+		    	  String etabAffectation = rs.getString("etabAffectation");
+		    	  String dateNaissance = rs.getString("dateNaissance");
+		    	  int tel = rs.getInt("tel");
+		    	  String email = rs.getString("email");
+		    	  float tauxJour = rs.getFloat("tauxJour");
+				 // Cadre c1 = new Cadre (nom, prenom, etabAffectation, dateNaissance, tel, email, tauxJour);
+				  //TODO add to class
+				  
+		    	  //affichage des valeurs de la BDD
+		    	  System.out.print("Nom: "+nom);
+		    	  System.out.print(", Prenom:"+prenom);
+		    	  System.out.print(", Date de Naissance: "+dateNaissance);
+		    	  System.out.print(", Etablissement: "+etabAffectation);
+		    	  System.out.print(", DateNaissance: "+dateNaissance);
+		    	  System.out.println(", Numéro de téléphone: "+tel);
+		    	  System.out.println(", Contact: "+email);
+		    	  System.out.println(", Salaire journalier: "+tauxJour);
+
+		      }
+		      
+		    //On ferme
+		      rs.close();
+		      stmt.close();
+		      conn.close();		         
+		    } 
+		    catch (SQLException se) {
+		    	//Gestion erreurs pour JDBC
+		      se.printStackTrace();
+		    }
+		    catch (Exception e){
+		    	//Gestion erreurs pour Class.forName
+		    	e.printStackTrace();
+		    }
+		    finally{
+		    	//bloc finally 
+		    	try{
+		    		if(stmt != null)
+		    			stmt.close();
+		    	}
+		    	catch (SQLException se2){
+		    	}
+		    	try{
+		    		if(conn != null)
+		    			conn.close();
+		    	}
+		    	catch (SQLException se){
+		    		se.printStackTrace();
+		    	}
+		    }
+		  }
   /* public static void main(String[] args) {
    Connection conn = null;
    Statement stmt = null;
