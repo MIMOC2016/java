@@ -5,16 +5,15 @@ public class TestEmploye {
 	
 	
 	{
-//--------------saisir une paie---------------------------//
+/*--------------saisir une paie---------------------------*/
 		
-		/*Paie paiefev = new Paie("2016/02", 1000, 200);
-		String paie = paiefev.toString();
-		System.out.println(paie);
-		paiefev.setperpaie("2017/02");
-		System.out.println(paie); A REVOIR */
+		Cadre c3= new Cadre("Jean", "Bernard", "01/04/2010", 1, "07/01/1974", 06651420032, "jb@gmail.com", (float) 9.67);
+		c3.calculPaie("01/12/2016", 21, 190);
+		System.out.println(c3);
+	
 		
-		
-	    Cadre c1= new Cadre("Jean", "Bernard", "01/04/2010", 1, "07/01/1974", 06651420032, "jb@gmail.com", (float) 9.67);
+		/*-------------------créer un salarié---------------------------------*/
+	  Cadre c1= new Cadre("Jean", "Bernard", "01/04/2010", 1, "07/01/1974", 06651420032, "jb@gmail.com", (float) 9.67);
 	    Cadre c2= new Cadre("Mathieu", "Rimel", "01/07/2012", 2, "14/09/1984", 0604210547, "mr@gmail.com", (float) 4.78);
 	    Cdd cdd1= new Cdd("Racha", "Iskan", "15/08/2016", 1, "05/12/1990", 0741254615, "ri@gmail.com", "01/07/2017", 28000, 1400);
 	    Cdd cdd2= new Cdd("Sarah", "Tarram", "01/07/2016", 1, "07/08/1994", 0741254132, "st@gmail.com", "14/09/2017", 35000, (float) 1700.5 );
@@ -30,12 +29,12 @@ public class TestEmploye {
 	    System.out.println(s1);
 	    
 	       /*------------ Changer le salaire de l'alternant  ----------*/
-	    float salaire = a1.getSalaire();
+	   float salaire = a1.getSalaire();
 	    System.out.println(salaire);
 	    a1.setSalaire(2000);
 	    System.out.println(a1.getSalaire());
 	         /*------------ Mettre le cadre c1 en congé et le faire revenir ----------*/
-	    c1.debutConge();
+	   c1.debutConge();
 	    System.out.println(c1);
 	    c1.finConge();
 	    System.out.println(c1);
@@ -56,7 +55,7 @@ public class TestEmploye {
 	    System.out.println(grp);
 	    
 	    /*---- afficher les personnes en congé du groupe ----*/
-	    System.out.println(grp.employesEnConge());
+	    /*System.out.println(grp.employesEnConge());
 	    
 	    /*------ Calculer la paie // Fonctionne pas ------*/
 	   /* System.out.println(a1.calculPaie());  */

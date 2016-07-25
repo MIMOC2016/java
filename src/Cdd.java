@@ -1,13 +1,10 @@
-public class Cdd extends Employe implements Conge
+public class Cdd extends EmployeConge implements Conge
 {
  private String dateFinContrat;
  private boolean enCong = false;
  
 //--------ATTRIBUTS CALCULPAIE--------/
- 
-public class Cdd extends EmployeConge
-{
-	private String dateFinContrat;
+
 	private float salaireVariable;
 	private float salaireFixe;
 	private String perpaie;
@@ -23,21 +20,6 @@ public class Cdd extends EmployeConge
 		
 	}
  
-	public float getSalaireVariable(){
-		return salaireVariable;
-	}
- 
-	public float getSalaireFixe(){
-		return salaireFixe;
-	}
-
-	public void setSalaireFixe(float salaireFixe){
-		this.salaireFixe = salaireFixe;
-	}
-
-	public void setSalaireVariable(float salaireVariable){
-		this.salaireVariable = salaireVariable;
-	}
  
 	public String getDateFinContrat(){
 		return dateFinContrat;
@@ -57,17 +39,52 @@ public class Cdd extends EmployeConge
 
 	public Paie calculPaie()
 	{	
-		return new Paie(this.perpaie,this.salaireMensuel, this.salaireFixe , this.salaireVariable);
+		return new Paie(this.perpaie,this.salaireMensuel = this.salaireFixe + this.salaireVariable, this.salaireFixe , this.salaireVariable);
 	}
 
-	public float getSalaireMensuel() {
+	public float getSalaireMensuel() 
+	{
 		return salaireMensuel;
 	}
-
 	public void setSalaireMensuel(float salaireMensuel) {
 		this.salaireMensuel = salaireMensuel;
 	}
+	
+	public float getSalaireVariable(){
+		return salaireVariable;
+	}
+	
+	public void setSalaireVariable(float salaireVariable){
+		this.salaireVariable = salaireVariable;
+	}
+ 
+	public float getSalaireFixe(){
+		return salaireFixe;
+	}
+
+	public void setSalaireFixe(float salaireFixe){
+		this.salaireFixe = salaireFixe;
+	}
+
+	
+	
+
+	
+	//----------------METHODES EN CONGE------------------------------//
+	
+	public boolean mettrenconge()
+	{   this.enCong = true;
+		return enCong;	
+	}
+	
+	public boolean estEnCong() {
+		return enCong;
+	}
+
+	public void setEnCong(boolean enCong) {
+		this.enCong = enCong;
+	}
 
 
 }
-}
+

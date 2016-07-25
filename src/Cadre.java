@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public class Cadre extends EmployeConge implements Conge{
  	 
@@ -47,9 +46,9 @@ public class Cadre extends EmployeConge implements Conge{
 	}
 	
 
-	public Paie calculPaie()
+	public Paie calculPaie(String perpaie, float jourPresence, float salaireVariable)
 	{	
-		return new Paie(this.perpaie,this.salaireMensuel = tauxJour * jourPresence,this.salaireFixe , this.salaireVariable);
+		return new Paie(this.perpaie,this.salaireMensuel = this.tauxJour * this.jourPresence,this.salaireFixe , this.salaireVariable);
 	}
 
 	public float getSalaireMensuel() {
@@ -60,8 +59,9 @@ public class Cadre extends EmployeConge implements Conge{
 		this.salaireMensuel = salaireMensuel;
 	}
 
-	public float calculPaie (int tauxJour, int jourPresence, float salaireVariable)
+	public float calculPaie (String perpaie, int tauxJour, int jourPresence, float salaireVariable)
  {
+ 	 this.perpaie = perpaie;
  	 this.tauxJour = tauxJour;
  	 this.jourPresence = jourPresence;
  	 this.salaireFixe = this.tauxJour * this.jourPresence;

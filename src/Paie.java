@@ -38,6 +38,11 @@ public class Paie
 					this.salaireVariable+that.salaireVariable, this.salaireMensuel+that.salaireMensuel);
 		}
 	 
+	 public Paie cloturePaie(Paie that)
+	 {
+		 return new Paie(this.perpaie = "31/12/2999", this.salaireMensuel = 0, this.salaireFixe = 0, this.salaireVariable = 0);
+	 }
+	 
 	 
 //-----------------------------Modifier l'objet Paie-----------------------//
 
