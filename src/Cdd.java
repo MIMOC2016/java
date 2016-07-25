@@ -57,7 +57,7 @@ public class Cdd extends EmployeConge
 
 	public Paie calculPaie()
 	{	
-		return new Paie(this.perpaie,this.salaireFixe , this.salaireVariable);
+		return new Paie(this.perpaie,this.salaireMensuel, this.salaireFixe , this.salaireVariable);
 	}
 
 	public float getSalaireMensuel() {
