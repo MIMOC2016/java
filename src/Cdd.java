@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 public class Cdd extends Employe implements Conge
@@ -7,6 +8,11 @@ public class Cdd extends Employe implements Conge
  
 //--------ATTRIBUTS CALCULPAIE--------/
  
+=======
+public class Cdd extends EmployeConge
+{
+	private String dateFinContrat;
+>>>>>>> origin/master
 	private float salaireVariable;
 	private float salaireFixe;
 	private String perpaie;
@@ -16,7 +22,10 @@ public class Cdd extends Employe implements Conge
 	{
 		super(nom,prenom,dateEmbauche, etabAffectation, dateNaissance,tel,email);
 		this.dateFinContrat = dateFinContrat;
+		this.salaireFixe = salaireFixe;
+		this.salaireVariable = salaireVariable;
 		this.salaireMensuel = this.salaireFixe + this.salaireVariable;
+		
 	}
  
 	public float getSalaireVariable(){
@@ -44,12 +53,7 @@ public class Cdd extends Employe implements Conge
 	}
 
 	public String toString(){
-		return "n°" + idEmp+"\n"+
-				nom + prenom + "né le" + dateNaissance+ "\n"+
-				"tel: "+ tel + "\n"+
-				"email: "+email+ "\n"+
-				"date d'Embauche : " +dateEmbauche+ "\n"+
-				"salaire Mensuel (Fixe + Variable) : "+ salaireFixe + salaireVariable +" = "+ salaireMensuel+ "\n";
+		return super.toString()+"\n"+ "salaire Mensuel (Fixe: "+salaireFixe+ " + Variable : "+salaireVariable+ ") = "+ salaireMensuel+ "\n";
 	
 	}
 	
@@ -67,21 +71,6 @@ public class Cdd extends Employe implements Conge
 
 	public void setSalaireMensuel(float salaireMensuel) {
 		this.salaireMensuel = salaireMensuel;
-	}
-
-	//Mettre un employé en congé
-	public void debutConge() {
-      this.enCong = true;		
-	}
-
-	//Sortir un employé de congé
-	public void finConge() {
-      this.enCong = false;		
-	}
-
-	//Savoir qui sont les employés en congés
-	public boolean enConge() {
-		return this.enCong;
 	}
 
 
