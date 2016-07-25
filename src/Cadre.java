@@ -36,12 +36,7 @@ public class Cadre extends EmployeConge implements Conge{
 	}
 	
 	public String toString(){
-		return "n°" + idEmp+"\n"+
-				nom + prenom + "né le" + dateNaissance+ "\n"+
-				"tel: "+ tel + "\n"+
-				"email: "+email+ "\n"+
-				"date d'Embauche : " +dateEmbauche+ "\n"+
-				"salaire Mensuel (Fixe + Variable) : "+ this.salaireFixe + this.salaireVariable +" = "+ this.salaireMensuel+ "\n";
+		return super.toString()+"\n"+ "salaire Mensuel (Fixe: "+salaireFixe+ " + Variable : "+salaireVariable+ ") = "+ salaireMensuel+ "\n";
 	
 	}
 	
@@ -53,7 +48,10 @@ public class Cadre extends EmployeConge implements Conge{
 
 	public Paie calculPaie(String Perpaie, int jourPresence)
 	{	
-		return new Paie(this.perpaie,this.salaireMensuel = this.tauxJour * this.jourPresence,this.salaireFixe , this.salaireVariable);
+		this.salaireFixe = tauxJour * jourPresence;
+		this.salaireMensuel = this.salaireFixe + this.salaireVariable;
+		
+		return new Paie();
 	}
 	
 
@@ -64,16 +62,6 @@ public class Cadre extends EmployeConge implements Conge{
 	public void setSalaireMensuel(float salaireMensuel) {
 		this.salaireMensuel = salaireMensuel;
 	}
-
-	public float calculPaie (String perpaie, int tauxJour, int jourPresence, float salaireVariable)
- {
- 	 this.perpaie = perpaie;
- 	 this.tauxJour = tauxJour;
- 	 this.jourPresence = jourPresence;
- 	 this.salaireFixe = this.tauxJour * this.jourPresence;
- 	 this.salaireMensuel = this.salaireFixe + this.salaireVariable;
-	 return this.salaireMensuel;
- }
  
  public float getTauxJour(){
   return tauxJour;
