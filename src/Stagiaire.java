@@ -3,6 +3,7 @@ public class Stagiaire extends Etudiant
 {
 	private float salaireFixe;
 	private String perpaie;
+	private float salaireMensuel;
 
 	public Stagiaire(String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance, int tel, String email, String ecole, String dateFinContrat, String cursus, float salaireFixe)
  		{
@@ -13,7 +14,7 @@ public class Stagiaire extends Etudiant
 
 	
 	public String toString(){
-		return super.toString()+ "gratification : "+gratification+"\n";
+		return super.toString()+ "gratification : "+this.salaireFixe+"\n";
 	}
 	
 	//----------------------------METHODE CALCUL PAIE STAGIAIRE---------------------------//
@@ -32,7 +33,7 @@ public class Stagiaire extends Etudiant
 
 		public Paie calculPaie() 
 		{
-			return new Paie(this.perpaie, this.salaireFixe,0);
+			return new Paie(this.perpaie, this.salaireMensuel = this.salaireFixe, 0, 0);
 		}
 
 

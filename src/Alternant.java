@@ -1,32 +1,37 @@
-import java.util.ArrayList;
 
 public class Alternant extends Etudiant implements Conge
 {
 
-	private float salaire;
-	private boolean enCong;
+	private float tauxHoraire;
+	private boolean enCong = false;
 
 //--------ATTRIBUTS CALCULPAIE--------//
- 
-	private ArrayList<Paie> paies=new ArrayList<Paie>();
- 
+  
 	private float salaireVariable;
 	private float salaireFixe;
+	private float salaireMensuel;
 	private String perpaie;
-	private boolean enCong=false;
 
 
-	public Alternant (String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance,int tel, String email, String ecole, String dateFinContrat, String cursus, float salaire){
+	public Alternant (String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance,int tel, String email, String ecole, String dateFinContrat, String cursus, float tauxHoraire){
 		super(nom,prenom,dateEmbauche, etabAffectation, dateNaissance,tel,email,ecole, dateFinContrat, cursus);		
-		this.salaire = salaire;
+		this.tauxHoraire = tauxHoraire;
 	}
 
-	public float getSalaire(){
-		return salaire;
+	public float getSalaireFixe(){
+		return salaireFixe;
 	}
 
-	public void setSalaire(float salaire){
-		this.salaire = salaire;
+	public void setSalaireFixe(float salaireFixe){
+		this.salaireFixe = salaireFixe;
+	}
+	
+	public float getSalaireVariable(){
+		return salaireVariable;
+	}
+
+	public void setSalaireVariable(float salaireVariable){
+		this.salaireVariable = salaireVariable;
 	}
 
 	 public void debutConge() {
@@ -42,12 +47,12 @@ public class Alternant extends Etudiant implements Conge
 		}
 
 	public String toString(){
-		  return ( enConge() ? " en congé" : "")+" "+ super.toString()+"salaire : "+salaire+"\n";
+		  return ( enConge() ? " en congé" : "")+" "+ super.toString()+"salaire : "+salaireMensuel+"\n";
 					
 		}
 	
 	public Paie calculPaie()
 	{	
-		return new Paie(this.perpaie,this.salaire);
+		return new Paie(this.perpaie,this.salaireMensuel = this.salaireFixe + this.salaireVariable, this.salaireFixe = (tauxHoraire*(float)151.666), this.salaireVariable);
 	}
 }
