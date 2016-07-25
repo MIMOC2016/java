@@ -1,4 +1,5 @@
 public class Cdd extends EmployeConge
+
 {
 	private String dateFinContrat;
 	private float salaireVariable;
