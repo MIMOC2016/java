@@ -76,10 +76,10 @@ public abstract String getNom();
 		
  public String toString(){
 		return "n°" + idEmp+"\n"+
-				nom + prenom + "né le" + dateNaissance+ "\n"+
-				"tel:"+ tel + "\n"+
-				"email:"+email+ "\n"+
-				"date d'Embauche" +dateEmbauche+ "\n";
+				nom +" "+ prenom + "né le " + dateNaissance+ "\n"+
+				"tel: "+ tel + "\n"+
+				"email: "+email+ "\n"+
+				"date d'embauche: " +dateEmbauche;
 	}
 
  public abstract Paie calculPaie();
