@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 
 public class Cdd extends Employe implements Conge
@@ -7,7 +6,6 @@ public class Cdd extends Employe implements Conge
  private boolean enCong = false;
  
 //--------ATTRIBUTS CALCULPAIE--------/
-	private ArrayList<Paie> paies=new ArrayList<Paie>();
  
 	private float salaireVariable;
 	private float salaireFixe;

@@ -61,12 +61,10 @@ import java.util.Scanner;
 									int tel = sc.nextInt();
 									System.out.print(" Email : ");
 									String email = sc.nextLine();
-									System.out.print("Salaire fixe : ");
-									float salaireFixe = sc.nextFloat();
-									System.out.print("Salaire variable : ");
-									float salaireVariable = sc.nextFloat();
+									System.out.print("Taux jour du salarié: ");
+									float tauxJour = sc.nextFloat();
 									
-									Cadre cadr = new Cadre(nom,prenom,dateEmbauche,etabAffectation, dateNaissance, tel, email, salaireFixe, salaireVariable); 
+									Cadre cadr = new Cadre(nom,prenom,dateEmbauche,etabAffectation, dateNaissance, tel, email, tauxJour); 
 									break;
 								   }
 								

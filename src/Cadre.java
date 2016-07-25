@@ -1,32 +1,33 @@
 import java.util.ArrayList;
 
-public class Cadre extends EmployeConge {
+public class Cadre extends EmployeConge implements Conge{
  	 
 		private float salaireVariable;
 		private float salaireFixe;
-		private String perpaie;
 		private float salaireMensuel;
+		private String perpaie;
+		float tauxJour;
+		int jourPresence;
+		private boolean enCong;
 		
-	public Cadre(String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance, int tel, String email,float salaireFixe, float salaireVariable)
+	public Cadre(String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance, int tel, String email,float tauxJour)
 	{
 		super(nom,prenom,dateEmbauche,etabAffectation, dateNaissance,tel,email);
-		this.salaireMensuel = this.salaireFixe + this.salaireVariable;
-	}
-public class Cadre extends Employe implements Conge
-{
- int tauxJour;
- int jourPresence;
- private boolean enCong;
-
- 
-	public float getSalaireVariable(){
-		return salaireVariable;
+		this.tauxJour = tauxJour;
 	}
  
+//--------------METHODES PAIE-------------------------//
+	
 	public float getSalaireFixe(){
 		return salaireFixe;
 	}
 
+ 
+	public float getSalaireVariable(){
+		return this.salaireVariable;
+	}
+ 
+	
 	public void setSalaireFixe(float salaireFixe){
 		this.salaireFixe = salaireFixe;
 	}
@@ -46,11 +47,9 @@ public class Cadre extends Employe implements Conge
 	}
 	
 
-	//----------------------------METHODE CALCUL PAIE CADRE---------------------------//
-
 	public Paie calculPaie()
 	{	
-		return new Paie(this.perpaie,this.salaireFixe , this.salaireVariable);
+		return new Paie(this.perpaie,this.salaireMensuel,this.salaireFixe , this.salaireVariable);
 	}
 
 	public float getSalaireMensuel() {
@@ -61,22 +60,16 @@ public class Cadre extends Employe implements Conge
 		this.salaireMensuel = salaireMensuel;
 	}
 
-	private ArrayList<Paie> paies=new ArrayList<Paie>();
-
-	private float salaireVariable;
-	private float salaireFixe;
-	private String perpaie;
-	private float salaireMensuel;
-
- public Cadre (int tauxJour, int jourPresence, float salaireMensuel)
+	public float calculPaie (int tauxJour, int jourPresence, float salaireVariable)
  {
-   super();
  	 this.tauxJour = tauxJour;
  	 this.jourPresence = jourPresence;
+ 	 this.salaireFixe = this.tauxJour * this.jourPresence;
  	 this.salaireMensuel = this.salaireFixe + this.salaireVariable;
+	 return this.salaireMensuel;
  }
  
- public int getTauxJour(){
+ public float getTauxJour(){
   return tauxJour;
  }
  
@@ -104,21 +97,6 @@ public boolean enConge() {
 }
 
 
-//----------------------------METHODE CALCUL PAIE CADRE---------------------------//
-
-public Paie calculPaie()
-{	
-	return new Paie(this.perpaie,this.salaireFixe , this.salaireVariable);
-}
-
-public float getSalaireMensuel() {
-	return salaireMensuel;
-}
-
-public void setSalaireMensuel(float salaireMensuel) {
-	this.salaireMensuel = salaireMensuel;
-}
-
 
 }
-}
+
