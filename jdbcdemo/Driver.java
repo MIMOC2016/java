@@ -2,6 +2,7 @@ package jdbcdemo;
 
 //STEP 1. Import des packages requis
 import java.sql.*;
+import java.util.ArrayList;
 
 public class Driver {
    //JDBC diver nom et database URL
@@ -13,8 +14,7 @@ public class Driver {
    static final String PASS = "root";
    
    //---------------------------AJOUT CADRE--------------------------------------------//
-   public static void connexionAjoutCadre(String nom, String prenom, String dateEmbauche, int etabAffectation, 
-		   String dateNaissance, int tel, String email,float tauxJour)
+   public static void connexionAjoutCadre(ArrayList<Employe> Cadres)
    {
 		Connection conn = null;
 		Statement stmt = null;
@@ -31,7 +31,14 @@ public class Driver {
 			//Etape 4: Execution de la requête
 			System.out.println("Insertion des données dans la table en cours.");
 			stmt = conn.createStatement();
-     
+			for (int i = 0; i < Cadres.size(); i++) 
+			{
+				//récupérer objet employe en position i
+				//récupérer le String insert into via une méthode de la class employe, requête SQL sql  = CadregetConnexInfos
+				//stmt.executeUpdate(sql);
+
+			}
+
 			String sql = "INSERT INTO Cadres " +
 						 "VALUES (" + nom + ",'" +prenom+"', '"+ dateEmbauche + "','"+etabAffectation+"', '"+dateNaissance+"', '"+dateNaissance+"', '"+tel+"', '"+email+"', '"+tauxJour+"')";
 			System.out.println("Requête : "+sql);
@@ -67,6 +74,10 @@ public class Driver {
 		System.out.println("Fin connexion BDD...");
 	}
    
+   
+   
+
+   
    //--------------voir tous les cadres-----------------//
    
    public static void AfficheTousCadres()
@@ -93,7 +104,7 @@ public class Driver {
 		    	  String nom = rs.getString("nom");
 		    	  String prenom = rs.getString("prenom");
 		    	  String dateEmbauche = rs.getString("dateEmabuche");
-		    	  String etabAffectation = rs.getString("etabAffectation");
+		    	  int etabAffectation = rs.getInt("etabAffectation");
 		    	  String dateNaissance = rs.getString("dateNaissance");
 		    	  int tel = rs.getInt("tel");
 		    	  String email = rs.getString("email");
@@ -104,10 +115,9 @@ public class Driver {
 		    	  //affichage des valeurs de la BDD
 		    	  System.out.print("Nom: "+nom);
 		    	  System.out.print(", Prenom:"+prenom);
-		    	  System.out.print(", Etablissement: "+etabAffectation);
 		    	  System.out.print(", dateEmbauche:"+dateEmbauche);
+		    	  System.out.print(", Etablissement: "+etabAffectation);
 		    	  System.out.print(", Date de Naissance: "+dateNaissance);
-		    	  System.out.print(", DateNaissance: "+dateNaissance);
 		    	  System.out.println(", Numéro de téléphone: "+tel);
 		    	  System.out.println(", Contact: "+email);
 		    	  System.out.println(", Salaire journalier: "+tauxJour);

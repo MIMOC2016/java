@@ -7,9 +7,10 @@ public class TestEmploye {
 	{
 /*--------------saisir une paie---------------------------*/
 		
-		Cadre c3= new Cadre("Jean", "Bernard", "01/04/2010", 1, "07/01/1974", 06651420032, "jb@gmail.com", (float) 9.67);
-		c3.calculPaie("01/12/2016", 21, 190);
-		System.out.println(c3);
+		Cadre c3= new Cadre("Jean", "Bernard", "01/04/2010", 1, "07/01/1974", 06651420032, "jb@gmail3.com", (float) 9.67);
+		c3.calculPaie("01/12/2016", 21);
+		String Jean = c3.toString();
+		System.out.println(Jean);
 	
 		
 		/*-------------------créer un salarié---------------------------------*/
@@ -21,12 +22,12 @@ public class TestEmploye {
 	    Stagiaire s1= new Stagiaire ("Alexandre", "Sylvie", "04/10/2016", 1, "04/07/1996", 0641052741, "as@gmail.com", "Paris 7 ", "17/12/2017", "Marketing",(float) 12000);
 	     /*------------ afficher les info perso des salariés initiés  ----------*/
 	    
-	    System.out.println(c1);
-	    System.out.println(c2);
-	    System.out.println(cdd1);
-	    System.out.println(cdd2);
-	    System.out.println(a1);
-	    System.out.println(s1);
+	    System.out.println(c1.toString());
+	    System.out.println(c2.toString());
+	    System.out.println(cdd1.toString());
+	    System.out.println(cdd2.toString());
+	    System.out.println(a1.toString());
+	    System.out.println(s1.toString());
 	    
 	       /*------------ Changer le salaire de l'alternant  ----------*/
 	   float salaire = a1.getSalaireFixe();

@@ -41,15 +41,21 @@ public class Cadre extends EmployeConge implements Conge{
 				"tel: "+ tel + "\n"+
 				"email: "+email+ "\n"+
 				"date d'Embauche : " +dateEmbauche+ "\n"+
-				"salaire Mensuel (Fixe + Variable) : "+ salaireFixe + salaireVariable +" = "+ salaireMensuel+ "\n";
+				"salaire Mensuel (Fixe + Variable) : "+ this.salaireFixe + this.salaireVariable +" = "+ this.salaireMensuel+ "\n";
 	
 	}
 	
+	public String getInfosConnexCadres()
+	{
+		
+		return null;
+	}
 
-	public Paie calculPaie(String perpaie, float jourPresence, float salaireVariable)
+	public Paie calculPaie(String Perpaie, int jourPresence)
 	{	
 		return new Paie(this.perpaie,this.salaireMensuel = this.tauxJour * this.jourPresence,this.salaireFixe , this.salaireVariable);
 	}
+	
 
 	public float getSalaireMensuel() {
 		return salaireMensuel;

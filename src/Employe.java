@@ -51,6 +51,7 @@ public abstract class Employe
 	public String getDateNaissance(){
 		return dateNaissance;
 	}
+	
 public abstract String getNom();
 
 
@@ -73,6 +74,8 @@ public abstract String getNom();
 	public void setEmail(String email){
 		this.email = email;
 	}
+	
+	
 		
  public String toString(){
 		return "n°" + idEmp+"\n"+

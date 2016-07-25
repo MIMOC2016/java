@@ -1,10 +1,12 @@
 import java.util.ArrayList;
 
 
-public class Groupe {
+public class Groupe 
+{
 	private ArrayList<Employe> employes=new ArrayList<Employe>();
-
-	public void ajoutEmploye(Employe a){
+	
+	public void ajoutEmploye(Employe a)
+	{
 		employes.add(a);
 	}
 
@@ -15,6 +17,7 @@ public class Groupe {
 		}
 		return p;
 	}	
+	
 	
 	
 	public String toString(){
