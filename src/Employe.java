@@ -48,6 +48,14 @@ public abstract class Employe
 	public void setDateEmbauche(String dateEmbauche){
 		this.dateEmbauche = dateEmbauche;
 	}
+
+	public int getEtabAffectation(){
+		return etabAffectation;
+	}
+	
+	public void setEtabAffectation(int etabAffectation){
+		this.etabAffectation = etabAffectation;
+	}
 	
 	public String getDateNaissance(){
 		return dateNaissance;
