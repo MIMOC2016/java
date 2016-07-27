@@ -46,6 +46,15 @@ public class Groupe
 		return s;
 	}
 	
+	public int nbemployesEnConge(){
+		int i = 0;
+		for(Employe a : employes ){
+			if (a instanceof Conge)
+				if (((Conge) a).enConge())
+					i= i+1;
+		}
+		return i;
+	}
 	
 	
 	
