@@ -98,6 +98,9 @@ public abstract class Employe
 		this.dossierCloture = true;
 		
 	}
+	public boolean estCloture() {
+		   return this.dossierCloture;
+		}
 	
 		
  public String toString(){
