@@ -10,7 +10,7 @@ public class Cadre extends EmployeConge implements Conge{
 		private boolean enCong;
 
 		
-	public Cadre(String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance, int tel, String email,float tauxJour)
+	public Cadre(int id, String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance, int tel, String email,float tauxJour)
 	{
 		super(nom,prenom,dateEmbauche,etabAffectation, dateNaissance,tel,email);
 		this.tauxJour = tauxJour;
@@ -41,11 +41,7 @@ public class Cadre extends EmployeConge implements Conge{
 	
 	}
 	
-	public String getrequetesql()
-	{
-	return "INSERT INTO Cadres " +
-			 "VALUES (" + nom + ",'" +prenom+"', '"+ dateEmbauche + "','"+etabAffectation+"', '"+dateNaissance+"', '"+dateNaissance+"', '"+tel+"', '"+email+"', '"+tauxJour+"')";
-	}
+
 	public Paie calculPaie(String Perpaie, int jourPresence)
 	{	
 		this.salaireFixe = tauxJour * jourPresence;
@@ -54,6 +50,12 @@ public class Cadre extends EmployeConge implements Conge{
 		return new Paie();
 	}
 	
+	public String AjoutCadre(int idEmp,String nom, String prenom, String dateEmbauche, int etabAffectation,
+			String dateNaissance, int tel, String email, float tauxJour)
+	{
+	return "INSERT INTO Cadres " +
+			 "VALUES ("+idEmp+",'" + nom + "','" +prenom+"', '"+ dateEmbauche + "','"+etabAffectation+"', '"+dateNaissance+"', '"+tel+"', '"+email+"', '"+tauxJour+"')";
+	}
 
 	public float getSalaireMensuel() {
 		return salaireMensuel;

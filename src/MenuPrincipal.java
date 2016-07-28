@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import com.mysql.jdbc.Driver;
+
 	public class MenuPrincipal 
 	{
 		public static void main(String[] args) 
@@ -68,13 +70,14 @@ import java.util.Scanner;
 										System.out.print("Email : ");
 										sc.nextLine();
 										String email = sc.nextLine();
-										System.out.print("Salaire fixe : ");
-										float salaireFixe = sc.nextFloat();
-										System.out.print("Salaire variable : ");
-										float salaireVariable = sc.nextFloat();
+										System.out.print("Taux journalier : ");
+										float tauxJour = sc.nextFloat();
 										
-										Cadre cadr = new Cadre(nom,prenom,dateEmbauche,etabAffectation, dateNaissance, tel, email, salaireFixe, salaireVariable); 
+										
+										Cadre cadr = new Cadre (idEmp, nom,prenom,dateEmbauche,etabAffectation, dateNaissance, tel, email, tauxJour); 
 										System.out.println("Cadre créé");
+										AjoutCadre(nom, prenom, dateEmbauche, etabAffectation, dateNaissance, tel, email, tauxJour);
+
 										break;
 								  } /* Fin ajout cadre CDI/ case 1 */ 
 								  
@@ -1096,7 +1099,15 @@ import java.util.Scanner;
 			} /* fin du while : gros menu */
 		}
    }
-}
+
+	
+
+		
+			
+		}
+
+
+
 
 	
 
