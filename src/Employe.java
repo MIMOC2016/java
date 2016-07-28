@@ -85,6 +85,7 @@ public abstract class Employe
 	public void setEmail(String email){
 		this.email = email;
 	}
+	
 	public String getDateClotureDossier(){
 		return dateClotureDossier;
 	}
