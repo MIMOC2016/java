@@ -76,7 +76,7 @@ import com.mysql.jdbc.Driver;
 										
 										Cadre cadr = new Cadre (idEmp, nom,prenom,dateEmbauche,etabAffectation, dateNaissance, tel, email, tauxJour); 
 										System.out.println("Cadre créé");
-										AjoutCadre(nom, prenom, dateEmbauche, etabAffectation, dateNaissance, tel, email, tauxJour);
+										Cadre.AjoutCadre(idEmp,nom, prenom, dateEmbauche, etabAffectation,dateNaissance,  tel, email, tauxJour);
 
 										break;
 								  } /* Fin ajout cadre CDI/ case 1 */ 

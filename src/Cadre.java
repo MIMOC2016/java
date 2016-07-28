@@ -50,7 +50,7 @@ public class Cadre extends EmployeConge implements Conge{
 		return new Paie();
 	}
 	
-	public String AjoutCadre(int idEmp,String nom, String prenom, String dateEmbauche, int etabAffectation,
+	public static String AjoutCadre(int idEmp,String nom, String prenom, String dateEmbauche, int etabAffectation,
 			String dateNaissance, int tel, String email, float tauxJour)
 	{
 	return "INSERT INTO Cadres " +
