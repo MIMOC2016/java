@@ -52,33 +52,36 @@ import com.mysql.jdbc.Driver;
 								{
 								  case 1:
 								  {
-									  sc.nextLine();
-										System.out.println("Ajout d'un cadre: ");
-										System.out.print("Nom : ");
-										String nom = sc.nextLine();
-										System.out.print("Prenom : ");
-										String prenom = sc.nextLine();
-										System.out.print("Date Embauche : ");
-										String dateEmbauche = sc.nextLine();
-										System.out.print("Etablissement d'affectation (identifiant) : ");
-										int etabAffectation = sc.nextInt();
-										System.out.print("Date de naissance : ");
-										sc.nextLine();
-										String dateNaissance = sc.nextLine();
-										System.out.print("Tel : ");
-										int tel = sc.nextInt();
-										System.out.print("Email : ");
-										sc.nextLine();
-										String email = sc.nextLine();
-										System.out.print("Taux journalier : ");
-										float tauxJour = sc.nextFloat();
-										
-										
-										Cadre cadr = new Cadre (idEmp, nom,prenom,dateEmbauche,etabAffectation, dateNaissance, tel, email, tauxJour); 
-										System.out.println("Cadre créé");
-										Cadre.AjoutCadre(idEmp,nom, prenom, dateEmbauche, etabAffectation,dateNaissance,  tel, email, tauxJour);
+									 
 
-										break;
+									  Cadre ajoutCadre(Cadre C) {
+											System.out.println("Ajout d'un cadre: ");
+											System.out.print("Nom : ");
+											String nom = sc.nextLine();
+											System.out.print("Prenom : ");
+											String prenom = sc.nextLine();
+											System.out.print("Date Embauche : ");
+											String dateEmbauche = sc.nextLine();
+											System.out.print("Etablissement d'affectation (identifiant) : ");
+											int etabAffectation = sc.nextInt();
+											System.out.print("Date de naissance : ");
+											sc.nextLine();
+											String dateNaissance = sc.nextLine();
+											System.out.print("Tel : ");
+											int tel = sc.nextInt();
+											System.out.print("Email : ");
+											sc.nextLine();
+											String email = sc.nextLine();
+											System.out.print("Taux journalier : ");
+											float tauxJour = sc.nextFloat();
+											System.out.println("Cadre créé");
+											gestionCadre g = new gestionCadre();
+											Cadre C1 = new Cadre (idEmp, nom, prenom, dateEmbauche, etabAffectation, dateNaissance, tel, email, tauxJour);
+											g.ajoutCadre(C1);		
+											driver.ConnAjoutCadre(idEmp, nom, prenom, dateEmbauche, etabAffectation, dateNaissance, tel, email, tauxJour);
+
+									  }
+							
 								  } /* Fin ajout cadre CDI/ case 1 */ 
 								  
 								  case 2 :

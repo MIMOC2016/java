@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class Driver {
+public class driver {
 	//JDBC diver nom et database URL
 	static final String JDBC_DRIVER ="com.mysql.jdbc.Driver";
 	static final String DB_URL = "jdbc:mysql://localhost:8889/RH";
@@ -9,7 +9,7 @@ public class Driver {
 	static final String USER ="root";
 	static final String PASS="root";
 	
-	public static void AjoutCadre(int idEmp,String nom, String prenom, String dateEmbauche, int etabAffectation,
+	public static void ConnAjoutCadre(int idEmp,String nom, String prenom, String dateEmbauche, int etabAffectation,
 			String dateNaissance, int tel, String email, float tauxJour)
 	{
 		Connection conn = null;
