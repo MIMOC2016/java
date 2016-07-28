@@ -8,6 +8,7 @@ public class Cadre extends EmployeConge implements Conge{
 		float tauxJour;
 		int jourPresence;
 		private boolean enCong;
+
 		
 	public Cadre(String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance, int tel, String email,float tauxJour)
 	{
