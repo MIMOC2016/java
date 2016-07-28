@@ -271,7 +271,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier le nom");
 											System.out.print("Nom : ");
 											String nom = sc.nextLine();
-											id.setNom(nom);
+											//id.setNom(nom);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -281,7 +281,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier le prénom ");
 											System.out.print("Prenom : ");
 											String prenom = sc.nextLine();
-											id.setPrenom(prenom);
+											//id.setPrenom(prenom);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -291,7 +291,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier la date d'embauche ");
 											System.out.print("Date d'embauche : ");
 											String dateEmbauche = sc.nextLine();
-											id.setDateEmbauche(dateEmbauche);
+											//id.setDateEmbauche(dateEmbauche);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -302,7 +302,7 @@ import com.mysql.jdbc.Driver;
 											System.out.print("Etablissement d'affectation : ");
 											int etabAffectation = sc.nextInt();
 											sc.nextInt();
-											id.setEtabAffectation(etabAffectation);
+											//id.setEtabAffectation(etabAffectation);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -312,7 +312,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier la date de naissance ");
 											System.out.print("Date de naissance : ");
 											String dateNaissance = sc.nextLine();
-											id.setDateNaissance(dateNaissance);
+										//	id.setDateNaissance(dateNaissance);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -323,7 +323,7 @@ import com.mysql.jdbc.Driver;
 											System.out.print("Tel : ");
 											int tel = sc.nextInt();
 											sc.nextLine();
-											id.setTel(tel);
+											//id.setTel(tel);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -333,7 +333,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier l'email ");
 											System.out.print("Email : ");
 											String email = sc.nextLine();
-											id.setEmail(email);
+										//	id.setEmail(email);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -344,7 +344,7 @@ import com.mysql.jdbc.Driver;
 											System.out.print("Salaire fixe : ");
 											float salaireFixe = sc.nextFloat();
 											sc.nextLine();
-											id.setSalaireFixe(salaireFixe);
+											//id.setSalaireFixe(salaireFixe);
 											System.out.println("Modification effectuée");
 
 											break;
@@ -356,7 +356,7 @@ import com.mysql.jdbc.Driver;
 											System.out.print("Salaire variable : ");
 											float salaireVariable = sc.nextFloat();
 											sc.nextLine();
-											id.setSalaireVariable(salaireVariable);
+											//id.setSalaireVariable(salaireVariable);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -433,7 +433,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier le nom");
 											System.out.print("Nom : ");
 											String nom = sc.nextLine();
-											id.setNom(nom);
+											//id.setNom(nom);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -443,7 +443,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier le prénom ");
 											System.out.print("Prenom : ");
 											String prenom = sc.nextLine();
-											id.setPrenom(prenom);
+											//id.setPrenom(prenom);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -453,7 +453,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier la date d'embauche ");
 											System.out.print("Date d'embauche : ");
 											String dateEmbauche = sc.nextLine();
-											id.setDateEmbauche(dateEmbauche);
+											//id.setDateEmbauche(dateEmbauche);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -464,7 +464,7 @@ import com.mysql.jdbc.Driver;
 											System.out.print("Etablissement d'affectation : ");
 											int etabAffectation = sc.nextInt();
 											sc.nextInt();
-											id.setEtabAffectation(etabAffectation);
+											//id.setEtabAffectation(etabAffectation);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -474,7 +474,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier la date de naissance ");
 											System.out.print("Date de naissance : ");
 											String dateNaissance = sc.nextLine();
-											id.setDateNaissance(dateNaissance);
+											//id.setDateNaissance(dateNaissance);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -485,7 +485,7 @@ import com.mysql.jdbc.Driver;
 											System.out.print("Tel : ");
 											int tel = sc.nextInt();
 											sc.nextLine();
-											id.setTel(tel);
+											//id.setTel(tel);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -495,7 +495,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier l'email ");
 											System.out.print("Email : ");
 											String email = sc.nextLine();
-											id.setEmail(email);
+											//id.setEmail(email);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -506,7 +506,7 @@ import com.mysql.jdbc.Driver;
 											System.out.print("Salaire fixe : ");
 											float salaireFixe = sc.nextFloat();
 											sc.nextLine();
-											id.setSalaireFixe(salaireFixe);
+											//id.setSalaireFixe(salaireFixe);
 											System.out.println("Modification effectuée");
 
 											break;
@@ -518,7 +518,7 @@ import com.mysql.jdbc.Driver;
 											System.out.print("Salaire variable : ");
 											float salaireVariable = sc.nextFloat();
 											sc.nextLine();
-											id.setSalaireVariable(salaireVariable);
+									//		id.setSalaireVariable(salaireVariable);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -533,7 +533,7 @@ import com.mysql.jdbc.Driver;
 										}/* fin du switch(c) qu'est ce qu'on souhaite modif au CDD*/
 									} /* fin du case 2 : modifier les info d'un CDD */									case 3:
 									
-									case 3:
+									//case 3:
 									{
 										System.out.println("Modifier les informations personnelles d'un stagiaire ");
 										int choix2 = 0;
@@ -597,7 +597,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier le nom");
 											System.out.print("Nom : ");
 											String nom = sc.nextLine();
-											id.setNom(nom);
+										//	id.setNom(nom);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -607,7 +607,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier le prénom ");
 											System.out.print("Prenom : ");
 											String prenom = sc.nextLine();
-											id.setPrenom(prenom);
+											//id.setPrenom(prenom);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -617,7 +617,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier la date d'embauche ");
 											System.out.print("Date d'embauche : ");
 											String dateEmbauche = sc.nextLine();
-											id.setDateEmbauche(dateEmbauche);
+											//id.setDateEmbauche(dateEmbauche);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -628,7 +628,7 @@ import com.mysql.jdbc.Driver;
 											System.out.print("Etablissement d'affectation : ");
 											int etabAffectation = sc.nextInt();
 											sc.nextInt();
-											id.setEtabAffectation(etabAffectation);
+											//id.setEtabAffectation(etabAffectation);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -638,7 +638,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier la date de naissance ");
 											System.out.print("Date de naissance : ");
 											String dateNaissance = sc.nextLine();
-											id.setDateNaissance(dateNaissance);
+											//id.setDateNaissance(dateNaissance);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -649,7 +649,7 @@ import com.mysql.jdbc.Driver;
 											System.out.print("Tel : ");
 											int tel = sc.nextInt();
 											sc.nextLine();
-											id.setTel(tel);
+											//id.setTel(tel);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -659,7 +659,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier l'email ");
 											System.out.print("Email : ");
 											String email = sc.nextLine();
-											id.setEmail(email);
+											//id.setEmail(email);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -669,7 +669,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier l'école");
 											System.out.print("Ecole : ");
 											String ecole = sc.nextLine();
-											id.setEcole(ecole);
+											//id.setEcole(ecole);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -679,7 +679,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier la date de fin du contrat ");
 											System.out.print("Fin contrat : ");
 											String dateFinContrat = sc.nextLine();
-											id.setDateFinContrat(dateFinContrat);
+											//id.setDateFinContrat(dateFinContrat);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -689,7 +689,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier le cursus");
 											System.out.print("Cursus : ");
 											String cursus = sc.nextLine();
-											id.setCursus(cursus);
+											//id.setCursus(cursus);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -700,7 +700,7 @@ import com.mysql.jdbc.Driver;
 											System.out.print("Gratification : ");
 											float gratification = sc.nextFloat();
 											sc.nextLine();
-											id.setGratification(gratification);
+											//id.setGratification(gratification);
 											System.out.println("Modification effectuée");
 											break;
 											}																					
@@ -779,7 +779,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier le nom");
 											System.out.print("Nom : ");
 											String nom = sc.nextLine();
-											id.setNom(nom);
+											//id.setNom(nom);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -789,7 +789,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier le prénom ");
 											System.out.print("Prenom : ");
 											String prenom = sc.nextLine();
-											id.setPrenom(prenom);
+											//id.setPrenom(prenom);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -799,7 +799,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier la date d'embauche ");
 											System.out.print("Date d'embauche : ");
 											String dateEmbauche = sc.nextLine();
-											id.setDateEmbauche(dateEmbauche);
+											//id.setDateEmbauche(dateEmbauche);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -810,7 +810,7 @@ import com.mysql.jdbc.Driver;
 											System.out.print("Etablissement d'affectation : ");
 											int etabAffectation = sc.nextInt();
 											sc.nextInt();
-											id.setEtabAffectation(etabAffectation);
+											//id.setEtabAffectation(etabAffectation);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -820,7 +820,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier la date de naissance ");
 											System.out.print("Date de naissance : ");
 											String dateNaissance = sc.nextLine();
-											id.setDateNaissance(dateNaissance);
+											//id.setDateNaissance(dateNaissance);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -831,7 +831,7 @@ import com.mysql.jdbc.Driver;
 											System.out.print("Tel : ");
 											int tel = sc.nextInt();
 											sc.nextLine();
-											id.setTel(tel);
+											//id.setTel(tel);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -841,7 +841,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier l'email ");
 											System.out.print("Email : ");
 											String email = sc.nextLine();
-											id.setEmail(email);
+											//id.setEmail(email);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -851,7 +851,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier l'école");
 											System.out.print("Ecole : ");
 											String ecole = sc.nextLine();
-											id.setEcole(ecole);
+											//id.setEcole(ecole);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -861,7 +861,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier la date de fin du contrat ");
 											System.out.print("Fin contrat : ");
 											String dateFinContrat = sc.nextLine();
-											id.setDateFinContrat(dateFinContrat);
+											//id.setDateFinContrat(dateFinContrat);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -871,7 +871,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Modifier le cursus");
 											System.out.print("Cursus : ");
 											String cursus = sc.nextLine();
-											id.setCursus(cursus);
+											//id.setCursus(cursus);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -882,7 +882,7 @@ import com.mysql.jdbc.Driver;
 											System.out.print("Salaire : ");
 											float gratification = sc.nextFloat();
 											sc.nextLine();
-											id.setSalaire(salaire);
+											//id.setSalaire(salaire);
 											System.out.println("Modification effectuée");
 											break;
 											}																					
@@ -979,7 +979,7 @@ import com.mysql.jdbc.Driver;
 								 /*on retrouve un id de la personne au final */ 
 
 								sc.nextLine();
-								id.debutConge();
+								//id.debutConge();
 								System.out.println("Congé pris en compte");
 							}/* fin du case 1 : mettre une personne en congé */
 							
@@ -1024,7 +1024,7 @@ import com.mysql.jdbc.Driver;
 								 /*on retrouve un id de la personne au final */ 
 
 								sc.nextLine();
-								id.finConge();
+								//id.finConge();
 								System.out.println("Retour pris en compte");
 							}/* fin du case 2 : inscrire un retour de congé */
 							
@@ -1032,7 +1032,7 @@ import com.mysql.jdbc.Driver;
 							{
 								System.out.println("Afficher les personnes en congé");
 								// RECUPERER LE GROUPE DE SALARIES : ARRAY LIST DE GROUPE 
-								System.out.println(grp.employesEnConge());
+								//System.out.println(grp.employesEnConge());
 							}
 							
 							case 0: 
@@ -1077,8 +1077,8 @@ import com.mysql.jdbc.Driver;
 							{
 								// récupérer l'arraylist d'employés (ds classe Groupe)
 								sc.nextLine();
-								int nbconges= grp.nbemployesEnConge();
-								System.out.println("Il y a "+nbconges+ " salariés du groupe en congés"); 
+								//int nbconges= grp.nbemployesEnConge();
+								//System.out.println("Il y a "+nbconges+ " salariés du groupe en congés"); 
 							}
 						} /* fin du switch(sousmenu2) : consultation des info du groupe*/
 						
