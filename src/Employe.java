@@ -10,6 +10,8 @@ public abstract class Employe
  protected int tel;
  protected String email;
  protected int etabAffectation;
+ protected String dateClotureDossier;
+ private boolean dossierCloture;
  
  public Employe (String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance, int tel, String email)
   {
@@ -21,6 +23,8 @@ public abstract class Employe
 	 this.tel = tel;
 	 this.email = email;
  	 this.idEmp = cpt++;
+ 	 this.dateClotureDossier= "";
+ 	 this.dossierCloture = false;
 
   }
  
@@ -81,15 +85,37 @@ public abstract class Employe
 	public void setEmail(String email){
 		this.email = email;
 	}
+	public String getDateClotureDossier(){
+		return dateClotureDossier;
+	}
+
+	public void setDateClotureDossier(String dcd){
+		this.dateClotureDossier = dcd;
+	}
 	
+	public void cloturerDossier (String dcd){ 
+		setDateClotureDossier(dcd);
+		this.dossierCloture = true;
+		
+	}
 	
 		
  public String toString(){
+ 	if (dossierCloture==true)
 		return "n°" + idEmp+"\n"+
 				nom +" "+ prenom + "né le " + dateNaissance+ "\n"+
 				"tel: "+ tel + "\n"+
 				"email: "+email+ "\n"+
-				"date d'embauche: " +dateEmbauche;
+				"date d'embauche: " + dateEmbauche + "\n"+
+				"ce dossier a été cloturé le" + dateClotureDossier+ "\n";
+	else
+		return "n°" + idEmp+"\n"+
+				nom +" "+ prenom + "né le " + dateNaissance+ "\n"+
+				"tel: "+ tel + "\n"+
+				"email: "+email+ "\n"+
+				"date d'embauche: " + dateEmbauche + "\n";
+				
+					
 	}
 
  public abstract Paie calculPaie();
