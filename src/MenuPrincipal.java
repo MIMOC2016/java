@@ -187,10 +187,13 @@ import com.mysql.jdbc.Driver;
 									System.out.print("Cursus : ");
 									String cursus = sc.nextLine();
 									System.out.print("Salaire fixe : ");
-									float salaireFixe = sc.nextFloat();
-										
+									float salaireFixe = sc.nextFloat();		
 									Alternant altern = new Alternant(nom,prenom,dateEmbauche, etabAffectation, dateNaissance,tel, email, ecole, dateFinContrat,cursus, salaireFixe); 
 									System.out.println("Alternant créé");
+									gestionAlternant ga = new gestionAlternant();
+									ga.ajoutAlternant(altern);
+									driver.ConnAjoutAlternant(idEmp, nom, prenom, dateEmbauche,etabAffectation, dateNaissance, tel, email, ecole, dateFinContrat, cursus, salaireFixe);
+
 									break;
 										   
 								   }	
