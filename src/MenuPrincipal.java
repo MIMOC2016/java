@@ -4,6 +4,8 @@ import com.mysql.jdbc.Driver;
 
 	public class MenuPrincipal 
 	{
+		private static final String Cadre = null;
+
 		public static void main(String[] args) 
 		{
 			Scanner sc = new Scanner(System.in);
@@ -52,9 +54,7 @@ import com.mysql.jdbc.Driver;
 								{
 								  case 1:
 								  {
-									 
-
-									  Cadre ajoutCadre(Cadre C) {
+                                            
 											System.out.println("Ajout d'un cadre: ");
 											System.out.print("Nom : ");
 											String nom = sc.nextLine();
@@ -80,7 +80,7 @@ import com.mysql.jdbc.Driver;
 											g.ajoutCadre(C1);		
 											driver.ConnAjoutCadre(idEmp, nom, prenom, dateEmbauche, etabAffectation, dateNaissance, tel, email, tauxJour);
 
-									  }
+			
 							
 								  } /* Fin ajout cadre CDI/ case 1 */ 
 								  
