@@ -38,9 +38,20 @@ public class TestEmploye {
 	    System.out.println(a1.getSalaireFixe());
 	         /*------------ Mettre le cadre c1 en congé et le faire revenir ----------*/
 	   c1.debutConge();
-	    System.out.println(c1);
+	    System.out.println(c1.toString());
 	    c1.finConge();
-	    System.out.println(c1);
+	    System.out.println(c1.toString());
+	    
+	       /*------------ Cloturer le dossier du cadre c1 ----------*/
+	    boolean etat1= c1.estColture();
+	    System.out.println(etat1);
+	    c1.colturerDossier(29/07/2016);
+	    etat1= c1.estColture();
+	    System.out.println(etat1);
+	    System.out.println(c1.toString());
+	    
+	    
+	    
 	    
         /*------------ Mettre l'alternante a1 et cdd1 en congé   ----------*/
 	    a1.debutConge();
