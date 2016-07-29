@@ -58,6 +58,7 @@ import com.mysql.jdbc.Driver;
 											System.out.println("Ajout d'un cadre: ");
 											System.out.print("Nom : ");
 											String nom = sc.nextLine();
+											sc.nextLine();
 											System.out.print("Prenom : ");
 											String prenom = sc.nextLine();
 											System.out.print("Date Embauche : ");
@@ -80,7 +81,7 @@ import com.mysql.jdbc.Driver;
 											g.ajoutCadre(C1);		
 											driver.ConnAjoutCadre(idEmp, nom, prenom, dateEmbauche, etabAffectation, dateNaissance, tel, email, tauxJour);
 
-			
+			                                break;
 							
 								  } /* Fin ajout cadre CDI/ case 1 */ 
 								  
@@ -109,10 +110,13 @@ import com.mysql.jdbc.Driver;
 									System.out.print("Salaire fixe : ");
 									float salaireFixe = sc.nextFloat();
 									System.out.print("Salaire variable : ");
-									float salaireVariable = sc.nextFloat();
-										
-									Cdd cd = new Cdd(nom,prenom,dateEmbauche,etabAffectation, dateNaissance, tel, email, dateFinContrat, salaireFixe, salaireVariable); 
+									float salaireVariable = sc.nextFloat();		
 									System.out.println("CDD créé");
+									gestionCdd d = new gestionCdd();
+									Cdd cd = new Cdd(nom,prenom,dateEmbauche,etabAffectation, dateNaissance, tel, email, dateFinContrat, salaireFixe, salaireVariable);
+									d.ajoutCdd(cd);
+									driver.ConnAjoutCDD(idEmp, nom, prenom, dateEmbauche, etabAffectation, dateNaissance, tel, email,  dateFinContrat, salaireFixe, salaireVariable);
+
 									break;
 										   
 								   }

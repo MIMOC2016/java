@@ -17,7 +17,7 @@ public class gestionCadre
 		cadres.add(C);
 	}
 	
-	// afficher les élèves
+	// afficher les CADRES
 	public String toString(){
 		String s= ""; 
 		for(Cadre C : cadres){
