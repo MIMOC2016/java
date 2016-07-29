@@ -149,9 +149,12 @@ import com.mysql.jdbc.Driver;
 									String dateFinContrat = sc.nextLine();
 									System.out.print("Salaire fixe : ");
 									float salaireFixe = sc.nextFloat();
-										
 									Stagiaire Stag = new Stagiaire(nom,prenom,dateEmbauche,etabAffectation, dateNaissance, tel, email, ecole, cursus, dateFinContrat, salaireFixe); 
 									System.out.println("Stagiaire créé");
+									gestionStagiaire gs = new gestionStagiaire();
+									gs.ajoutStagiaire(Stag);
+									driver.ConnAjoutStagiaire(idEmp, nom, prenom, dateEmbauche,etabAffectation, dateNaissance, tel, email, ecole, cursus, dateFinContrat, salaireFixe);
+
 									break;
 										   
 								   }
