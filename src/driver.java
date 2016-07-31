@@ -1,5 +1,6 @@
 import java.sql.*;
 
+
 public class driver {
 	//JDBC diver nom et database URL
 	static final String JDBC_DRIVER ="com.mysql.jdbc.Driver";
