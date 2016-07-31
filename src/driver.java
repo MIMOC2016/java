@@ -8,7 +8,7 @@ public class driver {
 	
 	//BDD IDs
 	static final String USER ="root";
-	static final String PASS="root";
+	static final String PASS="";
 	
 	public static void ConnAjoutCadre(int idEmp,String nom, String prenom, String dateEmbauche, int etabAffectation,
 			String dateNaissance, int tel, String email, float tauxJour)
@@ -30,7 +30,7 @@ public class driver {
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO Cadres " +
-						 "VALUES ("+idEmp+",'" +nom+"', '"+ prenom + "','"+dateNaissance+"', '"+etabAffectation+"', '"+tel+"', '"+email+"', '"+tauxJour+"')";
+						 "VALUES ('"+idEmp+"','" +nom+"', '"+ prenom + "','"+dateNaissance+"', '"+etabAffectation+"', '"+tel+"', '"+email+"', '"+tauxJour+"')";
 			System.out.println("Requête : "+sql);
 			stmt.executeUpdate(sql);
       
