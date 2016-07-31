@@ -5,7 +5,7 @@ public class gestionCdd
 
 		static ArrayList <Cdd> cdds = null;
 	
-	// création liste cadres si aucun cadre
+	// création liste cdd si aucun cdd
 	public gestionCdd()
 	{
 	if(cdds==null)

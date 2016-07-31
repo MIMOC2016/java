@@ -29,7 +29,7 @@ public class driver {
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO Cadres " +
-						 "VALUES ("+idEmp+",'" +nom+"', '"+ prenom + "','"+dateNaissance+"', '"+etabAffectation+"', '"+dateNaissance+"', '"+tel+"', '"+email+"', '"+tauxJour+"')";
+						 "VALUES ("+idEmp+",'" +nom+"', '"+ prenom + "','"+dateNaissance+"', '"+etabAffectation+"', '"+tel+"', '"+email+"', '"+tauxJour+"')";
 			System.out.println("Requête : "+sql);
 			stmt.executeUpdate(sql);
       
@@ -84,7 +84,7 @@ public class driver {
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO CDD " +
-						 "VALUES ("+idEmp+",'" +nom+"', '"+ prenom + "','"+dateNaissance+"', '"+etabAffectation+"', '"+dateNaissance+"', '"+tel+"', '"+email+"', '"+dateFinContrat+"', , '"+salaireFixe+"', '"+salaireVariable+"')";
+						 "VALUES ("+idEmp+",'" +nom+"', '"+ prenom + "','"+dateNaissance+"', '"+etabAffectation+"', '"+tel+"', '"+email+"', '"+dateFinContrat+"', '"+salaireFixe+"', '"+salaireVariable+"')";
 			System.out.println("Requête : "+sql);
 			stmt.executeUpdate(sql);
       
