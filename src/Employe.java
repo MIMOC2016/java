@@ -123,5 +123,4 @@ public abstract class Employe
 	}
 
  public abstract Paie calculPaie();
- public abstract String AjoutCadre();
 }
