@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-import com.mysql.jdbc.Driver;
 
 	public class MenuPrincipal 
 	{
@@ -383,24 +382,19 @@ import com.mysql.jdbc.Driver;
 								 			}	
 										}/* fin du switch(c) qu'est ce qu'on souhaite modif au CDI*/
 									} /* fin du case 1 : modifier les info d'un CDI */
-				//______________________________________________________MENU GESTION DE LA PAIE___________________________//
-								/*	switch (sousmenu){
-									case 3:
+									
+									case 2:
 									{
-										System.out.println("Gestion de la paie ");
+										System.out.println("Modifier les informations personnelles d'un CDD ");
 										int choix2 = 0;
 								
 										System.out.println("Quel salarié voulez vous modifier? ");
-										System.out.println("-1- Consulter un bulletin de paie");
-										System.out.println("-2- Créer un bulletin de paie");
-										System.out.println("-3- Modifier un bulletin de paie");
-										System.out.println("-0- Retour au menu principal ");
+										System.out.println("-1- Choix du salarié par son identifiant");
+										System.out.println("-2- Choix du salarié par son nom");
+										System.out.println("-0- Retour au menu principal");
 								
 										choix2 = sc.nextInt();
-									}
-									}*/
-				//______________________________________________________fin MENU GESTION DE LA PAIE___________________________//
-									
+								
 										switch (choix2)
 										{
 											case 1:
@@ -1003,14 +997,13 @@ import com.mysql.jdbc.Driver;
 							
 							case 2:
 							{
-								System.out.println(" Gestion des congés ");	
-								int sousmenu2 = 0;
-								System.out.println("-1- Mettre une personne en congé");
-								System.out.println("-2- Inscrire un retour de congé");
-								System.out.println("-3- Afficher les personnes en congé ");
+								System.out.println("Quel salarié vient de revenir de congé? : ");
+								int choix2 = 0;  //recherche de la personne (id)
+								System.out.println("-1- Choix du salarié par son identifiant");
+								System.out.println("-2- Choix du salarié par son nom");
 								System.out.println("-0- Retour au menu principal");
-								System.out.print("Choix : ");
-								sousmenu2 = sc.nextInt();
+								
+								choix2 = sc.nextInt();
 								
 								switch (choix2)
 								{
@@ -1068,14 +1061,7 @@ import com.mysql.jdbc.Driver;
 					
 					case 3:
 					{
-						System.out.println("Quel salarié vient de revenir de congé? : ");
-						int choix2 = 0;  //recherche de la personne (id)
-						System.out.println("-1- Consulter un bulletin de paie");
-						System.out.println("-2- Créer un bulletin de paie");
-						System.out.println("-3- Modifier un bulletin de paie");
-						System.out.println("-0- Retour au menu principal");
-						
-						choix2 = sc.nextInt();
+						System.out.println("Gestion de la paie ");	
 						break;
 					}/*fin case Gestion de la paie*/
 					case 4:
@@ -1131,9 +1117,4 @@ import com.mysql.jdbc.Driver;
 		
 			
 		}
-
-
-
-
-	
 
