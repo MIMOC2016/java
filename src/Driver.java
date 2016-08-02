@@ -29,7 +29,7 @@ public class Driver {
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO Cadres " +
-						 "VALUES ("+idEmp+",'" +nom+"', '"+ prenom + "','"+dateNaissance+"', '"+etabAffectation+"', '"+tel+"', '"+email+"', '"+tauxJour+"')";
+						 "VALUES ("+idEmp+",'" +nom+"', '"+ prenom + "','"+dateEmbauche+"','"+dateNaissance+"', '"+etabAffectation+"', '"+tel+"', '"+email+"', '"+tauxJour+"')";
 			System.out.println("Requête : "+sql);
 			stmt.executeUpdate(sql);
       
