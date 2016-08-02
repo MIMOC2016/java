@@ -1,14 +1,13 @@
 import java.sql.*;
 
-
-public class driver {
+public class Driver {
 	//JDBC diver nom et database URL
 	static final String JDBC_DRIVER ="com.mysql.jdbc.Driver";
 	static final String DB_URL = "jdbc:mysql://localhost:8889/RH";
 	
 	//BDD IDs
 	static final String USER ="root";
-	static final String PASS="";
+	static final String PASS="root";
 	
 	public static void ConnAjoutCadre(int idEmp,String nom, String prenom, String dateEmbauche, int etabAffectation,
 			String dateNaissance, int tel, String email, float tauxJour)
@@ -22,7 +21,7 @@ public class driver {
 		      
 		    //Etape 3: Ouverture connexion
 		      System.out.println("Connexion à la BDD...");
-		      conn = DriverManager.getConnection(DB_URL,USER, PASS);
+		      conn = DriverManager.getConnection(DB_URL,USER,PASS);
 			  System.out.println("Connexion établie...");				  
 		
 			//Etape 4: Execution de la requête
@@ -30,7 +29,7 @@ public class driver {
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO Cadres " +
-						 "VALUES ('"+idEmp+"','" +nom+"', '"+ prenom + "','"+dateNaissance+"', '"+etabAffectation+"', '"+tel+"', '"+email+"', '"+tauxJour+"')";
+						 "VALUES ("+idEmp+",'" +nom+"', '"+ prenom + "','"+dateNaissance+"', '"+etabAffectation+"', '"+tel+"', '"+email+"', '"+tauxJour+"')";
 			System.out.println("Requête : "+sql);
 			stmt.executeUpdate(sql);
       
@@ -77,7 +76,7 @@ public class driver {
 		      
 		    //Etape 3: Ouverture connexion
 		      System.out.println("Connexion à la BDD...");
-		      conn = DriverManager.getConnection(DB_URL,USER, PASS);
+		      conn = DriverManager.getConnection(DB_URL, USER,PASS);
 			  System.out.println("Connexion établie...");				  
 		
 			//Etape 4: Execution de la requête
@@ -131,7 +130,7 @@ public class driver {
 			      
 			    //Etape 3: Ouverture connexion
 			      System.out.println("Connexion à la BDD...");
-			      conn = DriverManager.getConnection(DB_URL,USER, PASS);
+			      conn = DriverManager.getConnection(DB_URL, USER,PASS);
 				  System.out.println("Connexion établie...");				  
 			
 				//Etape 4: Execution de la requête
@@ -188,7 +187,7 @@ public class driver {
 					      
 					    //Etape 3: Ouverture connexion
 					      System.out.println("Connexion à la BDD...");
-					      conn = DriverManager.getConnection(DB_URL,USER, PASS);
+					      conn = DriverManager.getConnection(DB_URL,USER,PASS);
 						  System.out.println("Connexion établie...");				  
 					
 						//Etape 4: Execution de la requête
