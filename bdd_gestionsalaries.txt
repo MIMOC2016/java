@@ -1,0 +1,121 @@
+-- phpMyAdmin SQL Dump
+-- version 4.4.10
+-- http://www.phpmyadmin.net
+--
+-- Client :  localhost:8889
+-- Généré le :  Mar 02 Août 2016 à 21:54
+-- Version du serveur :  5.5.42
+-- Version de PHP :  7.0.8
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Base de données :  `RH`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Alternants`
+--
+
+CREATE TABLE `Alternants` (
+  `idEmp` int(11) NOT NULL,
+  `nom` text NOT NULL,
+  `prenom` text NOT NULL,
+  `dateEmbauche` text NOT NULL,
+  `etabAffectation` int(11) NOT NULL,
+  `dateNaissance` text NOT NULL,
+  `tel` int(11) NOT NULL,
+  `email` text NOT NULL,
+  `ecole` text NOT NULL,
+  `cursus` text NOT NULL,
+  `dateFinContrat` text NOT NULL,
+  `salaireFixe` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Cadres`
+--
+
+CREATE TABLE `Cadres` (
+  `idEmp` int(11) NOT NULL,
+  `nom` varchar(100) NOT NULL,
+  `prenom` varchar(100) NOT NULL,
+  `dateEmbauche` varchar(100) NOT NULL,
+  `etabAffectation` int(10) NOT NULL,
+  `dateNaissance` varchar(10) NOT NULL,
+  `tel` int(11) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `tauxJour` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `Cadres`
+--
+
+INSERT INTO `Cadres` (`idEmp`, `nom`, `prenom`, `dateEmbauche`, `etabAffectation`, `dateNaissance`, `tel`, `email`, `tauxJour`) VALUES
+(0, 'CHEN', 'Viviane', '10/10/2010', 1, '10/01/1993', 1098765432, 'ERTY@gmail.com', 1000);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `CDD`
+--
+
+CREATE TABLE `CDD` (
+  `idEmp` int(11) NOT NULL,
+  `nom` text NOT NULL,
+  `prenom` text NOT NULL,
+  `dateEmbauche` varchar(100) NOT NULL,
+  `dateNaissance` text NOT NULL,
+  `etabAffectation` int(11) NOT NULL,
+  `tel` int(11) NOT NULL,
+  `email` text NOT NULL,
+  `dateFinContrat` text NOT NULL,
+  `salaireFixe` float NOT NULL,
+  `salaireVariable` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Employes`
+--
+
+CREATE TABLE `Employes` (
+  `idEmp` int(10) NOT NULL,
+  `nom` varchar(100) NOT NULL,
+  `prenom` varchar(100) NOT NULL,
+  `dateEmbauche` varchar(100) NOT NULL,
+  `etabAffectation` int(10) NOT NULL,
+  `dateNaissance` varchar(100) NOT NULL,
+  `tel` int(10) NOT NULL,
+  `email` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Stagiaires`
+--
+
+CREATE TABLE `Stagiaires` (
+  `idEmp` int(10) NOT NULL,
+  `nom` varchar(100) NOT NULL,
+  `prenom` varchar(100) NOT NULL,
+  `dateEmbauche` varchar(100) NOT NULL,
+  `etabAffectation` int(10) NOT NULL,
+  `dateNaissance` varchar(100) NOT NULL,
+  `tel` int(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `ecole` varchar(100) NOT NULL,
+  `cursus` varchar(100) NOT NULL,
+  `dateFinContrat` varchar(100) NOT NULL,
+  `salaireFixe` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
