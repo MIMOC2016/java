@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class Driver {
+public class DriverAjout {
 	//JDBC diver nom et database URL
 	static final String JDBC_DRIVER ="com.mysql.jdbc.Driver";
 	static final String DB_URL = "jdbc:mysql://localhost:8889/RH";
@@ -84,7 +84,7 @@ public class Driver {
 			stmt = conn.createStatement();
       
 			String sql = "INSERT INTO CDD " +
-						 "VALUES ("+idEmp+",'" +nom+"', '"+ prenom + "','"+dateNaissance+"', '"+etabAffectation+"', '"+tel+"', '"+email+"', '"+dateFinContrat+"', '"+salaireFixe+"', '"+salaireVariable+"')";
+						 "VALUES ("+idEmp+",'" +nom+"', '"+ prenom + "', '"+dateEmbauche+"', '"+etabAffectation+"','"+dateNaissance+"', '"+tel+"', '"+email+"', '"+dateFinContrat+"', '"+salaireFixe+"', '"+salaireVariable+"')";
 			System.out.println("Requête : "+sql);
 			stmt.executeUpdate(sql);
       
@@ -138,7 +138,7 @@ public class Driver {
 				stmt = conn.createStatement();
 	      
 				String sql = "INSERT INTO Stagiaires " +
-							 "VALUES ("+idEmp+",'" +nom+"', '"+ prenom + "','"+dateEmbauche+"', '"+etabAffectation+"', '"+dateNaissance+"', '"+tel+"', '"+email+"', '"+ecole+"', , '"+cursus+"', '"+dateFinContrat+"', , '"+salaireFixe+"')";
+							 "VALUES ("+idEmp+",'" +nom+"', '"+ prenom + "','"+dateEmbauche+"', '"+etabAffectation+"', '"+dateNaissance+"', '"+tel+"', '"+email+"', '"+ecole+"', '"+cursus+"', '"+dateFinContrat+"', '"+salaireFixe+"')";
 				System.out.println("Requête : "+sql);
 				stmt.executeUpdate(sql);
 	      
@@ -195,7 +195,7 @@ public class Driver {
 						stmt = conn.createStatement();
 			      
 						String sql = "INSERT INTO Alternants " +
-									 "VALUES ("+idEmp+",'" +nom+"', '"+ prenom + "','"+dateEmbauche+"', '"+etabAffectation+"', '"+dateNaissance+"', '"+tel+"', '"+email+"', '"+ecole+"', , '"+cursus+"', '"+dateFinContrat+"', '"+salaireFixe+"')";
+									 "VALUES ("+idEmp+",'" +nom+"', '"+ prenom + "','"+dateEmbauche+"', '"+etabAffectation+"', '"+dateNaissance+"', '"+tel+"', '"+email+"', '"+ecole+"', '"+cursus+"', '"+dateFinContrat+"', '"+salaireFixe+"')";
 						System.out.println("Requête : "+sql);
 						stmt.executeUpdate(sql);
 			      
