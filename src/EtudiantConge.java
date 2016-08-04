@@ -30,10 +30,6 @@ public class EtudiantConge extends Etudiant implements Conge {
 		return null;
 	}
 
-	@Override
-	public String AjoutCadre() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }

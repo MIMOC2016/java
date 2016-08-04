@@ -1252,10 +1252,122 @@ import java.util.Scanner;
 											//on remet dans la bdd
 			                                break;
 							
-								  } 
+								  }
+								   case 0:
+								   {
+									   break;
+								   }
+								   default:
+								   {
+									   System.out.println("Choix invalide");
+								   }
+								}
+								   //FIN switch CONSULTER PAIE
+								   break;
 					}
-							}/*fin case Gestion de la paie*/
-					
+							case 2:
+							{
+								System.out.println("Créer un bulletin de paie ");
+								int choix = 0;
+								System.out.println("-1- Créer un bulletin de paie pour un cadre CDI");
+								System.out.println("-2- Créer un bulletin de paie pour un CDD");
+								System.out.println("-3- Créer un bulletin de paie pour un alternant");
+								System.out.println("-3- Créer un bulletin de paie pour un stagiaire");
+								System.out.println("-0- Retour ");
+								System.out.print("Choix : ");
+
+								choix = sc.nextInt();
+								
+								switch (choix)
+								{
+								   case 1:
+								   {
+									// CDI nul qu'on va utiliser par la suite
+									Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0);
+
+									System.out.println("Saisir l'ID d'un cadre CDI: ");
+									DriverLecture.afficheCadre();
+								    sc.nextLine();
+									System.out.println("Saisir l'idEmp du Cadre");
+									System.out.print("Choix : ");
+									int idrech = sc.nextInt();
+									id = DriverLecture.idCadre(idrech);		// Retrouve le CDI dans la Bdd
+									System.out.println("Saisir une période de paie: ");
+									float perpaie = sc.nextInt();
+
+									//on appelle la méthode pour créer une paie pour un cadre
+									//on renvoie tout à la BDD
+
+									
+									break;
+								   }
+								   case 2:
+								   {
+									// CDD nul qu'on va utiliser par la suite
+										Cdd id = new Cdd(null, null, null, 0, null, 0, null, null, 0, 0);
+
+									System.out.println("Saisir l'ID d'un CDD: ");
+									DriverLecture.afficheCdd();
+								    sc.nextLine();
+									System.out.println("Saisir l'idEmp du CDD");
+									System.out.print("Choix : ");
+									int idrech = sc.nextInt();
+									id = DriverLecture.idCDD(idrech);		// Retrouve le CDD dans la Bdd
+									System.out.println("Saisir une période de paie: ");
+									float perpaie = sc.nextInt();
+
+									//on appelle la méthode pour créer une paie pour un CDD
+									//on renvoie tout à la BDD
+
+									
+									break;
+								   }
+								   case 3:
+								   {
+									// stagiaire nul qu'on va utiliser par la suite
+										Stagiaire id = new Stagiaire(null, null, null, 0, null, 0, null, null, null, null, 0);
+
+									System.out.println("Saisir l'ID d'un stagiaire: ");
+									DriverLecture.afficheStagiaire();
+								    sc.nextLine();
+									System.out.println("Saisir l'idEmp du stagiaire");
+									System.out.print("Choix : ");
+									int idrech = sc.nextInt();
+									id = DriverLecture.idStagiaire(idrech);		// Retrouve le stagiaire dans la Bdd
+									System.out.println("Saisir une période de paie: ");
+									float perpaie = sc.nextInt();
+
+									//on appelle la méthode pour créer une paie pour un stagiaire
+									//on renvoie tout à la BDD
+
+									
+									break;
+								   }
+								   case 4:
+								   {
+									// stagiaire nul qu'on va utiliser par la suite
+										Alternant id = new Alternant (null, null, null, 0, null, 0, null, null, null, null, 0);
+
+									System.out.println("Saisir l'ID d'un alternant: ");
+									DriverLecture.afficheAlternant();
+								    sc.nextLine();
+									System.out.println("Saisir l'idEmp du alternant");
+									System.out.print("Choix : ");
+									int idrech = sc.nextInt();
+									id = DriverLecture.idAlternant(idrech);		// Retrouve le Alternant dans la Bdd
+									System.out.println("Saisir une période de paie: ");
+									float perpaie = sc.nextInt();
+
+									//on appelle la méthode pour créer une paie pour un Alternant
+									//on renvoie tout à la BDD
+
+									
+									break;
+								   }
+							}
+						}
+						}
+						}
 //----------------------------------------FIN GESTION PAIE-----------------------------------------//					
 	
 					case 4:
