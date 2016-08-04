@@ -12,7 +12,6 @@ public abstract class Etudiant extends Employe
  	 this.dateFinContrat = dateFinContrat;
  	 this.cursus = cursus;
  }
- 
 
 public String getEcole(){
    return ecole;
@@ -45,8 +44,5 @@ public String toString(){
 }
 
 public abstract Paie calculPaie();
-
-
-
 }
 

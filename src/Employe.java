@@ -2,7 +2,7 @@
 public abstract class Employe 
 {
  protected int idEmp;
- private static int cpt=0;
+ private static int cpt=100000;
  protected String nom;
  protected String prenom;
  protected String dateEmbauche;
@@ -107,14 +107,14 @@ public abstract class Employe
  public String toString(){
  	if (dossierCloture==true)
 		return "n°" + idEmp+"\n"+
-				nom +" "+ prenom + "né le " + dateNaissance+ "\n"+
+				nom +" "+ prenom + " né le " + dateNaissance+ "\n"+
 				"tel: "+ tel + "\n"+
 				"email: "+email+ "\n"+
 				"date d'embauche: " + dateEmbauche + "\n"+
-				"ce dossier a été cloturé le" + dateClotureDossier+ "\n";
+				"ce dossier a été cloturé le " + dateClotureDossier+ "\n";
 	else
 		return "n°" + idEmp+"\n"+
-				nom +" "+ prenom + "né le " + dateNaissance+ "\n"+
+				nom +" "+ prenom + " né le " + dateNaissance+ "\n"+
 				"tel: "+ tel + "\n"+
 				"email: "+email+ "\n"+
 				"date d'embauche: " + dateEmbauche + "\n";

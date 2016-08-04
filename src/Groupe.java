@@ -1,20 +1,11 @@
 import java.util.ArrayList;
 
 
-public class Groupe 
-{
+public class Groupe {
 	private ArrayList<Employe> employes=new ArrayList<Employe>();
-	private ArrayList<Cadre> Cadres=new ArrayList<Cadre>();
-
 	
-	public void ajoutEmploye(Employe E)
-	{
-		employes.add(E);
-	}
-
-	public void ajoutCadre(Cadre C)
-	{
-		Cadres.add(C);
+	public void ajoutEmploye(Employe a){
+		employes.add(a);
 	}
 
 	public Paie calculPaieTotale(){
@@ -24,8 +15,11 @@ public class Groupe
 		}
 		return p;
 	}	
-	
-	
+
+	public int nbsalariesGroupe(){
+		int i= employes.size();
+		return i;
+	}
 	
 	public String toString(){
 		String s = new String();
@@ -55,6 +49,7 @@ public class Groupe
 		}
 		return i;
 	}
+	
 	
 	
 	

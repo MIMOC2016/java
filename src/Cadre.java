@@ -1,5 +1,5 @@
 
-public class Cadre extends EmployeConge implements Conge{
+public class Cadre extends EmployeConge {
  	 
 		private float salaireVariable;
 		private float salaireFixe;
@@ -7,10 +7,9 @@ public class Cadre extends EmployeConge implements Conge{
 		private String perpaie;
 		float tauxJour;
 		int jourPresence;
-		private boolean enCong;
 
 		
-	public Cadre(int id, String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance, int tel, String email,float tauxJour)
+	public Cadre(String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance, int tel, String email,float tauxJour)
 	{
 		super(nom,prenom,dateEmbauche,etabAffectation, dateNaissance,tel,email);
 		this.tauxJour = tauxJour;
@@ -42,7 +41,7 @@ public class Cadre extends EmployeConge implements Conge{
 	}
 	
 
-	public Paie calculPaie(String Perpaie, int jourPresence)
+	public Paie calculPaie(String perpaie, int jourPresence)
 	{	
 		this.salaireFixe = tauxJour * jourPresence;
 		this.salaireMensuel = this.salaireFixe + this.salaireVariable;
@@ -50,7 +49,6 @@ public class Cadre extends EmployeConge implements Conge{
 		return new Paie();
 	}
 	
-
 	public float getSalaireMensuel() {
 		return salaireMensuel;
 	}
@@ -66,26 +64,13 @@ public class Cadre extends EmployeConge implements Conge{
   public int getJourPresence(){
   return jourPresence;
  }
- public void setTauxJour(int tj){
+ public void setTauxJour(float tj){
    this.tauxJour = tj;
 }
 
  public void setJourPresence(int jp){
    this.jourPresence = jp;
 }
-
- public void debutConge() {
-   this.enCong=true;
-}
-
- public void finConge() {
-   this.enCong=false;
-}
-
-public boolean enConge() {
-   return this.enCong;
-}
-
 
 
 }

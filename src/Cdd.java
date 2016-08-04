@@ -1,7 +1,6 @@
-public class Cdd extends EmployeConge implements Conge
+public class Cdd extends EmployeConge 
 {
  private String dateFinContrat;
- private boolean enCong = false;
  //private boolean salariesorti=false;
  
 //--------ATTRIBUTS CALCULPAIE--------/
@@ -69,26 +68,5 @@ public class Cdd extends EmployeConge implements Conge
 	public void setSalaireFixe(float salaireFixe){
 		this.salaireFixe = salaireFixe;
 	}
-
-	
-	
-
-	
-	//----------------METHODES EN CONGE------------------------------//
-	
-	public boolean mettrenconge()
-	{   this.enCong = true;
-		return enCong;	
-	}
-	
-	public boolean estEnCong() {
-		return enCong;
-	}
-
-	public void setEnCong(boolean enCong) {
-		this.enCong = enCong;
-	}
-
-
 }
 

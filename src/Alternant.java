@@ -1,22 +1,21 @@
 
-public class Alternant extends Etudiant implements Conge
+public class Alternant extends EtudiantConge
 {
 
 	private float tauxHoraire;
-	private boolean enCong = false;
-	private float horairemensuel = (float) 151.66;
+	private float salaireFixe;
+
 
 //--------ATTRIBUTS CALCULPAIE--------//
   
 	private float salaireVariable;
-	private float salaireFixe;
 	private float salaireMensuel;
 	private String perpaie;
 
 
-	public Alternant (String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance,int tel, String email, String ecole, String dateFinContrat, String cursus, float tauxHoraire){
+	public Alternant (String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance,int tel, String email, String ecole, String dateFinContrat, String cursus, float salaireFixe){
 		super(nom,prenom,dateEmbauche, etabAffectation, dateNaissance,tel,email,ecole, dateFinContrat, cursus);		
-		this.tauxHoraire = tauxHoraire;
+		this.salaireFixe = salaireFixe;
 	}
 
 	public float getSalaireFixe(){
@@ -35,18 +34,6 @@ public class Alternant extends Etudiant implements Conge
 		this.salaireVariable = salaireVariable;
 	}
 
-	 public void debutConge() {
-		   this.enCong=true;
-		}
-
-	public void finConge() {
-		   this.enCong=false;
-		}
-
-	public boolean enConge() {
-		   return this.enCong;
-		}
-
 	public String toString(){
 		  return ( enConge() ? " en congé" : "")+" "+ super.toString()+"salaire : "+salaireMensuel+"\n";
 					
@@ -54,7 +41,7 @@ public class Alternant extends Etudiant implements Conge
 	
 	public Paie calculPaie(String perpaie, float salaireVariable)
 	{	
-		this.salaireFixe = tauxHoraire * horairemensuel;
+		//this.salaireFixe = ;
 		this.salaireMensuel = this.salaireFixe + this.salaireVariable;
 		return new Paie();
 	}
