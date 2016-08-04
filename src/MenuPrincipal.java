@@ -1,12 +1,13 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
 	public class MenuPrincipal 
 	{
-		private static final String Cadre = null;
-
 		public static void main(String[] args) 
 		{
+			Groupe employes =new Groupe();
+
 			Scanner sc = new Scanner(System.in);
 			int idEmp = 0;
 			int sousmenu = 0;
@@ -30,7 +31,7 @@ import java.util.Scanner;
 						int sousmenu2 = 0;
 						System.out.println("-1- Ajouter un nouveau salarié ");
 						System.out.println("-2- Modifier les informations personnelles d'un salarié ");
-						System.out.println("-3- Cloturer le dossier d'un salarié "); /* Comment on va faire ?? Le plus simple : calcpaie =0 */
+						System.out.println("-3- Cloturer le dossier d'un salarié "); 
 						System.out.println("-0- Retour au menu principal ");
 						System.out.print("Choix : ");
 						sousmenu2 = sc.nextInt();
@@ -74,12 +75,12 @@ import java.util.Scanner;
 											String email = sc.nextLine();
 											System.out.print("Taux journalier : ");
 											float tauxJour = sc.nextFloat();
+											
+											Cadre C1 = new Cadre (nom, prenom, dateEmbauche, etabAffectation, dateNaissance, tel, email, tauxJour);
+											employes.ajoutEmploye(C1);		
+											DriverAjout.ConnAjoutCadre(idEmp, nom, prenom, dateEmbauche, etabAffectation, dateNaissance, tel, email, tauxJour, false, false);
 											System.out.println("Cadre créé");
-											gestionCadre g = new gestionCadre();
-											Cadre C1 = new Cadre (idEmp, nom, prenom, dateEmbauche, etabAffectation, dateNaissance, tel, email, tauxJour);
-											g.ajoutCadre(C1);		
-											driver.ConnAjoutCadre(idEmp, nom, prenom, dateEmbauche, etabAffectation, dateNaissance, tel, email, tauxJour);
-
+											
 			                                break;
 							
 								  } /* Fin ajout cadre CDI/ case 1 */ 
@@ -109,13 +110,13 @@ import java.util.Scanner;
 									System.out.print("Salaire fixe : ");
 									float salaireFixe = sc.nextFloat();
 									System.out.print("Salaire variable : ");
-									float salaireVariable = sc.nextFloat();		
-									System.out.println("CDD créé");
-									gestionCdd d = new gestionCdd();
+									float salaireVariable = sc.nextFloat();
+									
 									Cdd cd = new Cdd(nom,prenom,dateEmbauche,etabAffectation, dateNaissance, tel, email, dateFinContrat, salaireFixe, salaireVariable);
-									d.ajoutCdd(cd);
-									driver.ConnAjoutCDD(idEmp, nom, prenom, dateEmbauche, etabAffectation, dateNaissance, tel, email,  dateFinContrat, salaireFixe, salaireVariable);
-
+									employes.ajoutEmploye(cd);
+									DriverAjout.ConnAjoutCDD(idEmp, nom, prenom, dateEmbauche, etabAffectation, dateNaissance, tel, email,  dateFinContrat, salaireFixe, salaireVariable, false, false);
+									System.out.println("CDD créé");
+									
 									break;
 										   
 								   }
@@ -148,12 +149,12 @@ import java.util.Scanner;
 									String dateFinContrat = sc.nextLine();
 									System.out.print("Salaire fixe : ");
 									float salaireFixe = sc.nextFloat();
+									
 									Stagiaire Stag = new Stagiaire(nom,prenom,dateEmbauche,etabAffectation, dateNaissance, tel, email, ecole, cursus, dateFinContrat, salaireFixe); 
+									employes.ajoutEmploye(Stag);
+									DriverAjout.ConnAjoutStagiaire(idEmp, nom, prenom, dateEmbauche,etabAffectation, dateNaissance, tel, email, ecole, cursus, dateFinContrat, salaireFixe, false);
 									System.out.println("Stagiaire créé");
-									gestionStagiaire gs = new gestionStagiaire();
-									gs.ajoutStagiaire(Stag);
-									driver.ConnAjoutStagiaire(idEmp, nom, prenom, dateEmbauche,etabAffectation, dateNaissance, tel, email, ecole, cursus, dateFinContrat, salaireFixe);
-
+									
 									break;
 										   
 								   }
@@ -187,12 +188,12 @@ import java.util.Scanner;
 									String cursus = sc.nextLine();
 									System.out.print("Salaire fixe : ");
 									float salaireFixe = sc.nextFloat();		
+									
 									Alternant altern = new Alternant(nom,prenom,dateEmbauche, etabAffectation, dateNaissance,tel, email, ecole, dateFinContrat,cursus, salaireFixe); 
+									employes.ajoutEmploye(altern);
+									DriverAjout.ConnAjoutAlternant(idEmp, nom, prenom, dateEmbauche,etabAffectation, dateNaissance, tel, email, ecole, dateFinContrat, cursus, salaireFixe, false,false);
 									System.out.println("Alternant créé");
-									gestionAlternant ga = new gestionAlternant();
-									ga.ajoutAlternant(altern);
-									driver.ConnAjoutAlternant(idEmp, nom, prenom, dateEmbauche,etabAffectation, dateNaissance, tel, email, ecole, dateFinContrat, cursus, salaireFixe);
-
+									
 									break;
 										   
 								   }	
@@ -208,6 +209,7 @@ import java.util.Scanner;
 								break;
 						    } /*fin case 1 : ajout d'un nouveau salarié */
 							
+							
 							case 2:
 							{
 								System.out.println("Modifier les informations personnelles d'un salarié ");
@@ -216,51 +218,26 @@ import java.util.Scanner;
 								System.out.println("-2- Modifier les informations personnelles d'un CDD");
 								System.out.println("-3- Modifier les informations personnelles d'un stagiaire");
 								System.out.println("-4- Modifier les informations personnelles d'un alternant");
-								
+								System.out.println("-0- Retour");
+								System.out.print("Choix : ");
+
 								choix = sc.nextInt();
 								
 								switch (choix)
 								{
 									case 1:
 									{
+										// CDI nul qu'on va utiliser par la suite
+										Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0);
+
 										System.out.println("Modifier les informations personnelles d'un cadre CDI: ");
-										int choix2 = 0;
-								
-										System.out.println("Quel salarié voulez vous modifier? ");
-										System.out.println("-1- Choix du salarié par son identifiant");
-										System.out.println("-2- Choix du salarié par son nom");
-										System.out.println("-0- Retour au menu principal");
-								
-										choix2 = sc.nextInt();
-								
-										switch (choix2)
-										{
-											case 1:
-												{
-													sc.nextLine();
-													System.out.print("Saisir l'identifiant du salarié: ");
-													int id = sc.nextInt();
-													/* FONCTION DE RECHERCHE ALLANT CHERCHER DANS UN ARRAYLIST CDI ISSUE DE LA BDD et compare l'id saisi avec tout ceux dans l'arraylist*/
-													break;
-												} /* fin du case 1 : par l'identifiant */
-											case 2 :
-												{
-													System.out.print("Saisir le nom du salarié: ");
-													String nomrecherche = sc.nextLine();
-													/*FONCTION DE RECHERCHE ET COMPARAISON AVEC LE NOM SAISI */
-													/* Si plusieurs résultats trouvé : afficher la liste des resultats + identifiant des psn */ 
-													/* appeler ensuite la fonction du case 1 : modif avec la saisi de l'identifiant */ 
-												}/* fin du case 2 : par le nom */ 
-											case 0 :
-												{
-													break;
-												}
-											default : 
-								 			 {
-													System.out.println("Choix invalide");
-											 }	
-										} /* fin du switch(choix) comment on va retrouver le salarié (id, nom)*/ 
-								
+										DriverLecture.afficheCadre();
+									    sc.nextLine();
+										System.out.println("Saisir l'idEmp du Cadre");
+										System.out.print("Choix : ");
+										int idrech = sc.nextInt();
+										id = DriverLecture.idCadre(idrech);		// Retrouve le CDI dans la Bdd													
+	
 										/*on retrouve un ID de la personne au final */ 
 										
 									    int c = 0;	
@@ -271,20 +248,23 @@ import java.util.Scanner;
 										System.out.println("-5- Modifier la date de naissance");
 										System.out.println("-6- Modifier le tel");
 										System.out.println("-7- Modifier l'Email");
-										System.out.println("-8- Modifier le salaire fixe");
-										System.out.println("-9- Modifier le salaire variable");
+										System.out.println("-8- Modifier le taux jour");
+										System.out.println("-0- Retour");
+										System.out.print("Choix : ");
+
 										c = sc.nextInt();
 										
 										switch(c)
 										{
-											case 1:
+										case 1:
 											{
 											sc.nextLine();
 											System.out.println("Modifier le nom");
 											System.out.print("Nom : ");
 											String nom = sc.nextLine();
-											//id.setNom(nom);
+											id.setNom(nom);
 											System.out.println("Modification effectuée");
+											DriverModifier.idCadreNom(id.idEmp, nom);
 											break;
 											}
 										case 2:
@@ -293,8 +273,9 @@ import java.util.Scanner;
 											System.out.println("Modifier le prénom ");
 											System.out.print("Prenom : ");
 											String prenom = sc.nextLine();
-											//id.setPrenom(prenom);
+											id.setPrenom(prenom);
 											System.out.println("Modification effectuée");
+											DriverModifier.idCadrePrenom(id.idEmp, prenom);
 											break;
 											}
 										case 3:
@@ -303,8 +284,9 @@ import java.util.Scanner;
 											System.out.println("Modifier la date d'embauche ");
 											System.out.print("Date d'embauche : ");
 											String dateEmbauche = sc.nextLine();
-											//id.setDateEmbauche(dateEmbauche);
+											id.setDateEmbauche(dateEmbauche);
 											System.out.println("Modification effectuée");
+											DriverModifier.idCadreEmbauche(id.idEmp, dateEmbauche);
 											break;
 											}
 										case 4:
@@ -314,8 +296,9 @@ import java.util.Scanner;
 											System.out.print("Etablissement d'affectation : ");
 											int etabAffectation = sc.nextInt();
 											sc.nextInt();
-											//id.setEtabAffectation(etabAffectation);
+											id.setEtabAffectation(etabAffectation);
 											System.out.println("Modification effectuée");
+											DriverModifier.idCadreEtabAffectation(id.idEmp, etabAffectation);
 											break;
 											}
 										case 5:
@@ -324,8 +307,9 @@ import java.util.Scanner;
 											System.out.println("Modifier la date de naissance ");
 											System.out.print("Date de naissance : ");
 											String dateNaissance = sc.nextLine();
-										//	id.setDateNaissance(dateNaissance);
+											id.setDateNaissance(dateNaissance);
 											System.out.println("Modification effectuée");
+											DriverModifier.idCadreDateNaissance(id.idEmp, dateNaissance);
 											break;
 											}
 										case 6:
@@ -335,8 +319,9 @@ import java.util.Scanner;
 											System.out.print("Tel : ");
 											int tel = sc.nextInt();
 											sc.nextLine();
-											//id.setTel(tel);
+											id.setTel(tel);
 											System.out.println("Modification effectuée");
+											DriverModifier.idCadreTel(id.idEmp, tel);
 											break;
 											}
 										case 7:
@@ -345,31 +330,21 @@ import java.util.Scanner;
 											System.out.println("Modifier l'email ");
 											System.out.print("Email : ");
 											String email = sc.nextLine();
-										//	id.setEmail(email);
+											id.setEmail(email);
 											System.out.println("Modification effectuée");
+											DriverModifier.idCadreEmail(id.idEmp, email);
 											break;
 											}
 										case 8:
 											{
 											sc.nextLine();
-											System.out.println("Modifier le salaire fixe ");
-											System.out.print("Salaire fixe : ");
-											float salaireFixe = sc.nextFloat();
+											System.out.println("Modifier le taux jour ");
+											System.out.print("Taux jour : ");
+											float tauxJour = sc.nextFloat();
 											sc.nextLine();
-											//id.setSalaireFixe(salaireFixe);
+											id.setTauxJour(tauxJour);
 											System.out.println("Modification effectuée");
-
-											break;
-											}
-										case 9:
-											{
-											sc.nextLine();
-											System.out.println("Modifier le salaire variable ");
-											System.out.print("Salaire variable : ");
-											float salaireVariable = sc.nextFloat();
-											sc.nextLine();
-											//id.setSalaireVariable(salaireVariable);
-											System.out.println("Modification effectuée");
+											DriverModifier.idCadreTauxJour(id.idEmp, tauxJour);
 											break;
 											}
 										case 0:
@@ -380,50 +355,23 @@ import java.util.Scanner;
 								  			{
 												System.out.println("Choix invalide");
 								 			}	
-										}/* fin du switch(c) qu'est ce qu'on souhaite modif au CDI*/
+								  		
+										} // Fin du Switch(c) : choix de l'info à modifier
 									} /* fin du case 1 : modifier les info d'un CDI */
+								
 									
 									case 2:
 									{
-										System.out.println("Modifier les informations personnelles d'un CDD ");
-										int choix2 = 0;
-								
-										System.out.println("Quel salarié voulez vous modifier? ");
-										System.out.println("-1- Choix du salarié par son identifiant");
-										System.out.println("-2- Choix du salarié par son nom");
-										System.out.println("-0- Retour au menu principal");
-								
-										choix2 = sc.nextInt();
-								
-										switch (choix2)
-										{
-											case 1:
-												{
-													sc.nextLine();
-													System.out.print("Saisir l'identifiant du salarié: ");
-													int id = sc.nextInt();
-													/* FONCTION DE RECHERCHE ALLANT CHERCHER DANS UN ARRAYLIST CDD ISSUE DE LA BDD et compare l'id saisi avec tout ceux dans l'arraylist*/
-													break;
-												} /* fin du case 1 : par l'identifiant */
-											case 2 :
-												{
-													System.out.print("Saisir le nom du salarié: ");
-													String nomrecherche = sc.nextLine();
-													/*FONCTION DE RECHERCHE ET COMPARAISON AVEC LE NOM SAISI */
-													/* Si plusieurs résultats trouvé : afficher la liste des resultats + identifiant des psn */ 
-													/* appeler ensuite la fonction du case 1 : modif avec la saisi de l'identifiant */ 
-												}/* fin du case 2 : par le nom */ 
-											case 0 :
-												{
-													break;
-												}
-								 		   default : 
-								 			   {
-													System.out.println("Choix invalide");
-											   }													
-										} /* fin du switch(choix) comment on va retrouver le salarié (id, nom)*/ 
-								
-										/*on retrouve un ID de la personne au final */ 
+										// CDD nul qu'on va utiliser ensuite
+										Cdd id = new Cdd(null, null, null, 0, null, 0, null, null, 0, 0);
+										
+										System.out.println("Modifier les informations personnelles d'un CDD: ");
+										DriverLecture.afficheCdd();
+										sc.nextLine();
+										System.out.println("Saisir l'idEmp du CDD");
+										System.out.print("Choix : ");
+										int idrech = sc.nextInt();
+										id = DriverLecture.idCDD(idrech); // Retrouve le CDD dans la bdd
 										
 									    int c = 0;	
 										System.out.println("-1- Modifier le nom");
@@ -435,6 +383,9 @@ import java.util.Scanner;
 										System.out.println("-7- Modifier l'Email");
 										System.out.println("-8- Modifier le salaire fixe");
 										System.out.println("-9- Modifier le salaire variable");
+										System.out.println("-0- Retour ");
+										System.out.print("Choix : ");
+
 										c = sc.nextInt();
 										
 										switch(c)
@@ -445,7 +396,8 @@ import java.util.Scanner;
 											System.out.println("Modifier le nom");
 											System.out.print("Nom : ");
 											String nom = sc.nextLine();
-											//id.setNom(nom);
+											id.setNom(nom);
+											DriverModifier.idCddNom(id.idEmp, nom);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -455,7 +407,8 @@ import java.util.Scanner;
 											System.out.println("Modifier le prénom ");
 											System.out.print("Prenom : ");
 											String prenom = sc.nextLine();
-											//id.setPrenom(prenom);
+											id.setPrenom(prenom);
+											DriverModifier.idCddPrenom(id.idEmp, prenom);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -465,7 +418,8 @@ import java.util.Scanner;
 											System.out.println("Modifier la date d'embauche ");
 											System.out.print("Date d'embauche : ");
 											String dateEmbauche = sc.nextLine();
-											//id.setDateEmbauche(dateEmbauche);
+											id.setDateEmbauche(dateEmbauche);
+											DriverModifier.idCddEmbauche(id.idEmp,dateEmbauche);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -475,8 +429,8 @@ import java.util.Scanner;
 											System.out.println("Modifier l'etablissement d'affectation ");
 											System.out.print("Etablissement d'affectation : ");
 											int etabAffectation = sc.nextInt();
-											sc.nextInt();
-											//id.setEtabAffectation(etabAffectation);
+											id.setEtabAffectation(etabAffectation);
+											DriverModifier.idCddEtabAffectation(id.idEmp,etabAffectation);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -486,7 +440,8 @@ import java.util.Scanner;
 											System.out.println("Modifier la date de naissance ");
 											System.out.print("Date de naissance : ");
 											String dateNaissance = sc.nextLine();
-											//id.setDateNaissance(dateNaissance);
+											id.setDateNaissance(dateNaissance);
+											DriverModifier.idCddDateNaissance(id.idEmp, dateNaissance);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -496,8 +451,8 @@ import java.util.Scanner;
 											System.out.println("Modifier le tel  ");
 											System.out.print("Tel : ");
 											int tel = sc.nextInt();
-											sc.nextLine();
-											//id.setTel(tel);
+											id.setTel(tel);
+											DriverModifier.idCddTel(id.idEmp, tel);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -507,7 +462,8 @@ import java.util.Scanner;
 											System.out.println("Modifier l'email ");
 											System.out.print("Email : ");
 											String email = sc.nextLine();
-											//id.setEmail(email);
+											id.setEmail(email);
+											DriverModifier.idCddEmail(id.idEmp, email);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -517,10 +473,9 @@ import java.util.Scanner;
 											System.out.println("Modifier le salaire fixe ");
 											System.out.print("Salaire fixe : ");
 											float salaireFixe = sc.nextFloat();
-											sc.nextLine();
-											//id.setSalaireFixe(salaireFixe);
+											id.setSalaireFixe(salaireFixe);
+											DriverModifier.idCddSalaireFixe(id.idEmp, salaireFixe);
 											System.out.println("Modification effectuée");
-
 											break;
 											}
 										case 9:
@@ -529,8 +484,8 @@ import java.util.Scanner;
 											System.out.println("Modifier le salaire variable ");
 											System.out.print("Salaire variable : ");
 											float salaireVariable = sc.nextFloat();
-											sc.nextLine();
-									//		id.setSalaireVariable(salaireVariable);
+											id.setSalaireVariable(salaireVariable);
+											DriverModifier.idCddSalaireVariable(id.idEmp, salaireVariable);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -543,48 +498,22 @@ import java.util.Scanner;
 												System.out.println("Choix invalide");
 								 		   }	
 										}/* fin du switch(c) qu'est ce qu'on souhaite modif au CDD*/
-									} /* fin du case 2 : modifier les info d'un CDD */									case 3:
+										break;
+									} /* fin du case 2 : modifier les info d'un CDD */									
 									
-									//case 3:
+									case 3:
 									{
+										// Stagiaire null créé qu'on va utiliser par la suite
+										Stagiaire id = new Stagiaire(null, null, null, 0, null, 0, null, null, null, null, 0);
+										
 										System.out.println("Modifier les informations personnelles d'un stagiaire ");
-										int choix2 = 0;
-								
-										System.out.println("Quel salarié voulez vous modifier? ");
-										System.out.println("-1- Choix du salarié par son identifiant");
-										System.out.println("-2- Choix du salarié par son nom");
-										System.out.println("-0- Retour au menu principal");
-								
-										choix2 = sc.nextInt();
-								
-										switch (choix2)
-										{
-											case 1:
-												{
-													sc.nextLine();
-													System.out.print("Saisir l'identifiant du salarié: ");
-													int id = sc.nextInt();
-													/* FONCTION DE RECHERCHE ALLANT CHERCHER DANS L'ARRAYLIST STAGIAIRE ISSUE DE LA BDD et compare l'id saisi avec tout ceux dans l'arraylist*/
-													break;
-												} /* fin du case 1 : par l'identifiant */
-											case 2 :
-												{
-													System.out.print("Saisir le nom du salarié: ");
-													String nomrecherche = sc.nextLine();
-													/*FONCTION DE RECHERCHE ET COMPARAISON AVEC LE NOM SAISI */
-													/* Si plusieurs résultats trouvé : afficher la liste des resultats + identifiant des psn */ 
-													/* appeler ensuite la fonction du case 1 : modif avec la saisi de l'identifiant */ 
-												}/* fin du case 2 : par le nom */ 
-											case 0 :
-												{
-													break;
-												}
-											default : 
-						      	   			    {
-													System.out.println("Choix invalide");
-												}	
-										} /* fin du switch(choix) comment on va retrouver le salarié (id, nom)*/ 
-								
+										DriverLecture.afficheStagiaire();
+										sc.nextLine();
+										System.out.println("Saisir l'idEmp du stagiaire");
+										System.out.print("Choix : ");
+										int idrech = sc.nextInt();
+										id = DriverLecture.idStagiaire(idrech);
+												
 										/*on retrouve un ID de la personne au final */ 
 										
 									    int c = 0;	
@@ -598,7 +527,10 @@ import java.util.Scanner;
 										System.out.println("-8- Modifier l'école");
 										System.out.println("-9- Modifier la date de fin du contrat");
 										System.out.println("-10- Modifier le cursus suivi");
-										System.out.println("-11- Modifier la gratification");
+										System.out.println("-11- Modifier le salaire fixe");
+										System.out.println("-0- Retour ");
+										System.out.print("Choix : ");
+
 										c = sc.nextInt();
 										
 										switch(c)
@@ -609,7 +541,8 @@ import java.util.Scanner;
 											System.out.println("Modifier le nom");
 											System.out.print("Nom : ");
 											String nom = sc.nextLine();
-										//	id.setNom(nom);
+											id.setNom(nom);
+											DriverModifier.idStagiaireNom(id.idEmp,nom);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -619,7 +552,8 @@ import java.util.Scanner;
 											System.out.println("Modifier le prénom ");
 											System.out.print("Prenom : ");
 											String prenom = sc.nextLine();
-											//id.setPrenom(prenom);
+											id.setPrenom(prenom);
+											DriverModifier.idStagiairePrenom(id.idEmp,prenom);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -629,7 +563,8 @@ import java.util.Scanner;
 											System.out.println("Modifier la date d'embauche ");
 											System.out.print("Date d'embauche : ");
 											String dateEmbauche = sc.nextLine();
-											//id.setDateEmbauche(dateEmbauche);
+											id.setDateEmbauche(dateEmbauche);
+											DriverModifier.idStagiaireEmbauche(id.idEmp,dateEmbauche);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -640,7 +575,8 @@ import java.util.Scanner;
 											System.out.print("Etablissement d'affectation : ");
 											int etabAffectation = sc.nextInt();
 											sc.nextInt();
-											//id.setEtabAffectation(etabAffectation);
+											id.setEtabAffectation(etabAffectation);
+											DriverModifier.idStagiaireEtabAffectation(id.idEmp,etabAffectation);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -650,7 +586,8 @@ import java.util.Scanner;
 											System.out.println("Modifier la date de naissance ");
 											System.out.print("Date de naissance : ");
 											String dateNaissance = sc.nextLine();
-											//id.setDateNaissance(dateNaissance);
+											id.setDateNaissance(dateNaissance);
+											DriverModifier.idStagiaireDateNaissance(id.idEmp,dateNaissance);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -661,7 +598,8 @@ import java.util.Scanner;
 											System.out.print("Tel : ");
 											int tel = sc.nextInt();
 											sc.nextLine();
-											//id.setTel(tel);
+											id.setTel(tel);
+											DriverModifier.idStagiaireTel(id.idEmp,tel);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -671,7 +609,8 @@ import java.util.Scanner;
 											System.out.println("Modifier l'email ");
 											System.out.print("Email : ");
 											String email = sc.nextLine();
-											//id.setEmail(email);
+											id.setEmail(email);
+											DriverModifier.idStagiaireEmail(id.idEmp,email);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -681,7 +620,8 @@ import java.util.Scanner;
 											System.out.println("Modifier l'école");
 											System.out.print("Ecole : ");
 											String ecole = sc.nextLine();
-											//id.setEcole(ecole);
+											id.setEcole(ecole);
+											DriverModifier.idStagiaireEcole(id.idEmp,ecole);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -691,7 +631,8 @@ import java.util.Scanner;
 											System.out.println("Modifier la date de fin du contrat ");
 											System.out.print("Fin contrat : ");
 											String dateFinContrat = sc.nextLine();
-											//id.setDateFinContrat(dateFinContrat);
+											id.setDateFinContrat(dateFinContrat);
+											DriverModifier.idStagiaireDateFinContrat(id.idEmp,dateFinContrat);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -701,7 +642,8 @@ import java.util.Scanner;
 											System.out.println("Modifier le cursus");
 											System.out.print("Cursus : ");
 											String cursus = sc.nextLine();
-											//id.setCursus(cursus);
+											id.setCursus(cursus);
+											DriverModifier.idStagiaireCursus(id.idEmp,cursus);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -710,9 +652,10 @@ import java.util.Scanner;
 											sc.nextLine();
 											System.out.println("Modifier la gratification");
 											System.out.print("Gratification : ");
-											float gratification = sc.nextFloat();
+											float salaireFixe = sc.nextFloat();
 											sc.nextLine();
-											//id.setGratification(gratification);
+											id.setSalaireFixe(salaireFixe);
+											DriverModifier.idStagiaireSalaireFixe(id.idEmp,salaireFixe);
 											System.out.println("Modification effectuée");
 											break;
 											}																					
@@ -725,50 +668,22 @@ import java.util.Scanner;
 												System.out.println("Choix invalide");
 										   }	
 										}/* fin du switch(c) qu'est ce qu'on souhaite modif au stagiaire*/
+										break;
 									} /* fin du case 3 : modifier les info d'un stagiaire */
 									
 									case 4:
 									{
+										// Alternant nul qu'on va utiliser ensuite
+										Alternant id = new Alternant (null, null, null, 0, null, 0, null, null, null, null, 0);
+
 										System.out.println("Modifier les informations personnelles d'un alternant ");
-										int choix2 = 0;
-								
-										System.out.println("Quel salarié voulez vous modifier? ");
-										System.out.println("-1- Choix du salarié par son identifiant");
-										System.out.println("-2- Choix du salarié par son nom");
-										System.out.println("-0- Retour au menu principal");
-								
-										choix2 = sc.nextInt();
-								
-										switch (choix2)
-										{
-											case 1:
-												{
-													sc.nextLine();
-													System.out.print("Saisir l'identifiant du salarié: ");
-													int id = sc.nextInt();
-													/* FONCTION DE RECHERCHE ALLANT CHERCHER DANS L'ARRAYLIST STAGIAIRE ISSUE DE LA BDD et compare l'id saisi avec tout ceux dans l'arraylist*/
-													break;
-												} /* fin du case 1 : par l'identifiant */
-											case 2 :
-												{
-													System.out.print("Saisir le nom du salarié: ");
-													String nomrecherche = sc.nextLine();
-													/*FONCTION DE RECHERCHE ET COMPARAISON AVEC LE NOM SAISI */
-													/* Si plusieurs résultats trouvé : afficher la liste des resultats + identifiant des psn */ 
-													/* appeler ensuite la fonction du case 1 : modif avec la saisi de l'identifiant */ 
-												}/* fin du case 2 : par le nom */ 
-											case 0 :
-												{
-													break;
-												}
-											default : 
-								  				{
-													System.out.println("Choix invalide");
-								 			    }	
-										} /* fin du switch(choix) comment on va retrouver le salarié (id, nom)*/ 
-								
-										/*on retrouve un ID de la personne au final */ 
-										
+										DriverLecture.afficheAlternant();
+										sc.nextLine();
+										System.out.println("Saisir l'idEmp de l'alternant");
+										System.out.print("Choix : ");
+										int idrech = sc.nextInt();
+										id = DriverLecture.idAlternant(idrech); // Retrouve l'alternant dans la Bdd
+																						
 									    int c = 0;	
 										System.out.println("-1- Modifier le nom");
 										System.out.println("-2- Modifier le prenom");
@@ -781,6 +696,9 @@ import java.util.Scanner;
 										System.out.println("-9- Modifier la date de fin du contrat");
 										System.out.println("-10- Modifier le cursus suivi");
 										System.out.println("-11- Modifier le salaire");
+										System.out.println("-0- Retour ");
+										System.out.print("Choix : ");
+
 										c = sc.nextInt();
 										
 										switch(c)
@@ -791,7 +709,8 @@ import java.util.Scanner;
 											System.out.println("Modifier le nom");
 											System.out.print("Nom : ");
 											String nom = sc.nextLine();
-											//id.setNom(nom);
+											id.setNom(nom);
+											DriverModifier.idAlternantNom(id.idEmp,nom);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -801,7 +720,8 @@ import java.util.Scanner;
 											System.out.println("Modifier le prénom ");
 											System.out.print("Prenom : ");
 											String prenom = sc.nextLine();
-											//id.setPrenom(prenom);
+											id.setPrenom(prenom);
+											DriverModifier.idAlternantPrenom(id.idEmp,prenom);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -811,7 +731,8 @@ import java.util.Scanner;
 											System.out.println("Modifier la date d'embauche ");
 											System.out.print("Date d'embauche : ");
 											String dateEmbauche = sc.nextLine();
-											//id.setDateEmbauche(dateEmbauche);
+											id.setDateEmbauche(dateEmbauche);
+											DriverModifier.idAlternantEmbauche(id.idEmp,dateEmbauche);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -822,7 +743,8 @@ import java.util.Scanner;
 											System.out.print("Etablissement d'affectation : ");
 											int etabAffectation = sc.nextInt();
 											sc.nextInt();
-											//id.setEtabAffectation(etabAffectation);
+											id.setEtabAffectation(etabAffectation);
+											DriverModifier.idAlternantEtabAffectation(id.idEmp,etabAffectation);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -832,7 +754,8 @@ import java.util.Scanner;
 											System.out.println("Modifier la date de naissance ");
 											System.out.print("Date de naissance : ");
 											String dateNaissance = sc.nextLine();
-											//id.setDateNaissance(dateNaissance);
+											id.setDateNaissance(dateNaissance);
+											DriverModifier.idAlternantDateNaissance(id.idEmp,dateNaissance);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -843,7 +766,8 @@ import java.util.Scanner;
 											System.out.print("Tel : ");
 											int tel = sc.nextInt();
 											sc.nextLine();
-											//id.setTel(tel);
+											id.setTel(tel);
+											DriverModifier.idAlternantTel(id.idEmp,tel);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -853,7 +777,8 @@ import java.util.Scanner;
 											System.out.println("Modifier l'email ");
 											System.out.print("Email : ");
 											String email = sc.nextLine();
-											//id.setEmail(email);
+											id.setEmail(email);
+											DriverModifier.idAlternantEmail(id.idEmp,email);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -863,7 +788,8 @@ import java.util.Scanner;
 											System.out.println("Modifier l'école");
 											System.out.print("Ecole : ");
 											String ecole = sc.nextLine();
-											//id.setEcole(ecole);
+											id.setEcole(ecole);
+											DriverModifier.idAlternantEcole(id.idEmp,ecole);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -873,7 +799,8 @@ import java.util.Scanner;
 											System.out.println("Modifier la date de fin du contrat ");
 											System.out.print("Fin contrat : ");
 											String dateFinContrat = sc.nextLine();
-											//id.setDateFinContrat(dateFinContrat);
+											id.setDateFinContrat(dateFinContrat);
+											DriverModifier.idAlternantDateFinContrat(id.idEmp,dateFinContrat);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -883,7 +810,8 @@ import java.util.Scanner;
 											System.out.println("Modifier le cursus");
 											System.out.print("Cursus : ");
 											String cursus = sc.nextLine();
-											//id.setCursus(cursus);
+											id.setCursus(cursus);
+											DriverModifier.idAlternantCursus(id.idEmp,cursus);
 											System.out.println("Modification effectuée");
 											break;
 											}
@@ -892,9 +820,9 @@ import java.util.Scanner;
 											sc.nextLine();
 											System.out.println("Modifier le salaire");
 											System.out.print("Salaire : ");
-											float gratification = sc.nextFloat();
+											float salaireFixe = sc.nextFloat();
 											sc.nextLine();
-											//id.setSalaire(salaire);
+											id.setSalaireFixe(salaireFixe);
 											System.out.println("Modification effectuée");
 											break;
 											}																					
@@ -907,45 +835,124 @@ import java.util.Scanner;
 											System.out.println("Choix invalide");
 										    }	
 										}/* fin du switch(c) qu'est ce qu'on souhaite modif à l'alternant*/
+										break;
 									} /* fin du case 4 : modifier les info d'un alternant */
 								}	/* fin du switch(choix) type d'employé à modifier*/
+								break;
 							} /* Fin:  modifier les informations perso d'un salarié */
 						    
 						    case 3:
 							{
-								System.out.println("Cloturer le dossier d'un salarié ");
+								System.out.println("Clôturer le dossier d'un salarié ");
 								int choix = 0;
-								System.out.println("-1- Cloturer le dossier d'un cadre CDI");
-								System.out.println("-2- Cloturer le dossier d'un CDD");
-								System.out.println("-3- Cloturer le dossier d'un stagiaire");
-								System.out.println("-4- Cloturer le dossier d'un alternant");
-								
+								System.out.println("-1- Clôturer le dossier d'un cadre CDI");
+								System.out.println("-2- Clôturer le dossier d'un CDD");
+								System.out.println("-3- Clôturer le dossier d'un stagiaire");
+								System.out.println("-4- Clôturer le dossier d'un alternant");
+								System.out.println("-0- Retour ");
+								System.out.print("Choix : ");
+
 								choix = sc.nextInt();
 								
 								switch (choix)
 								{
-									case 1:
-										{
-										sc.nextLine();
-										System.out.println("Cloturer le dossier d'un cadre CDI");
-										sc.nextLine();
-										System.out.print("Saisir l'identifiant du salarié: ");
-										int id = sc.nextInt();
-										/* FONCTION DE RECHERCHE ALLANT CHERCHER DANS UN ARRAYLIST CDI ISSUE DE LA BDD et compare l'id saisi avec tout ceux dans l'arraylist*/
-										System.out.print("Saisir la date de  cloture du dossier: ");
-										String dcd = sc.nextInt();
-										/* employe.cloturerDossier(dcd);*/
-										System.out.println("Dossier cadre CDI cloturé");
-										break;
-										}
-										/* même chose pour clotuer les dossiers CDD, stagiaire et alternant, à faire copier coller Mohammed une fois la fonction recherche est trouvée
+								   case 1:
+								   {
+									// CDI nul qu'on va utiliser par la suite
+									Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0);
+
+									System.out.println("Clôturer le dossier d'un cadre CDI: ");
+									DriverLecture.afficheCadre();
+								    sc.nextLine();
+									System.out.println("Saisir l'idEmp du Cadre");
+									System.out.print("Choix : ");
+									int idrech = sc.nextInt();
+									id = DriverLecture.idCadre(idrech);		// Retrouve le CDI dans la Bdd
+									
+									id.estCloture();
+									DriverModifier.idCadreCloture(idrech,true);
+									System.out.println("Le dossier a été clôturé");
+									
+									break;
+								   }
+								   
+								   case 2: 
+								   {
+									// CDD nul qu'on va utiliser ensuite
+									Cdd id = new Cdd(null, null, null, 0, null, 0, null, null, 0, 0);
+										
+									System.out.println("Clôturer le dossier d'un CDD: ");
+									DriverLecture.afficheCdd();
+									sc.nextLine();
+									System.out.println("Saisir l'idEmp du CDD");
+									System.out.print("Choix : ");
+									int idrech = sc.nextInt();
+									id = DriverLecture.idCDD(idrech); // Retrouve le CDD dans la bdd  
+									
+									id.estCloture();
+									DriverModifier.idCddCloture(idrech, true);
+									System.out.println("Le dossier a été clôturé");
+									
+									break;
+								   }
+								   
+								   case 3:
+								   {
+									// Stagiaire null créé qu'on va utiliser par la suite
+									Stagiaire id = new Stagiaire(null, null, null, 0, null, 0, null, null, null, null, 0);
+										
+									System.out.println("Clôturer le dossier d'un stagiaire ");
+									DriverLecture.afficheStagiaire();
+									sc.nextLine();
+									System.out.println("Saisir l'idEmp du stagiaire");
+									System.out.print("Choix : ");
+									int idrech = sc.nextInt();
+									id = DriverLecture.idStagiaire(idrech);
+									
+									id.estCloture();
+									DriverModifier.idCddCloture(idrech, true);
+									System.out.println("Le dossier a été clôturé");
+									
+									break;
+								   }
+								   
+								   case 4: 
+								   {
+									// Alternant nul qu'on va utiliser ensuite
+									Alternant id = new Alternant (null, null, null, 0, null, 0, null, null, null, null, 0);
+
+									System.out.println("Clôturer le dossier d'un alternant ");
+									DriverLecture.afficheAlternant();
+									sc.nextLine();
+									System.out.println("Saisir l'idEmp de l'alternant");
+									System.out.print("Choix : ");
+									int idrech = sc.nextInt();								
+									id = DriverLecture.idAlternant(idrech); // Retrouve l'alternant dans la Bdd
+									
+									id.estCloture();
+									DriverModifier.idAlternantCloture(idrech, true);
+									System.out.println("Le dossier a été clôturé");
+									
+									break;
+								   }
+								   
+								   case 0:
+								   {
+									   break;
+								   }
 									
 								} /* fin du switch(choix) type d'employé - cloturer le dossier */
+								break;
 							} /* Fin du case 3 : cloturer le dossier d'un salarié */
 							
 							case 0:
 							{
 								break;
+							}
+							
+							default:
+							{
+								System.out.println("Choix invalide");
 							}
 					    } /*fin case Gestion des salariés ( switch sousmenu2)*/
 						break;
@@ -967,97 +974,181 @@ import java.util.Scanner;
 							case 1:
 							{
 								System.out.println("Quel salarié vient de partir en congé? : ");
-								int choix2 = 0;  //recherche de la personne (id)
-								System.out.println("-1- Choix du salarié par son identifiant");
-								System.out.println("-2- Choix du salarié par son nom");
-								System.out.println("-0- Retour au menu principal");
-								
-								choix2 = sc.nextInt();
-								
-								switch (choix2)
-								{
-									case 1:
-									{
-										sc.nextLine();
-										System.out.print("Saisir l'identifiant du salarié : ");
-										int id = sc.nextInt();
-										/* FONCTION DE RECHERCHE ALLANT CHERCHER DANS L'ARRAYLIST AVEC TOUS LES SALARIES ISSUE DE LA BDD et compare l'id saisi avec tout ceux dans l'arraylist*/
-										break;
-									} /* fin du case 1 : par l'identifiant */
-									
-									case 2 :
-									{
-										System.out.print("Saisir le nom du salarié : ");
-										String nomrecherche = sc.nextLine();
-										/*FONCTION DE RECHERCHE ET COMPARAISON AVEC LE NOM SAISI */
-										/* Si plusieurs résultats trouvé : afficher la liste des resultats + identifiant des psn */ 
-										/* appeler ensuite la fonction du case 1 : modif avec la saisi de l'identifiant */ 
-									}/* fin du case 2 : par le nom */ 
-									case 0 :
-									{
-										break;
-									}
-									default : 
-								    {
-									   System.out.println("Choix invalide");
-								    }	
-								} /* fin du switch(choix) comment on va retrouver le salarié (id, nom)*/ 
-								 /*on retrouve un id de la personne au final */ 
+								int choix = 0;
+								System.out.println("-1- Mettre en congé un cadre CDI");
+								System.out.println("-2- Mettre en congé un CDD");
+								System.out.println("-3- Mettre en congé un alternant");
+								System.out.println("-0- Retour ");
+								System.out.print("Choix : ");
 
-								sc.nextLine();
-								//id.debutConge();
-								System.out.println("Congé pris en compte");
-							}/* fin du case 1 : mettre une personne en congé */
-							
+								choix = sc.nextInt();
+								
+								switch (choix)
+								{
+								   case 1:
+								   {
+									// CDI nul qu'on va utiliser par la suite
+									Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0);
+
+									System.out.println("Mettre en congé un cadre CDI: ");
+									DriverLecture.afficheCadre();
+								    sc.nextLine();
+									System.out.println("Saisir l'idEmp du Cadre");
+									System.out.print("Choix : ");
+									int idrech = sc.nextInt();
+									id = DriverLecture.idCadre(idrech);		// Retrouve le CDI dans la Bdd
+									
+									id.debutConge();
+									DriverModifier.idCadreConge(idrech, true);
+									System.out.println("Congé pris en compte");
+									
+									break;
+								   }
+								   
+								   case 2: 
+								   {
+									// CDD nul qu'on va utiliser ensuite
+									Cdd id = new Cdd(null, null, null, 0, null, 0, null, null, 0, 0);
+										
+									System.out.println("Mettre en congé un CDD: ");
+									DriverLecture.afficheCdd();
+									sc.nextLine();
+									System.out.println("Saisir l'idEmp du CDD");
+									System.out.print("Choix : ");
+									int idrech = sc.nextInt();
+									id = DriverLecture.idCDD(idrech); // Retrouve le CDD dans la bdd  
+									
+									id.debutConge();
+									DriverModifier.idCddConge(idrech, true);
+									System.out.println("Congé pris en compte");
+									
+									break;
+								   }
+								   							   
+								   case 3: 
+								   {
+									// Alternant nul qu'on va utiliser ensuite
+									Alternant id = new Alternant (null, null, null, 0, null, 0, null, null, null, null, 0);
+
+									System.out.println("Mettre en congé un alternant ");
+									DriverLecture.afficheAlternant();
+									sc.nextLine();
+									System.out.println("Saisir l'idEmp de l'alternant");
+									System.out.print("Choix : ");
+									int idrech = sc.nextInt();								
+									id = DriverLecture.idAlternant(idrech); // Retrouve l'alternant dans la Bdd
+									
+									id.debutConge();
+									DriverModifier.idAlternantConge(idrech, true);
+									System.out.println("Congé pris en compte");
+									
+									break;
+								   }
+								   
+								   case 0:
+								   {
+									   break;
+								   }
+								   
+								   default:
+								   {
+									   System.out.println("Choix invalide");
+								   }					   
+								} /* fin du switch(choix) type d'employé - mettre en congé  */
+								break;
+							} /* Fin du case 1 : Mettre en congé un salarié */
+
 							case 2:
 							{
 								System.out.println("Quel salarié vient de revenir de congé? : ");
-								int choix2 = 0;  //recherche de la personne (id)
-								System.out.println("-1- Choix du salarié par son identifiant");
-								System.out.println("-2- Choix du salarié par son nom");
-								System.out.println("-0- Retour au menu principal");
-								
-								choix2 = sc.nextInt();
-								
-								switch (choix2)
-								{
-									case 1:
-									{
-										sc.nextLine();
-										System.out.print("Saisir l'identifiant du salarié : ");
-										int id = sc.nextInt();
-										/* FONCTION DE RECHERCHE ALLANT CHERCHER DANS L'ARRAYLIST AVEC TOUS LES SALARIES ISSUE DE LA BDD et compare l'id saisi avec tout ceux dans l'arraylist*/
-										break;
-									} /* fin du case 1 : par l'identifiant */
-									
-									case 2 :
-									{
-										System.out.print("Saisir le nom du salarié  : ");
-										String nomrecherche = sc.nextLine();
-										/*FONCTION DE RECHERCHE ET COMPARAISON AVEC LE NOM SAISI */
-										/* Si plusieurs résultats trouvé : afficher la liste des resultats + identifiant des psn */ 
-										/* appeler ensuite la fonction du case 1 : modif avec la saisi de l'identifiant */ 
-									}/* fin du case 2 : par le nom */ 
-									case 0 :
-									{
-										break;
-									}
-									default : 
-								  	{
-										System.out.println("Choix invalide");
-								  	}	
-								} /* fin du switch(choix) comment on va retrouver le salarié (id, nom)*/ 
-								 /*on retrouve un id de la personne au final */ 
+								int choix = 0;
+								System.out.println("-1- Retour de congé d'un cadre CDI");
+								System.out.println("-2- Retour de congé d'un CDD");
+								System.out.println("-3- Retour de congé d'un alternant");
+								System.out.println("-0- Retour ");
+								System.out.print("Choix : ");
 
-								sc.nextLine();
-								//id.finConge();
-								System.out.println("Retour pris en compte");
-							}/* fin du case 2 : inscrire un retour de congé */
+								choix = sc.nextInt();
+								
+								switch (choix)
+								{
+								   case 1:
+								   {
+									// CDI nul qu'on va utiliser par la suite
+									Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0);
+
+									System.out.println("Retour de congé d'un cadre CDI: ");
+									DriverLecture.afficheCadre();
+								    sc.nextLine();
+									System.out.println("Saisir l'idEmp du Cadre");
+									System.out.print("Choix : ");
+									int idrech = sc.nextInt();
+									id = DriverLecture.idCadre(idrech);		// Retrouve le CDI dans la Bdd
+									
+									id.finConge();
+									DriverModifier.idCadreConge(idrech, false);
+									System.out.println("Retour pris en compte");
+									
+									break;
+								   }
+								   
+								   case 2: 
+								   {
+									// CDD nul qu'on va utiliser ensuite
+									Cdd id = new Cdd(null, null, null, 0, null, 0, null, null, 0, 0);
+										
+									System.out.println("Retour de congé d'un CDD: ");
+									DriverLecture.afficheCdd();
+									sc.nextLine();
+									System.out.println("Saisir l'idEmp du CDD");
+									System.out.print("Choix : ");
+									int idrech = sc.nextInt();
+									id = DriverLecture.idCDD(idrech); // Retrouve le CDD dans la bdd  
+									
+									id.finConge();
+									DriverModifier.idCddConge(idrech, false);
+									System.out.println("Retour pris en compte");
+									
+									break;
+								   }
+								   							   
+								   case 3: 
+								   {
+									// Alternant nul qu'on va utiliser ensuite
+									Alternant id = new Alternant (null, null, null, 0, null, 0, null, null, null, null, 0);
+
+									System.out.println("Retour de congé d'un alternant ");
+									DriverLecture.afficheAlternant();
+									sc.nextLine();
+									System.out.println("Saisir l'idEmp de l'alternant");
+									System.out.print("Choix : ");
+									int idrech = sc.nextInt();								
+									id = DriverLecture.idAlternant(idrech); // Retrouve l'alternant dans la Bdd
+									
+									id.finConge();
+									DriverModifier.idAlternantConge(idrech, false);
+									System.out.println("Retour pris en compte");
+									
+									break;
+								   }
+								   
+								   case 0:
+								   {
+									   break;
+								   }
+								   
+								   default:
+								   {
+									   System.out.println("Choix invalide");
+								   }					   
+								} /* fin du switch(choix) type d'employé - retour de congé  */
+								break;
+							} /* Fin du case 2 : Retour de congé d'un salarié */
 							
 							case 3:
 							{
+								
 								System.out.println("Afficher les personnes en congé");
-								// RECUPERER LE GROUPE DE SALARIES : ARRAY LIST DE GROUPE 
 								//System.out.println(grp.employesEnConge());
 							}
 							
@@ -1078,14 +1169,17 @@ import java.util.Scanner;
 						System.out.println("Gestion de la paie ");	
 						break;
 					}/*fin case Gestion de la paie*/
+					
+					
 					case 4:
 					{
 						System.out.println("Consultation des informations relatives au groupe ");	
 						int sousmenu2 = 0;
-						// Retrouver dans la BDD l'arraylist correspondant au groupe
-						System.out.println("-1- Afficher le nombre de salariés");
-						System.out.println("-2- Afficher la masse salariale");
-						System.out.println("-3- Afficher le nombre de personnes en congé aujourd'hui");
+						System.out.println("-1- Afficher tous les salariés du groupe");
+						System.out.println("-2- Afficher le nombre de salariés");
+						System.out.println("-3- Afficher la masse salariale");
+						System.out.println("-4- Afficher le nombre de personnes en congé aujourd'hui");
+						System.out.println("-0- Retour ");
 						System.out.print("Choix : ");
 						sousmenu2 = sc.nextInt();
 						
@@ -1094,17 +1188,40 @@ import java.util.Scanner;
 							case 1:
 							{
 								sc.nextLine();
-								// recupérer l'arraylist d'employés (ds classe Groupe) --> récupérer idEmp
-								int nbsalaries = idEmp+1; // car idEmp commence à 0
-								System.out.println("Il y a " +nbsalaries+" dans le groupe");
-							} // fin case 1 : afficher nb de salariés du groupe
-							
+								System.out.println(employes.toString());
+								break;
+							}
 							case 2:
 							{
-								// récupérer l'arraylist d'employés (ds classe Groupe)
 								sc.nextLine();
-								//int nbconges= grp.nbemployesEnConge();
-								//System.out.println("Il y a "+nbconges+ " salariés du groupe en congés"); 
+								int nbsalaries = employes.nbsalariesGroupe();
+								System.out.println("Il y a " +nbsalaries+" dans le groupe");
+								break;
+							} // fin case 2 : afficher nb de salariés du groupe
+							
+							case 3:
+							{
+								sc.nextLine();
+								int nbconges = employes.nbemployesEnConge();
+								System.out.println("Il y a "+nbconges+ " salariés du groupe en congés"); 
+								break;
+							}
+							
+							case 4:
+							{
+								sc.nextLine();
+								employes.employesEnConge();
+								break;
+							}
+							
+							case 0:
+							{
+								break;
+							}
+							
+							default:
+							{
+								System.out.println("Choix invalide");
 							}
 						} /* fin du switch(sousmenu2) : consultation des info du groupe*/
 						
@@ -1124,11 +1241,6 @@ import java.util.Scanner;
 						
 			} /* fin du while : gros menu */
 		}
-   }
-
-	
-
-		
-			
-		}
+   }			
+}
 
