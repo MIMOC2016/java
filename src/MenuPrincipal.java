@@ -1285,7 +1285,7 @@ import java.util.Scanner;
 									// CDI nul qu'on va utiliser par la suite
 									Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0);
 
-									System.out.println("Saisir l'ID d'un cadre CDI: ");
+									System.out.println("Créer un bulletin de paie d'un cadre CDI: ");
 									DriverLecture.afficheCadre();
 								    sc.nextLine();
 									System.out.println("Saisir l'idEmp du Cadre");
@@ -1306,7 +1306,7 @@ import java.util.Scanner;
 									// CDD nul qu'on va utiliser par la suite
 										Cdd id = new Cdd(null, null, null, 0, null, 0, null, null, 0, 0);
 
-									System.out.println("Saisir l'ID d'un CDD: ");
+									System.out.println("Créer un bulletin de paie d'un CDD: ");
 									DriverLecture.afficheCdd();
 								    sc.nextLine();
 									System.out.println("Saisir l'idEmp du CDD");
@@ -1327,7 +1327,7 @@ import java.util.Scanner;
 									// stagiaire nul qu'on va utiliser par la suite
 										Stagiaire id = new Stagiaire(null, null, null, 0, null, 0, null, null, null, null, 0);
 
-									System.out.println("Saisir l'ID d'un stagiaire: ");
+									System.out.println("Créer un bulletin de paie d'un stagiaire: ");
 									DriverLecture.afficheStagiaire();
 								    sc.nextLine();
 									System.out.println("Saisir l'idEmp du stagiaire");
@@ -1348,7 +1348,7 @@ import java.util.Scanner;
 									// stagiaire nul qu'on va utiliser par la suite
 										Alternant id = new Alternant (null, null, null, 0, null, 0, null, null, null, null, 0);
 
-									System.out.println("Saisir l'ID d'un alternant: ");
+									System.out.println("Créer un bulletin de paie d'un alternant: ");
 									DriverLecture.afficheAlternant();
 								    sc.nextLine();
 									System.out.println("Saisir l'idEmp du alternant");
@@ -1364,10 +1364,297 @@ import java.util.Scanner;
 									
 									break;
 								   }
-							}
+								   case 0:
+								   {
+									   break;
+								   }
+								   default:
+								   {
+									   System.out.println("Choix invalide");
+								   }
+								}
+								   break;
+					}								   //FIN CASE 2 CREER PAIE
+
+							case 3:
+							{
+								System.out.println("Modifier un bulletin de paie ");
+								int choix = 0;
+								System.out.println("-1- Modifier un bulletin de paie pour un cadre CDI");
+								System.out.println("-2- Modifier un bulletin de paie pour un CDD");
+								System.out.println("-3- Modifier un bulletin de paie pour un alternant");
+								System.out.println("-3- Modifier un bulletin de paie pour un stagiaire");
+								System.out.println("-0- Retour ");
+								System.out.print("Choix : ");
+
+								choix = sc.nextInt();
+								
+								switch (choix)
+								{
+								   case 1:
+								   {
+									// CDI nul qu'on va utiliser par la suite
+									Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0);
+
+									System.out.println("Modifier un bulletin de paie d'un cadre CDI: ");
+									DriverLecture.afficheCadre();
+								    sc.nextLine();
+									System.out.println("Saisir l'idEmp du Cadre");
+									System.out.print("Choix : ");
+									int idrech = sc.nextInt();
+									id = DriverLecture.idCadre(idrech);		// Retrouve le CDI dans la Bdd
+									
+									 int c = 0;	
+										System.out.println("-1- Modifier la période de paie ");
+										System.out.println("-2- Modifier le taux jour");
+										System.out.println("-0- Retour");
+										System.out.print("Choix : ");
+
+										c = sc.nextInt();
+										switch(c)
+										{
+										case 1:
+											{
+											sc.nextLine();
+											System.out.println("Modifier la période de paie ");
+											System.out.print("Nouvelle période : ");
+											String perpaie = sc.nextLine();
+											//id.setPerpaie(perpaie);
+											System.out.println("Modification effectuée");
+											//DriverModifier.idCadrePerpaie(id.idEmp, perpaie);
+											break;
+											}
+										case 2:
+										{
+										sc.nextLine();
+										System.out.println("Modifier le taux jour ");
+										System.out.print("Nouveau taux jour : ");
+										float tauxJour = sc.nextInt();
+										id.setTauxJour(tauxJour);
+										System.out.println("Modification effectuée");
+										DriverModifier.idCadreTauxJour(id.idEmp, tauxJour);
+										break;
+										}
+
+										case 0:
+											{
+											break;
+											}
+										default : 
+								  			{
+												System.out.println("Choix invalide");
+								 			}	
+								  		
+										} // Fin du Switch(c) : choix de l'info à modifier
+								   } /* fin du case 1 : modifier la paie d'un cadre CDI */
+								   
+								   case 2:
+								   {
+									// CDD nul qu'on va utiliser par la suite
+										Cdd id = new Cdd(null, null, null, 0, null, 0, null, null, 0, 0);
+
+									System.out.println("Modifier un bulletin de paie d'un CDD: ");
+									DriverLecture.afficheCdd();
+								    sc.nextLine();
+									System.out.println("Saisir l'idEmp du Cdd");
+									System.out.print("Choix : ");
+									int idrech = sc.nextInt();
+									id = DriverLecture.idCDD(idrech);		// Retrouve le CDI dans la Bdd
+									
+									 int c = 0;	
+										System.out.println("-1- Modifier la période de paie ");
+										System.out.println("-2- Modifier le salaire fixe");
+										System.out.println("-2- Modifier le salaire variable");
+										System.out.println("-0- Retour");
+										System.out.print("Choix : ");
+
+										c = sc.nextInt();
+										switch(c)
+										{
+										case 1:
+											{
+											sc.nextLine();
+											System.out.println("Modifier la période de paie ");
+											System.out.print("Nouvelle période : ");
+											String perpaie = sc.nextLine();
+											//id.setPerpaie(perpaie);
+											System.out.println("Modification effectuée");
+											//DriverModifier.idCadrePerpaie(id.idEmp, perpaie);
+											break;
+											}
+										case 2:
+										{
+										sc.nextLine();
+										System.out.println("Modifier le salaire fixe ");
+										System.out.print("Nouveau salaire fixe : ");
+										float salaireFixe = sc.nextInt();
+										id.setSalaireFixe(salaireFixe);
+										System.out.println("Modification effectuée");
+										DriverModifier.idCddSalaireFixe(id.idEmp, salaireFixe);
+										break;
+										}
+										case 3:
+										{
+										sc.nextLine();
+										System.out.println("Modifier le salaire variable ");
+										System.out.print("Nouveau salaire variable : ");
+										float salaireVariable = sc.nextInt();
+										id.setSalaireVariable(salaireVariable);
+										System.out.println("Modification effectuée");
+										DriverModifier.idCddSalaireVariable(id.idEmp, salaireVariable);
+										break;
+										}
+
+										case 0:
+											{
+											break;
+											}
+										default : 
+								  			{
+												System.out.println("Choix invalide");
+								 			}	
+								  		
+										} // Fin du Switch(c) : choix de l'info à modifier
+								   } /* fin du case 2 : modifier la paie d'un CDD */
+								   
+								   case 3:
+								   {
+									// ALTERNANT nul qu'on va utiliser par la suite
+										Alternant id = new Alternant (null, null, null, 0, null, 0, null, null, null, null, 0);
+
+									System.out.println("Modifier un bulletin de paie d'un alternant: ");
+									DriverLecture.afficheAlternant();
+								    sc.nextLine();
+									System.out.println("Saisir l'idEmp de l'alternant");
+									System.out.print("Choix : ");
+									int idrech = sc.nextInt();
+									id = DriverLecture.idAlternant(idrech);		// Retrouve l'alternant dans la Bdd
+									
+									 int c = 0;	
+										System.out.println("-1- Modifier la période de paie ");
+										System.out.println("-2- Modifier le salaire fixe");
+										System.out.println("-0- Retour");
+										System.out.print("Choix : ");
+
+										c = sc.nextInt();
+										switch(c)
+										{
+										case 1:
+											{
+											sc.nextLine();
+											System.out.println("Modifier la période de paie ");
+											System.out.print("Nouvelle période : ");
+											String perpaie = sc.nextLine();
+											//id.setPerpaie(perpaie);
+											System.out.println("Modification effectuée");
+											//DriverModifier.idCadrePerpaie(id.idEmp, perpaie);
+											break;
+											}
+										case 2:
+										{
+										sc.nextLine();
+										System.out.println("Modifier le salaire fixe ");
+										System.out.print("Nouveau salaire fixe : ");
+										float salaireFixe = sc.nextInt();
+										id.setSalaireFixe(salaireFixe);
+										System.out.println("Modification effectuée");
+										DriverModifier.idAlternantSalaireFixe(id.idEmp, salaireFixe);
+										break;
+										}
+										
+
+										case 0:
+											{
+											break;
+											}
+										default : 
+								  			{
+												System.out.println("Choix invalide");
+								 			}	
+								  		
+										} // Fin du Switch(c) : choix de l'info à modifier
+								   } /* fin du case 2 : modifier la paie d'un alternant */
+								   
+								   case 4:
+								   {
+										// Stagiaire null créé qu'on va utiliser par la suite
+										Stagiaire id = new Stagiaire(null, null, null, 0, null, 0, null, null, null, null, 0);
+
+									System.out.println("Modifier un bulletin de paie d'un stagiaire: ");
+									DriverLecture.afficheStagiaire();
+								    sc.nextLine();
+									System.out.println("Saisir l'idEmp du stagiaire");
+									System.out.print("Choix : ");
+									int idrech = sc.nextInt();
+									id = DriverLecture.idStagiaire(idrech);	// Retrouve l'alternant dans la Bdd
+									
+									 int c = 0;	
+										System.out.println("-1- Modifier la période de paie ");
+										System.out.println("-2- Modifier la gratification");
+										System.out.println("-0- Retour");
+										System.out.print("Choix : ");
+
+										c = sc.nextInt();
+										switch(c)
+										{
+										case 1:
+											{
+											sc.nextLine();
+											System.out.println("Modifier la période de paie ");
+											System.out.print("Nouvelle période : ");
+											String perpaie = sc.nextLine();
+											//id.setPerpaie(perpaie);
+											System.out.println("Modification effectuée");
+											//DriverModifier.idStagiairePerpaie(id.idEmp, perpaie);
+											break;
+											}
+										case 2:
+										{
+										sc.nextLine();
+										System.out.println("Modifier la gratification ");
+										System.out.print("Nouvelle gratification: ");
+										float salaireFixe = sc.nextInt();
+										id.setSalaireFixe(salaireFixe);
+										System.out.println("Modification effectuée");
+										DriverModifier.idStagiaireSalaireFixe(id.idEmp, salaireFixe);
+										break;
+										}
+										
+
+										case 0:
+											{
+											break;
+											}
+											
+										default : 
+								  			{
+												System.out.println("Choix invalide");
+								 			}
+										}
+										break;
+								   }
+								
+								//FIN MODIF PAIE
+								   
+										case 0:
+										{
+										break;
+										}
+										
+									default : 
+							  			{
+											System.out.println("Choix invalide");
+							 			}
+								}
+								} /* fin du switch(sousmenu2) gestion des congés*/
+								break;
+							}/*fin case 2 : Gestion des congés*/
+					
 						}
-						}
-						}
+					
+					
+				
+						
 //----------------------------------------FIN GESTION PAIE-----------------------------------------//					
 	
 					case 4:
@@ -1442,4 +1729,5 @@ import java.util.Scanner;
 		}
    }			
 }
+			
 
