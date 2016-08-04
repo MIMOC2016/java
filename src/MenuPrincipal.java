@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -54,11 +53,10 @@ import java.util.Scanner;
 								{
 								  case 1:
 								  {
-                                            
+                                            sc.nextLine();
 											System.out.println("Ajout d'un cadre: ");
 											System.out.print("Nom : ");
 											String nom = sc.nextLine();
-											sc.nextLine();
 											System.out.print("Prenom : ");
 											String prenom = sc.nextLine();
 											System.out.print("Date Embauche : ");
@@ -1149,7 +1147,7 @@ import java.util.Scanner;
 							{
 								
 								System.out.println("Afficher les personnes en congé");
-								//System.out.println(grp.employesEnConge());
+								System.out.println(employes.employesEnConge());
 							}
 							
 							case 0: 
@@ -1163,154 +1161,13 @@ import java.util.Scanner;
 						} /* fin du switch(sousmenu2) gestion des congés*/
 						break;
 					}/*fin case 2 : Gestion des congés*/
-//------------------------------------GESTION PAIE------------------------------------------------//					
+					
 					case 3:
 					{
 						System.out.println("Gestion de la paie ");	
-						int sousmenu2 = 0;
-						System.out.println("-1- Consulter la paie");
-						System.out.println("-2- Créer un bulletin de paie");
-						System.out.println("-3- Modifier un bulletin de paie");
-						System.out.println("-0- Retour au menu principal ");
-						System.out.print("Choix : ");
-						sousmenu2 = sc.nextInt();
-						
-						switch (sousmenu2)
-						{
-							case 1:
-							{
-								System.out.println(" Consulter la paie ");
-								int choix = 0;		
-									System.out.println("-1- Consulter la paie d'un cadre CDI");
-									System.out.println("-2- Consulter la paie d'un CDD");
-									System.out.println("-3- Consulter la paie d'un stagiaire");
-									System.out.println("-4- Consulter la paie d'un alternant");
-									System.out.println("-0- Retour au menu principal ");					
-									System.out.print("Choix : ");
-									choix = sc.nextInt();
-									switch (choix)
-									{
-									  case 1:
-									  {
-	                                            
-												System.out.println("Consulter la paie d'un cadre CDI ");
-												System.out.print("Id de l'employé : ");
-												int idrech = sc.nextInt();
-												sc.nextLine();
-											
-				                                break;
-								
-									  } /*Fin consulter paie cadre*/
-									  
-									  case 2:
-									  {
-	                                            
-												System.out.println("Consulter la paie d'un CDD ");
-												System.out.print("Id de l'employé : ");
-												int idrech = sc.nextInt();
-												sc.nextLine();
-											
-				                                break;
-								
-									  } 
-									  case 3:
-									  {
-	                                            
-												System.out.println("Consulter la paie d'un stagiaire ");
-												System.out.print("Id de l'employé : ");
-												int idrech = sc.nextInt();
-												sc.nextLine();
-											
-				                                break;
-								
-									  } 
-									  case 4:
-									  {
-	                                            
-												System.out.println("Consulter la paie d'un alternant ");
-												System.out.print("Id de l'employé : ");
-												int idEmp = sc.nextInt();
-												sc.nextLine();
-											
-				                                break;
-								
-									  } 
-									  default : 
-									  {
-										System.out.println("Choix invalide");
-									  }
-									  break;
-									}
-							}/*fin case 1 : consulter paie */
-									
-									case 2:
-									{
-										System.out.println("Créer un bulletin de paie ");
-										int choix = 0;
-										System.out.println("-1- Créer le bulletin de paie d'un cadre CDI");
-										System.out.println("-2- Créer le bulletin de paie d'un CDD");
-										System.out.println("-3- Créer le bulletin de paie d'un stagiaire");
-										System.out.println("-4- Créer le bulletin de paie d'un alternant");
-										System.out.println("-0- Retour");
-										System.out.print("Choix : ");
-
-										choix = sc.nextInt();
-										
-										switch (choix)
-										{
-											case 1:
-											{
-												System.out.println("Créer le bulletin de paie d'un cadre CDI ");
-												System.out.println("Saisir l'idEmp du Cadre");
-												System.out.print("Choix : ");
-												int idrech = sc.nextInt();
-			
-												/*on retrouve un ID de la personne au final */ 
-												
-							                  }
-											case 2:
-											{
-												System.out.println("Créer le bulletin de paie d'un CDD ");
-												System.out.println("Saisir l'idEmp du CDD");
-												System.out.print("Choix : ");
-												int idrech = sc.nextInt();
-			
-												/*on retrouve un ID de la personne au final */ 
-												
-							                  }
-											case 3:
-											{
-												System.out.println("Créer le bulletin de paie d'un stagiaire ");
-												System.out.println("Saisir l'idEmp du stagiaire");
-												System.out.print("Choix : ");
-												int idrech = sc.nextInt();
-			
-												/*on retrouve un ID de la personne au final */ 
-												
-							                  }
-											case 4:
-											{
-												System.out.println("Créer le bulletin de paie d'un alternant ");
-												System.out.println("Saisir l'idEmp du stagiaire");
-												System.out.print("Choix : ");
-												int idrech = sc.nextInt();
-			
-												/*on retrouve un ID de la personne au final */ 
-												
-							                  }
-											default : 
-											  {
-												System.out.println("Choix invalide");
-											  }
-											  break;
-											}
-									}/*fin case 2 : créer paie */
-											
-					}
-				}
+						break;
+					}/*fin case Gestion de la paie*/
 					
-//--------------------------------------------------------FIN GESTION PAIE------------------------------------------------//					
-	
 					
 					case 4:
 					{
@@ -1336,7 +1193,7 @@ import java.util.Scanner;
 							{
 								sc.nextLine();
 								int nbsalaries = employes.nbsalariesGroupe();
-								System.out.println("Il y a " +nbsalaries+" dans le groupe");
+								System.out.println("Il y a " +nbsalaries+"  salariés dans le groupe");
 								break;
 							} // fin case 2 : afficher nb de salariés du groupe
 							
@@ -1351,7 +1208,7 @@ import java.util.Scanner;
 							case 4:
 							{
 								sc.nextLine();
-								employes.employesEnConge();
+								System.out.println(employes.employesEnConge());
 								break;
 							}
 							
