@@ -1162,13 +1162,102 @@ import java.util.Scanner;
 						break;
 					}/*fin case 2 : Gestion des congés*/
 					
+//----------------------------------------GESTION PAIE-----------------------------------------//					
 					case 3:
 					{
 						System.out.println("Gestion de la paie ");	
-						break;
-					}/*fin case Gestion de la paie*/
+						int sousmenu2 = 0;
+						System.out.println("-1- Consulter la paie");
+						System.out.println("-2- Créer un bulletin de paie");
+						System.out.println("-3- Modifier un bulletin de paie");
+						System.out.println("-0- Retour au menu principal ");
+						System.out.print("Choix : ");
+						sousmenu2 = sc.nextInt();	
+						switch (sousmenu2)
+						{
+							case 1:
+							{
+								System.out.println(" Consulter la paie ");
+								int choix = 0;		
+									System.out.println("-1- Consulter la paie d'un cadre CDI");
+									System.out.println("-2- Consulter la paie d'un CDD");
+									System.out.println("-3- Consulter la paie d'un stagiaire");
+									System.out.println("-4- Consulter la paie d'un alternant");
+									System.out.println("-0- Retour au menu principal ");					
+									System.out.print("Choix : ");
+								choix = sc.nextInt();
+								
+								switch (choix)
+								{
+								  case 1:
+								  {
+									// CDI nul qu'on va utiliser par la suite
+										Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0);
+										
+											System.out.println("Consulter la paie d'un cadre CDI ");
+											DriverLecture.afficheCadre();
+										    sc.nextLine();
+											System.out.print("Id de l'employé : ");
+											int idrech = sc.nextInt();
+											id = DriverLecture.idCadre(idrech);		// Retrouve le CDI dans la Bdd												
+											//on calcule sa paie
+											//on remet dans la bdd
+			                                break;
+							
+								  } 
+								  case 2:
+								  {
+									// CDD nul qu'on va utiliser par la suite
+										Cdd id = new Cdd(null, null, null, 0, null, 0, null, null, 0, 0);
+										
+											System.out.println("Consulter la paie d'un CDD ");
+											DriverLecture.afficheCdd();
+										    sc.nextLine();
+											System.out.print("Id de l'employé : ");
+											int idrech = sc.nextInt();
+											id = DriverLecture.idCDD(idrech);		// Retrouve le CDD dans la Bdd												
+											//on calcule sa paie
+											//on remet dans la bdd
+			                                break;
+							
+								  }
+								  case 3:
+								  {
+									// stagiaire nul qu'on va utiliser par la suite
+										Stagiaire id = new Stagiaire(null, null, null, 0, null, 0, null, null, null, null, 0);
+										
+											System.out.println("Consulter la paie d'un stagiaire ");
+											DriverLecture.afficheStagiaire();
+										    sc.nextLine();
+											System.out.print("Id de l'employé : ");
+											int idrech = sc.nextInt();
+											id = DriverLecture.idStagiaire(idrech);		// Retrouve le stagiaire dans la Bdd												
+											//on calcule sa paie
+											//on remet dans la bdd
+			                                break;
+							
+								  } 
+								  case 4:
+								  {
+									// alternant nul qu'on va utiliser par la suite
+										Alternant id = new Alternant (null, null, null, 0, null, 0, null, null, null, null, 0);
+										
+											System.out.println("Consulter la paie d'un alternant ");
+											DriverLecture.afficheAlternant();
+										    sc.nextLine();
+											System.out.print("Id de l'employé : ");
+											int idrech = sc.nextInt();
+											id = DriverLecture.idAlternant(idrech);		// Retrouve l'alternant dans la Bdd												
+											//on calcule sa paie
+											//on remet dans la bdd
+			                                break;
+							
+								  } 
+					}
+							}/*fin case Gestion de la paie*/
 					
-					
+//----------------------------------------FIN GESTION PAIE-----------------------------------------//					
+	
 					case 4:
 					{
 						System.out.println("Consultation des informations relatives au groupe ");	

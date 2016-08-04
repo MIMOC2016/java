@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry exported="true" kind="lib" path="lib/com.mysql.jdbc_5.1.5.jar"/>
-	<classpathentry excluding="src/" kind="src" path=""/>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry excluding="src/|src/bin/" kind="src" path=""/>
+	<classpathentry excluding="bin/" kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="src/bin"/>
 	<classpathentry kind="output" path="bin1"/>
 </classpath>
