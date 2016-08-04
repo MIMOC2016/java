@@ -1163,13 +1163,36 @@ import java.util.Scanner;
 						} /* fin du switch(sousmenu2) gestion des congés*/
 						break;
 					}/*fin case 2 : Gestion des congés*/
-					
+//------------------------------------GESTION PAIE------------------------------------------------//					
 					case 3:
 					{
 						System.out.println("Gestion de la paie ");	
-						break;
-					}/*fin case Gestion de la paie*/
-					
+						int sousmenu2 = 0;
+						System.out.println("-1- Consulter la paie");
+						System.out.println("-2- Créer un bulletin de paie");
+						System.out.println("-3- Modifier un bulletin de paie");
+						System.out.println("-0- Retour au menu principal ");
+						System.out.print("Choix : ");
+						sousmenu2 = sc.nextInt();
+						
+						switch (sousmenu2)
+						{
+							case 1:
+							{
+								System.out.println(" Consulter la paie ");
+								int choix = 0;		
+									System.out.println("-1- Consulter la paie d'un cadre CDI");
+									System.out.println("-2- Consulter la paie d'un CDD");
+									System.out.println("-3- Consulter la paie d'un stagiaire");
+									System.out.println("-4- Consulter la paie d'un alternant");
+									System.out.println("-0- Retour au menu principal ");					
+									System.out.print("Choix : ");
+								choix = sc.nextInt();
+							}
+					}
+					}
+//--------------------------------------------------------FIN GESTION PAIE------------------------------------------------//					
+	
 					
 					case 4:
 					{
