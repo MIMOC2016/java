@@ -924,7 +924,21 @@ import java.util.Scanner;
 								
 								switch (choix)
 								{
-									// MOHAMMED : CHOIX COMMENT CLOTURER DOSSIER 
+									case 1:
+										{
+										sc.nextLine();
+										System.out.println("Cloturer le dossier d'un cadre CDI");
+										sc.nextLine();
+										System.out.print("Saisir l'identifiant du salarié: ");
+										int id = sc.nextInt();
+										/* FONCTION DE RECHERCHE ALLANT CHERCHER DANS UN ARRAYLIST CDI ISSUE DE LA BDD et compare l'id saisi avec tout ceux dans l'arraylist*/
+										System.out.print("Saisir la date de  cloture du dossier: ");
+										String dcd = sc.nextInt();
+										/* employe.cloturerDossier(dcd);*/
+										System.out.println("Dossier cadre CDI cloturé");
+										break;
+										}
+										/* même chose pour clotuer les dossiers CDD, stagiaire et alternant, à faire copier coller Mohammed une fois la fonction recherche est trouvée
 									
 								} /* fin du switch(choix) type d'employé - cloturer le dossier */
 							} /* Fin du case 3 : cloturer le dossier d'un salarié */
