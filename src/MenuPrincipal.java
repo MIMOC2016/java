@@ -1187,10 +1187,128 @@ import java.util.Scanner;
 									System.out.println("-4- Consulter la paie d'un alternant");
 									System.out.println("-0- Retour au menu principal ");					
 									System.out.print("Choix : ");
-								choix = sc.nextInt();
-							}
+									choix = sc.nextInt();
+									switch (choix)
+									{
+									  case 1:
+									  {
+	                                            
+												System.out.println("Consulter la paie d'un cadre CDI ");
+												System.out.print("Id de l'employé : ");
+												int idrech = sc.nextInt();
+												sc.nextLine();
+											
+				                                break;
+								
+									  } /*Fin consulter paie cadre*/
+									  
+									  case 2:
+									  {
+	                                            
+												System.out.println("Consulter la paie d'un CDD ");
+												System.out.print("Id de l'employé : ");
+												int idrech = sc.nextInt();
+												sc.nextLine();
+											
+				                                break;
+								
+									  } 
+									  case 3:
+									  {
+	                                            
+												System.out.println("Consulter la paie d'un stagiaire ");
+												System.out.print("Id de l'employé : ");
+												int idrech = sc.nextInt();
+												sc.nextLine();
+											
+				                                break;
+								
+									  } 
+									  case 4:
+									  {
+	                                            
+												System.out.println("Consulter la paie d'un alternant ");
+												System.out.print("Id de l'employé : ");
+												int idEmp = sc.nextInt();
+												sc.nextLine();
+											
+				                                break;
+								
+									  } 
+									  default : 
+									  {
+										System.out.println("Choix invalide");
+									  }
+									  break;
+									}
+							}/*fin case 1 : consulter paie */
+									
+									case 2:
+									{
+										System.out.println("Créer un bulletin de paie ");
+										int choix = 0;
+										System.out.println("-1- Créer le bulletin de paie d'un cadre CDI");
+										System.out.println("-2- Créer le bulletin de paie d'un CDD");
+										System.out.println("-3- Créer le bulletin de paie d'un stagiaire");
+										System.out.println("-4- Créer le bulletin de paie d'un alternant");
+										System.out.println("-0- Retour");
+										System.out.print("Choix : ");
+
+										choix = sc.nextInt();
+										
+										switch (choix)
+										{
+											case 1:
+											{
+												System.out.println("Créer le bulletin de paie d'un cadre CDI ");
+												System.out.println("Saisir l'idEmp du Cadre");
+												System.out.print("Choix : ");
+												int idrech = sc.nextInt();
+			
+												/*on retrouve un ID de la personne au final */ 
+												
+							                  }
+											case 2:
+											{
+												System.out.println("Créer le bulletin de paie d'un CDD ");
+												System.out.println("Saisir l'idEmp du CDD");
+												System.out.print("Choix : ");
+												int idrech = sc.nextInt();
+			
+												/*on retrouve un ID de la personne au final */ 
+												
+							                  }
+											case 3:
+											{
+												System.out.println("Créer le bulletin de paie d'un stagiaire ");
+												System.out.println("Saisir l'idEmp du stagiaire");
+												System.out.print("Choix : ");
+												int idrech = sc.nextInt();
+			
+												/*on retrouve un ID de la personne au final */ 
+												
+							                  }
+											case 4:
+											{
+												System.out.println("Créer le bulletin de paie d'un alternant ");
+												System.out.println("Saisir l'idEmp du stagiaire");
+												System.out.print("Choix : ");
+												int idrech = sc.nextInt();
+			
+												/*on retrouve un ID de la personne au final */ 
+												
+							                  }
+											default : 
+											  {
+												System.out.println("Choix invalide");
+											  }
+											  break;
+											}
+									}/*fin case 2 : créer paie */
+											
 					}
-					}
+				}
+					
 //--------------------------------------------------------FIN GESTION PAIE------------------------------------------------//					
 	
 					
