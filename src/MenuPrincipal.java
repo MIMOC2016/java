@@ -1327,16 +1327,15 @@ public class MenuPrincipal {
 					switch (choix) {
 					case 1: {
 						// CDI nul qu'on va utiliser par la suite
-						Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0);
-
-						System.out.println("Modifier un bulletin de paie d'un cadre CDI: ");
+						Paie paiecadre = new Paie(0, null, 0, 0, 0);
+						System.out.println("Consulter la paie d'un cadre CDI ");
+						sc.nextLine();
+						//on affiche tous les cadres
 						DriverLecture.afficheCadre();
 						sc.nextLine();
-						System.out.println("Saisir l'idEmp du Cadre");
-						System.out.print("Choix : ");
+						System.out.print("Id de l'employé : ");
 						int idrech = sc.nextInt();
-						id = DriverLecture.idCadre(idrech); // Retrouve le CDI
-															// dans la Bdd
+						paiecadre = DriverLecture.idPaieCadre(idrech); // Retrouve le salaire du CDI dans la BDD
 
 						int c = 0;
 						System.out.println("-1- Modifier la période de paie ");
@@ -1351,9 +1350,9 @@ public class MenuPrincipal {
 							System.out.println("Modifier la période de paie ");
 							System.out.print("Nouvelle période : ");
 							String perpaie = sc.nextLine();
-							// id.setPerpaie(perpaie);
+							paiecadre.setperpaie(perpaie);
 							System.out.println("Modification effectuée");
-							// DriverModifier.idCadrePerpaie(id.idEmp, perpaie);
+							DriverModifier.modifPerpaie(paiecadre.idEmp, perpaie);
 							break;
 						}
 						case 2: {
@@ -1361,9 +1360,9 @@ public class MenuPrincipal {
 							System.out.println("Modifier le taux jour ");
 							System.out.print("Nouveau taux jour : ");
 							float tauxJour = sc.nextInt();
-							id.setTauxJour(tauxJour);
+							//id.setTauxJour(tauxJour);
 							System.out.println("Modification effectuée");
-							DriverModifier.idCadreTauxJour(id.idEmp, tauxJour);
+							//DriverModifier.idCadreTauxJour(id.idEmp, tauxJour);
 							break;
 						}
 

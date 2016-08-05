@@ -2510,6 +2510,63 @@ import java.sql.*;
 																    	}
 																    }	
 															}
+															
+															
+															
+//-----------------------------------MODIFIER ATTRIBUTS OBJETS PAIE-----------------------------//
+															public static void modifPerpaie (int idrech, String perpaie){
+																Connection conn = null;
+																Statement stmt = null;
+																    try {
+																    //Etape 2: Enregistrement JDBC Driver
+																      Class.forName("com.mysql.jdbc.Driver");
+																      System.out.println("Driver O.K.");
+																      
+																    //Etape 3: Ouverture connexion
+																      System.out.println("Connexion à la BDD...");
+																      conn = DriverManager.getConnection(DB_URL,USER, PASS);
+																	  System.out.println("Connexion établie...");
+																      
+																    //Etape 4: Execution de la requête
+																      System.out.println("Création de la requête...");
+																      stmt = conn.createStatement();
+																      String sql = "UPDATE PaieCadres SET perpaie=? WHERE idEmp=?";
+																      PreparedStatement preparedStmt = conn.prepareStatement(sql);
+																      preparedStmt.setString(1,perpaie);
+																      preparedStmt.setInt(2,idrech);
+																      preparedStmt.executeUpdate();
+
+																    //Etape 5: Nettoyage de l'environnement
+																      preparedStmt.close();
+																      stmt.close();
+																      conn.close();		         
+																    } 
+																    catch (SQLException se) {
+																    	//Gestion erreurs pour JDBC
+																      se.printStackTrace();
+																    }
+																    catch (Exception e){
+																    	//Gestion erreurs pour Class.forName
+																    	e.printStackTrace();
+																    }
+																    finally{
+																    	//bloc finally utilisé pour fermer les ressources
+																    	try{
+																    		if(stmt != null)
+																    			stmt.close();
+																    	}
+																    	catch (SQLException se2){
+																    	}//rien à faire
+																    	try{
+																    		if(conn != null)
+																    			conn.close();
+																    	}
+																    	catch (SQLException se){
+																    		se.printStackTrace();
+																    	}
+																    }	
+															}													
+															
 	}
 		
 
