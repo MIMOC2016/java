@@ -1103,8 +1103,7 @@ public class MenuPrincipal {
 				break;
 			} /* fin case 2 : Gestion des congés */
 
-				// ----------------------------------------GESTION
-				// PAIE-----------------------------------------//
+				// ----------------------------------------GESTION PAIE-----------------------------------------//
 			case 3: {
 				System.out.println("Gestion de la paie ");
 				int sousmenu2 = 0;
@@ -1132,6 +1131,9 @@ public class MenuPrincipal {
 						Paie paiecadre = new Paie(0, null, 0, 0, 0);
 						System.out.println("Consulter la paie d'un cadre CDI ");
 						sc.nextLine();
+						//on affiche tous les cadres
+						DriverLecture.afficheCadre();
+						sc.nextLine();
 						System.out.print("Id de l'employé : ");
 						int idrech = sc.nextInt();
 						paiecadre = DriverLecture.idPaieCadre(idrech); // Retrouve le salaire du CDI dans la BDD
@@ -1144,6 +1146,9 @@ public class MenuPrincipal {
 						Paie paieCDD = new Paie(0, null, 0, 0, 0);
 						System.out.println("Consulter la paie d'un CDD ");
 						sc.nextLine();
+						//on affiche tous les CDD
+						DriverLecture.afficheCdd();
+						sc.nextLine();
 						System.out.print("Id de l'employé : ");
 						int idrech = sc.nextInt();
 						paieCDD = DriverLecture.idPaieCDD(idrech); // Retrouve la paie du CDD dans la BDD
@@ -1154,8 +1159,10 @@ public class MenuPrincipal {
 					case 3: {
 						// stagiaire nul qu'on va utiliser par la suite
 						Paie paieStagiaire = new Paie(0, null, 0, 0, 0);
-
 						System.out.println("Consulter la paie d'un stagiaire ");
+						sc.nextLine();
+						//on affiche tous les stagiaires
+						DriverLecture.afficheStagiaire();
 						sc.nextLine();
 						System.out.print("Id de l'employé : ");
 						int idrech = sc.nextInt();
@@ -1170,6 +1177,10 @@ public class MenuPrincipal {
 
 						System.out.println("Consulter la paie d'un alternant ");
 						sc.nextLine();
+						//on affiche tous les alternants
+						DriverLecture.afficheAlternant();
+						sc.nextLine();
+						//on choisir un alternant
 						System.out.print("Id de l'employé : ");
 						int idrech = sc.nextInt();
 						paieAlternant = DriverLecture.idPaieAlternant(idrech); // Retrouve la paie de l'alternant dans la Bdd
@@ -1201,23 +1212,29 @@ public class MenuPrincipal {
 
 					switch (choix) {
 					case 1: {
-						// CDI nul qu'on va utiliser par la suite
-						Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0);
-
 						System.out.println("Créer un bulletin de paie d'un cadre CDI: ");
+						sc.nextLine();
+						// CDI nul qu'on va utiliser par la suite
+						Cadre c1 = new Cadre(null, null, null, 0, null, 0, null, 0);
+						//on affiche tous les cadres
 						DriverLecture.afficheCadre();
 						sc.nextLine();
+						Paie paieCadre = new Paie (0, null, 0, 0, 0);						
 						System.out.println("Saisir l'idEmp du Cadre");
 						System.out.print("Choix : ");
 						int idrech = sc.nextInt();
-						id = DriverLecture.idCadre(idrech); // Retrouve le CDI
-															// dans la Bdd
 						System.out.println("Saisir une période de paie: ");
-						float perpaie = sc.nextInt();
-
-						// on appelle la méthode pour créer une paie pour un
-						// cadre
-						// on renvoie tout à la BDD
+						String perpaie = sc.nextLine();
+						System.out.println("Saisir le nombre de jour de présence: ");
+						int jourPresence = sc.nextInt();
+						System.out.println("Saisir le taux journalier à appliquer: ");
+						int tauxJour = sc.nextInt();
+						c1.calculPaie(idrech, perpaie, jourPresence, tauxJour);// on appelle la méthode pour créer une paie pour un cadre
+						c1.toString();
+						float salaireMensuel = c1.getSalaireMensuel();
+						float salaireFixe = c1.getSalaireFixe();
+						float salaireVariable = c1.getSalaireVariable();
+						paieCadre = DriverAjout.AjoutPaieCadre(idrech,perpaie, salaireMensuel,salaireFixe,salaireVariable);// on renvoie tout à la BDD
 
 						break;
 					}

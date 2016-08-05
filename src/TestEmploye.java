@@ -8,7 +8,7 @@ public class TestEmploye {
 /*--------------saisir une paie---------------------------*/
 		
 		Cadre c3= new Cadre("Jean", "Bernard", "01/04/2010", 1, "07/01/1974", 06651420032, "jb@gmail3.com", (float) 9.67);
-		c3.calculPaie("01/12/2016", 21);
+		c3.calculPaie(0, "01/12/2016", 21, 0);
 		String Jean = c3.toString();
 		System.out.println(Jean);
 	

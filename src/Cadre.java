@@ -1,55 +1,36 @@
 
 public class Cadre extends EmployeConge {
- 	 
-		private float salaireVariable;
-		private float salaireFixe;
-		private float salaireMensuel;
-		private String perpaie;
-		float tauxJour;
-		int jourPresence;
 
-		
-	public Cadre(String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance, int tel, String email,float tauxJour)
-	{
-		super(nom,prenom,dateEmbauche,etabAffectation, dateNaissance,tel,email);
+	private float salaireVariable;
+	private float salaireFixe;
+	private float salaireMensuel;
+	private String perpaie;
+	float tauxJour;
+	int jourPresence;
+
+	public Cadre(String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance, int tel,
+			String email, float tauxJour) {
+		super(nom, prenom, dateEmbauche, etabAffectation, dateNaissance, tel, email);
 		this.tauxJour = tauxJour;
 	}
- 
-//--------------METHODES PAIE-------------------------//
-	
-	public float getSalaireFixe(){
-		return salaireFixe;
+
+	// ---------------------------------------METHODES
+	// PAIE------------------------------------------//
+
+	public String toString() {
+		return super.toString() + "\n" + "Période de paie : " + perpaie + "salaire Mensuel (Fixe: " + salaireFixe
+				+ " + Variable : " + salaireVariable + ") = " + salaireMensuel + "\n";
+
 	}
 
- 
-	public float getSalaireVariable(){
-		return this.salaireVariable;
-	}
- 
-	
-	public void setSalaireFixe(float salaireFixe){
-		this.salaireFixe = salaireFixe;
-	}
-
-	public void setSalaireVariable(float salaireVariable){
-		this.salaireVariable = salaireVariable;
-	}
-	
-	public String toString(){
-		return super.toString()+"\n"+ "salaire Mensuel (Fixe: "+salaireFixe+ " + Variable : "+salaireVariable+ ") = "+ salaireMensuel+ "\n";
-	
-	}
-	
-
-	public Paie calculPaie(int idEmp,String perpaie, int jourPresence)
-	{	
+	public Paie calculPaie(int idEmp, String perpaie, int jourPresence, float tauxJour) {
 		this.idEmp = idEmp;
 		this.salaireFixe = tauxJour * jourPresence;
 		this.salaireMensuel = this.salaireFixe + this.salaireVariable;
-		
-		return new Paie();
+
+		return new Paie(this.idEmp, this.perpaie, this.salaireMensuel, this.salaireFixe, this.salaireVariable);
 	}
-	
+
 	public float getSalaireMensuel() {
 		return salaireMensuel;
 	}
@@ -57,22 +38,37 @@ public class Cadre extends EmployeConge {
 	public void setSalaireMensuel(float salaireMensuel) {
 		this.salaireMensuel = salaireMensuel;
 	}
- 
- public float getTauxJour(){
-  return tauxJour;
- }
- 
-  public int getJourPresence(){
-  return jourPresence;
- }
- public void setTauxJour(float tj){
-   this.tauxJour = tj;
+
+	public float getSalaireFixe() {
+		return salaireFixe;
+	}
+
+	public void setSalaireFixe(float salaireFixe) {
+		this.salaireFixe = salaireFixe;
+	}
+
+	public float getSalaireVariable() {
+		return salaireVariable;
+	}
+
+	public void setSalaireVariable(float SalaireVariable) {
+		this.salaireVariable = SalaireVariable;
+	}
+
+	public float getTauxJour() {
+		return tauxJour;
+	}
+
+	public float setTauxJour(float tauxJour) {
+		return this.tauxJour = tauxJour;
+	}
+
+	public int getJourPresence() {
+		return jourPresence;
+	}
+
+	public void setJourPresence(int jp) {
+		this.jourPresence = jp;
+	}
+
 }
-
- public void setJourPresence(int jp){
-   this.jourPresence = jp;
-}
-
-
-}
-
