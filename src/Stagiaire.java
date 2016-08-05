@@ -1,5 +1,5 @@
 
-public class Stagiaire extends Etudiant
+public class Stagiaire extends EtudiantConge
 {
 	private float salaireFixe;
 	private String perpaie;
@@ -31,10 +31,13 @@ public class Stagiaire extends Etudiant
             this.salaireFixe = g;
          }
 
-		public Paie calculPaie() 
+		public Paie calculPaie(int idEmp, String perpaie, float salaireFixe) 
 		{
 			return new Paie(this.idEmp,this.perpaie, this.salaireMensuel = this.salaireFixe, 0, 0);
 		}
 
+
+
+		
 
 }

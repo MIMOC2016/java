@@ -3,11 +3,7 @@ public class Alternant extends EtudiantConge
 {
 
 	private float tauxHoraire;
-	private float salaireFixe;
-
-
-//--------ATTRIBUTS CALCULPAIE--------//
-  
+	private float salaireFixe;  
 	private float salaireVariable;
 	private float salaireMensuel;
 	private String perpaie;
@@ -39,11 +35,10 @@ public class Alternant extends EtudiantConge
 					
 		}
 	
-	public Paie calculPaie(String perpaie, float salaireVariable)
+	public Paie calculPaie(String perpaie, float salaireFixe)
 	{	
-		//this.salaireFixe = ;
-		this.salaireMensuel = this.salaireFixe + this.salaireVariable;
-		return new Paie();
+		this.salaireMensuel = this.salaireFixe ;
+		return new Paie(this.idEmp,this.perpaie, this.salaireMensuel, this.salaireFixe, 0);
 	}
 
 
