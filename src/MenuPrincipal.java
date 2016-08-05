@@ -1195,7 +1195,6 @@ import java.util.Scanner;
 										Paie paiecadre = new Paie(0, null, 0, 0, 0);
 										
 											System.out.println("Consulter la paie d'un cadre CDI ");
-											DriverLecture.afficheCadre();
 										    sc.nextLine();
 											System.out.print("Id de l'employé : ");
 											int idrech = sc.nextInt();
@@ -1207,7 +1206,7 @@ import java.util.Scanner;
 								  case 2:
 								  {
 									// CDD nul qu'on va utiliser par la suite
-										Cdd id = new Cdd(null, null, null, 0, null, 0, null, null, 0, 0);
+										Paie paieCDD = new Paie(0, null, 0, 0, 0);
 										
 											System.out.println("Consulter la paie d'un CDD ");
 											DriverLecture.afficheCdd();
