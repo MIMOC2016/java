@@ -1192,17 +1192,16 @@ import java.util.Scanner;
 								  case 1:
 								  {
 									// CDI nul qu'on va utiliser par la suite
-										Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0);
+										Paie paiecadre = new Paie(0, null, 0, 0, 0);
 										
 											System.out.println("Consulter la paie d'un cadre CDI ");
 											DriverLecture.afficheCadre();
 										    sc.nextLine();
 											System.out.print("Id de l'employé : ");
 											int idrech = sc.nextInt();
-											id = DriverLecture.idCadre(idrech);		// Retrouve le CDI dans la Bdd												
-											//on calcule sa paie
-											//on remet dans la bdd
-			                                break;
+											paiecadre = DriverLecture.idPaieCadre(idrech);		// Retrouve le salaire de l'id dans la BDD												
+			                                
+											break;
 							
 								  } 
 								  case 2:

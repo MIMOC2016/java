@@ -156,6 +156,80 @@ public class DriverLecture {
 				return null;
 
 		}
+		
+		//recherche paie cadre
+		// Recherche du cadre 
+				public static Paie idPaieCadre (int idrech){
+					Connection conn = null;
+					Statement stmt = null;
+					    try {
+					    //Etape 2: Enregistrement JDBC Driver
+					      Class.forName("com.mysql.jdbc.Driver");
+					      System.out.println("Driver O.K.");
+					      
+					    //Etape 3: Ouverture connexion
+					      System.out.println("Connexion à la BDD...");
+					      conn = DriverManager.getConnection(DB_URL,USER, PASS);
+						  System.out.println("Connexion établie...");
+					      
+					    //Etape 4: Execution de la requête
+					      System.out.println("Création de la requête...");
+					      stmt = conn.createStatement();
+					      String sql;
+					      sql = "(SELECT * FROM PaieCadres WHERE idEmp='"+idrech+"')";
+					      ResultSet rs = stmt.executeQuery(sql);
+					      
+					    //Etape 5: Extraction data du ResultSet
+					      while(rs.next()){
+					    	  //Retrieve par colonne
+					    	  String perpaie = rs.getString("Période de paie");
+					    	  float salaireMensuel = rs.getInt("Salaire mensuel");
+					    	  float salaireFixe = rs.getInt("Salaire fixe");
+					    	  float salaireVariable = rs.getInt("Salaire variable");
+					    	 
+					    	  
+					    	  //affichage des valeurs de la BDD
+							  System.out.print("idEmp: "+idrech);
+					    	  System.out.print(", période de paie : "+perpaie);
+					    	  System.out.print(", salaire mensuel:"+salaireMensuel);
+					    	  System.out.print(", salaire fixe:"+salaireFixe);
+					    	  System.out.print(", salaire variable :"+salaireVariable);
+					    	  return new Paie (idrech,perpaie, salaireMensuel, salaireFixe, salaireVariable);
+					      }
+					      
+					    //Etape 6: Nettoyage de l'environnement
+					      rs.close();
+					      stmt.close();
+					      conn.close();		         
+					    } 
+					    catch (SQLException se) {
+					    	//Gestion erreurs pour JDBC
+					      se.printStackTrace();
+					    }
+					    catch (Exception e){
+					    	//Gestion erreurs pour Class.forName
+					    	e.printStackTrace();
+					    }
+					    finally{
+					    	//bloc finally utilisé pour fermer les ressources
+					    	try{
+					    		if(stmt != null)
+					    			stmt.close();
+					    	}
+					    	catch (SQLException se2){
+					    	}//rien à faire
+					    	try{
+					    		if(conn != null)
+					    			conn.close();
+					    	}
+					    	catch (SQLException se){
+					    		se.printStackTrace();
+					    	}
+					    }	
+
+						return null;
+
+				}
 
 		// AFFICHAGE ID ET NOM PRENOM DE TOUS LES CDD
 				public static void afficheCdd(){

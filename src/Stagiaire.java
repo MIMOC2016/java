@@ -33,7 +33,7 @@ public class Stagiaire extends Etudiant
 
 		public Paie calculPaie() 
 		{
-			return new Paie(this.perpaie, this.salaireMensuel = this.salaireFixe, 0, 0);
+			return new Paie(this.idEmp,this.perpaie, this.salaireMensuel = this.salaireFixe, 0, 0);
 		}
 
 

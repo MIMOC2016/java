@@ -1,9 +1,7 @@
-import java.util.ArrayList;
 
 public class Paie 
 {
-	private ArrayList<Paie> paies=new ArrayList<Paie>();
-
+	 public	int	idEmp;
 	 public float salaireVariable;
 	 public float salaireFixe;
 	 public float salaireMensuel;
@@ -11,14 +9,16 @@ public class Paie
 	 
 	 public Paie()
 		{
-			perpaie = "";
+			idEmp = 0;
+		 	perpaie = "";
 			salaireFixe = 0;
 			salaireVariable = 0;
 			salaireMensuel = 0;
 		}
 	 
-	 public Paie (String perpaie, float salaireMensuel, float salaireFixe, float salaireVariable)
+	 public Paie (int idEmp, String perpaie, float salaireMensuel, float salaireFixe, float salaireVariable)
 	 {
+		 this.idEmp = idEmp;
 		 this.perpaie = perpaie;
 		 this.salaireFixe = salaireFixe;
 		 this.salaireVariable = salaireVariable;
@@ -28,19 +28,19 @@ public class Paie
 	
 	 public String ToString ()
 	 {
-		 return "Période de paie : "+this.perpaie +" Salaire mensuel : "+
+		 return "Identifiant de l'employé : "+this.idEmp+"Période de paie : "+this.perpaie +" Salaire mensuel : "+
 	 this.salaireMensuel+" Montant du salaire fixe : "+ this.salaireFixe +" Part variable : "+ this.salaireVariable;
 	 }
 	 
 	 
 	 public Paie somme(Paie that){
-			return new Paie(this.perpaie,this.salaireFixe+that.salaireFixe, 
+			return new Paie(this.idEmp,this.perpaie,this.salaireFixe+that.salaireFixe, 
 					this.salaireVariable+that.salaireVariable, this.salaireMensuel+that.salaireMensuel);
 		}
 	 
 	 public Paie cloturePaie(Paie that)
 	 {
-		 return new Paie(this.perpaie = "31/12/2999", this.salaireMensuel = 0, this.salaireFixe = 0, this.salaireVariable = 0);
+		 return new Paie(this.idEmp,this.perpaie = "31/12/2999", this.salaireMensuel = 0, this.salaireFixe = 0, this.salaireVariable = 0);
 	 }
 	 
 	 
@@ -51,14 +51,16 @@ public class Paie
 		this.perpaie = Pperpaie ;
 	 }
 	 
-	 public void setsalaireFixe(float PsalaireFixe)
+	 public void setsalaireFixe(float salaireFixe)
 	 {
-		this.salaireFixe = PsalaireFixe ; 
+		this.salaireFixe = salaireFixe ; 
 	 }
 	 
-	 public void setsalaireVariable(float PsalaireVariable)
+	 public void setsalaireVariable(float salaireVariable)
 	 {
-		this.salaireVariable = PsalaireVariable; 
+		this.salaireVariable = salaireVariable; 
 	 }
+	 
+	 
 
 }
