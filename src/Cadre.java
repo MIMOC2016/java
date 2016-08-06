@@ -24,8 +24,9 @@ public class Cadre extends EmployeConge {
 
 	}
 
-	public Paie calculPaie(int idEmp, String perpaie, int jourPresence, float tauxJour) {
+	public Paie calculPaie(int idEmp, String perpaie, int jourPresence, float tauxJour, float salaireVaribale) {
 		this.idEmp = idEmp;
+		this.salaireVariable = salaireVariable;
 		this.salaireFixe = tauxJour * jourPresence;
 		this.salaireMensuel = this.salaireFixe + this.salaireVariable;
 
