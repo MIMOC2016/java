@@ -9,9 +9,10 @@ public class Cadre extends EmployeConge {
 	int jourPresence;
 
 	public Cadre(String nom, String prenom, String dateEmbauche, int etabAffectation, String dateNaissance, int tel,
-			String email, float tauxJour) {
+			String email, float tauxJour, float salaireVariable) {
 		super(nom, prenom, dateEmbauche, etabAffectation, dateNaissance, tel, email);
 		this.tauxJour = tauxJour;
+		this.salaireVariable= salaireVariable;
 	}
 
 	// ---------------------------------------METHODES
