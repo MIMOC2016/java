@@ -8,12 +8,12 @@ public class TestEmploye {
 /*--------------saisir une paie---------------------------*/
 		
 		Cadre c3= new Cadre("Jean", "Bernard", "01/04/2010", 1, "07/01/1974", 06651420032, "jb@gmail3.com", (float) 9.67, 500);
-		c3.calculPaie(0, "01/12/2016", 21, 0);
+		c3.calculPaie(0, "01/12/2016", 21, 0, 0);
 		String Jean = c3.toString();
 		System.out.println(Jean);
 	
 	    Alternant a1= new Alternant("Sophia", "Dephline", "09/09/2016", 2, "12/11/1997", 0666514201, "sd@gmail.com", "La Sorbonne", "14/09/2017", "ingenierie", (float)9.68);
-		a1.calculPaie("01/12/2016", 200);
+		a1.calculPaie(0, "01/12/2016", 200);
 		String Delphine = a1.toString();
 		System.out.println(Delphine);
 		/*-------------------créer un salarié---------------------------------*/

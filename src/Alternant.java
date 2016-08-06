@@ -35,8 +35,8 @@ public class Alternant extends EtudiantConge
 					
 		}
 	
-	public Paie calculPaie(String perpaie, float salaireFixe)
-	{	
+	public Paie calculPaie(int idEmp, String perpaie, float salaireFixe)
+	{	this.idEmp=idEmp;
 		this.salaireMensuel = this.salaireFixe ;
 		return new Paie(this.idEmp,this.perpaie, this.salaireMensuel, this.salaireFixe, 0);
 	}

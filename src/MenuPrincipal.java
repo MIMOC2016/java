@@ -1255,66 +1255,78 @@ public class MenuPrincipal {
 						break;
 					}
 					case 2: {
-						// CDD nul qu'on va utiliser par la suite
-						Cdd id = new Cdd(null, null, null, 0, null, 0, null, null, 0, 0);
-
 						System.out.println("Créer un bulletin de paie d'un CDD: ");
-						DriverLecture.afficheCdd();
 						sc.nextLine();
-						System.out.println("Saisir l'idEmp du CDD");
+						// CDD nul qu'on va utiliser par la suite
+						Cdd c1 = new Cdd(null, null, null, 0, null, 0, null, null, 0, 0);
+						//on affiche tous les cdd
+						DriverLecture.afficheCdd();
+						Paie paieCdd = new Paie (0, null, 0, 0, 0);						
+						System.out.println("Saisir l'idEmp du Cdd");
 						System.out.print("Choix : ");
 						int idrech = sc.nextInt();
-						id = DriverLecture.idCDD(idrech); // Retrouve le CDD
-															// dans la Bdd
+						sc.nextLine();
 						System.out.println("Saisir une période de paie: ");
-						float perpaie = sc.nextInt();
-
-						// on appelle la méthode pour créer une paie pour un CDD
-						// on renvoie tout à la BDD
-
+						String perpaie = sc.nextLine();
+						System.out.println("Saisir le nombre de jour de présence: ");
+						int jourPresence = sc.nextInt();
+						sc.nextLine();
+						System.out.println("Saisir le taux journalier à appliquer: ");
+						int tauxJour = sc.nextInt();
+						sc.nextLine();
+						System.out.println("Saisir le montant du variable: ");
+						float salaireVariable = sc.nextInt();
+						sc.nextLine();
+						c1.calculPaie(idrech, perpaie, jourPresence, tauxJour, salaireVariable);// on appelle la méthode pour créer une paie pour un cdd
+						c1.toString();
+						float salaireMensuel = c1.getSalaireMensuel();
+						float salaireFixe = c1.getSalaireFixe();
+						paieCdd = DriverAjout.AjoutPaieCdd(idrech,perpaie, salaireMensuel,salaireFixe,salaireVariable);// on renvoie tout à la BDD
 						break;
 					}
 					case 3: {
-						// stagiaire nul qu'on va utiliser par la suite
-						Stagiaire id = new Stagiaire(null, null, null, 0, null, 0, null, null, null, null, 0);
-
 						System.out.println("Créer un bulletin de paie d'un stagiaire: ");
-						DriverLecture.afficheStagiaire();
 						sc.nextLine();
+						// Stagiaire nul qu'on va utiliser par la suite
+						Stagiaire c1 = new Stagiaire(null, null, null, 0, null, 0, null, null, null, null, 0);
+						//on affiche tous les stagiaire
+						DriverLecture.afficheStagiaire();
+						Paie paieStagiaire= new Paie (0, null, 0, 0, 0);						
 						System.out.println("Saisir l'idEmp du stagiaire");
 						System.out.print("Choix : ");
 						int idrech = sc.nextInt();
-						id = DriverLecture.idStagiaire(idrech); // Retrouve le
-																// stagiaire
-																// dans la Bdd
+						sc.nextLine();
 						System.out.println("Saisir une période de paie: ");
-						float perpaie = sc.nextInt();
-
-						// on appelle la méthode pour créer une paie pour un
-						// stagiaire
-						// on renvoie tout à la BDD
+						String perpaie = sc.nextLine();
+						System.out.println("Saisir le montant de la gratification: ");
+						float salaireFixe = sc.nextInt();
+						sc.nextLine();
+						c1.calculPaie(idrech, perpaie, salaireFixe);// on appelle la méthode pour créer une paie pour un stagiaire
+						c1.toString();
+						paieStagiaire = DriverAjout.AjoutPaieStagiaire(idrech,perpaie,salaireFixe);// on renvoie tout à la BDD
 
 						break;
 					}
 					case 4: {
-						// stagiaire nul qu'on va utiliser par la suite
-						Alternant id = new Alternant(null, null, null, 0, null, 0, null, null, null, null, 0);
-
 						System.out.println("Créer un bulletin de paie d'un alternant: ");
-						DriverLecture.afficheAlternant();
 						sc.nextLine();
-						System.out.println("Saisir l'idEmp du alternant");
+						// Stagiaire nul qu'on va utiliser par la suite
+						Alternant c1 = new Alternant(null, null, null, 0, null, 0, null, null, null, null, 0);
+						//on affiche tous les alternants
+						DriverLecture.afficheAlternant();
+						Paie paieAlternant= new Paie (0, null, 0, 0, 0);						
+						System.out.println("Saisir l'idEmp de l'alternant");
 						System.out.print("Choix : ");
 						int idrech = sc.nextInt();
-						id = DriverLecture.idAlternant(idrech); // Retrouve le
-																// Alternant
-																// dans la Bdd
+						sc.nextLine();
 						System.out.println("Saisir une période de paie: ");
-						float perpaie = sc.nextInt();
-
-						// on appelle la méthode pour créer une paie pour un
-						// Alternant
-						// on renvoie tout à la BDD
+						String perpaie = sc.nextLine();
+						System.out.println("Saisir le montant du salaire de base: ");
+						float salaireFixe = sc.nextInt();
+						sc.nextLine();
+						c1.calculPaie(idrech, perpaie, salaireFixe);// on appelle la méthode pour créer une paie pour un stagaire
+						c1.toString();
+						paieAlternant = DriverAjout.AjoutPaieAlternant(idrech,perpaie,salaireFixe);// on renvoie tout à la BDD
 
 						break;
 					}

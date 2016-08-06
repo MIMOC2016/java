@@ -39,11 +39,13 @@ public class Cdd extends EmployeConge
 
 	//----------------------------METHODE CALCUL PAIE CDD---------------------------//
 
-	public Paie calculPaie(int IdEmp, String perpaie, float salaireFixe, float salaireVariable)
-	{	
+	public Paie calculPaie(int idEmp, String perpaie, int jourPresence, float tauxJour, float salaireVaribale) {
+		this.idEmp = idEmp;
+		this.salaireVariable = salaireVariable;
+		this.salaireFixe = tauxJour * jourPresence;
 		this.salaireMensuel = this.salaireFixe + this.salaireVariable;
-		return new Paie(this.idEmp,this.perpaie,this.salaireMensuel , this.salaireFixe , this.salaireVariable);
-	
+
+		return new Paie(this.idEmp, this.perpaie, this.salaireMensuel, this.salaireFixe, this.salaireVariable);
 	}
 
 	public float getSalaireMensuel() 
