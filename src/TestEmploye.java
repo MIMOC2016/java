@@ -7,7 +7,7 @@ public class TestEmploye {
 	{
 /*--------------saisir une paie---------------------------*/
 		
-		Cadre c3= new Cadre("Jean", "Bernard", "01/04/2010", 1, "07/01/1974", 06651420032, "jb@gmail3.com", (float) 9.67);
+		Cadre c3= new Cadre("Jean", "Bernard", "01/04/2010", 1, "07/01/1974", 06651420032, "jb@gmail3.com", (float) 9.67, 500);
 		c3.calculPaie(0, "01/12/2016", 21, 0);
 		String Jean = c3.toString();
 		System.out.println(Jean);
@@ -17,8 +17,8 @@ public class TestEmploye {
 		String Delphine = a1.toString();
 		System.out.println(Delphine);
 		/*-------------------créer un salarié---------------------------------*/
-	    Cadre c1= new Cadre("Jean", "Bernard", "01/04/2010", 1, "07/01/1974", 06651420032, "jb@gmail.com", (float) 199.67);
-	    Cadre c2= new Cadre("Mathieu", "Rimel", "01/07/2012", 2, "14/09/1984", 0604210547, "mr@gmail.com", (float) 4.78);
+	    Cadre c1= new Cadre("Jean", "Bernard", "01/04/2010", 1, "07/01/1974", 06651420032, "jb@gmail.com", (float) 199.67, 500);
+	    Cadre c2= new Cadre("Mathieu", "Rimel", "01/07/2012", 2, "14/09/1984", 0604210547, "mr@gmail.com", (float) 4.78,500);
 	    Cdd cdd1= new Cdd("Racha", "Iskan", "15/08/2016", 1, "05/12/1990", 0741254615, "ri@gmail.com", "01/07/2017", 28000, 1400);
 	    Cdd cdd2= new Cdd("Sarah", "Tarram", "01/07/2016", 1, "07/08/1994", 0741254132, "st@gmail.com", "14/09/2017", 35000, (float) 1700.5 );
 	    Stagiaire s1= new Stagiaire ("Alexandre", "Sylvie", "04/10/2016", 1, "04/07/1996", 0641052741, "as@gmail.com", "Paris 7 ", "17/12/2017", "Marketing",(float) 12000);
