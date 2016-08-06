@@ -2,7 +2,7 @@ import java.sql.*;
 
 public class DriverAjout {
 
-	public static int cpt = 100000;
+	public static int cpt = 10000;
 
 	// JDBC diver nom et database URL
 	static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
@@ -13,7 +13,7 @@ public class DriverAjout {
 	static final String PASS = "root";
 
 	public static void ConnAjoutCadre(int idEmp, String nom, String prenom, String dateEmbauche, int etabAffectation,
-			String dateNaissance, int tel, String email, float tauxJour, boolean conge, boolean cloture) {
+			String dateNaissance, int tel, String email, float tauxJour, float salaireVariable, boolean conge, boolean cloture) {
 		Connection conn = null;
 		Statement stmt = null;
 		try {
@@ -32,8 +32,8 @@ public class DriverAjout {
 
 			idEmp = cpt++;
 			String sql = "INSERT INTO Cadres " + "VALUES (" + idEmp + ",'" + nom + "','" + prenom + "','" + dateEmbauche
-					+ "','" + dateNaissance + "', '" + etabAffectation + "', '" + tel + "', '" + email + "', '"
-					+ tauxJour + "', " + conge + ", " + cloture + ")";
+					+ "', '" + etabAffectation + "','" + dateNaissance + "', '" + tel + "', '" + email + "', '"
+					+ tauxJour + "', '"+ salaireVariable + "',"+ conge +", " + cloture + ")";
 			System.out.println("Requête : " + sql);
 			stmt.executeUpdate(sql);
 
@@ -82,9 +82,7 @@ public class DriverAjout {
 			System.out.println("Insertion des données dans la table...");
 			stmt = conn.createStatement();
 
-			idEmp = cpt++;
-			String sql = "INSERT INTO PaieCadres " + "VALUES (" + idEmp + ",'" + perpaie + "','" + salaireMensuel + "','" + salaireFixe
-					+ "','" + salaireVariable + ")";
+			String sql = "INSERT INTO PaieCadres " + "VALUES ("+idEmp+",'"+ perpaie +"','" +salaireMensuel + "','" + salaireFixe+ "','" + salaireVariable + "')";
 			System.out.println("Requête : " + sql);
 			stmt.executeUpdate(sql);
 
