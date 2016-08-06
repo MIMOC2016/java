@@ -98,6 +98,7 @@ public class DriverLecture {
 				int tel = rs.getInt("tel");
 				String email = rs.getString("email");
 				float tauxJour = rs.getFloat("tauxJour");
+				float salaireVariable = rs.getFloat("salaireVariable");
 				boolean conge = rs.getBoolean("conge");
 				boolean cloture = rs.getBoolean("cloture");
 
@@ -111,9 +112,10 @@ public class DriverLecture {
 				System.out.print(", Tel: " + tel);
 				System.out.print(", Email:" + email);
 				System.out.print(", Taux jour: " + tauxJour);
+				System.out.print(", Salaire variable: "+ salaireVariable);
 				System.out.print(", Congé :" + conge);
 				System.out.println(", Dossier cloturé :" + cloture);
-				return new Cadre(nom, prenom, dateEmbauche, etabAffectation, dateNaissance, tel, email, tauxJour);
+				return new Cadre(nom, prenom, dateEmbauche, etabAffectation, dateNaissance, tel, email, tauxJour, salaireVariable);
 			}
 
 			// Etape 6: Nettoyage de l'environnement
