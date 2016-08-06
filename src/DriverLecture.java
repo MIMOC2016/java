@@ -171,17 +171,17 @@ public class DriverLecture {
 			// Etape 5: Extraction data du ResultSet
 			while (rs.next()) {
 				// Retrieve par colonne
-				String perpaie = rs.getString("Période de paie");
-				float salaireMensuel = rs.getInt("Salaire mensuel");
-				float salaireFixe = rs.getInt("Salaire fixe");
-				float salaireVariable = rs.getInt("Salaire variable");
+				String perpaie = rs.getString("perpaie");
+				float salaireMensuel = rs.getInt("salaireMensuel");
+				float salaireFixe = rs.getInt("SalaireFixe");
+				float salaireVariable = rs.getInt("SalaireVariable");
 
 				// affichage des valeurs de la BDD
 				System.out.print("idEmp: " + idrech);
 				System.out.print(", période de paie : " + perpaie);
 				System.out.print(", salaire mensuel:" + salaireMensuel);
 				System.out.print(", salaire fixe:" + salaireFixe);
-				System.out.print(", salaire variable :" + salaireVariable);
+				System.out.println(", salaire variable :" + salaireVariable);
 				return new Paie(idrech, perpaie, salaireMensuel, salaireFixe, salaireVariable);
 			}
 
@@ -377,17 +377,17 @@ public class DriverLecture {
 			// Etape 5: Extraction data du ResultSet
 			while (rs.next()) {
 				// Retrieve par colonne
-				String perpaie = rs.getString("Période de paie");
-				float salaireMensuel = rs.getInt("Salaire mensuel");
-				float salaireFixe = rs.getInt("Salaire fixe");
-				float salaireVariable = rs.getInt("Salaire variable");
+				String perpaie = rs.getString("perpaie");
+				float salaireMensuel = rs.getInt("salaireMensuel");
+				float salaireFixe = rs.getInt("salaireFixe");
+				float salaireVariable = rs.getInt("salaireVariable");
 
 				// affichage des valeurs de la BDD
 				System.out.print("idEmp: " + idrech);
 				System.out.print(", période de paie : " + perpaie);
 				System.out.print(", salaire mensuel:" + salaireMensuel);
 				System.out.print(", salaire fixe:" + salaireFixe);
-				System.out.print(", salaire variable :" + salaireVariable);
+				System.out.println(", salaire variable :" + salaireVariable);
 				return new Paie(idrech, perpaie, salaireMensuel, salaireFixe, salaireVariable);
 			}
 
@@ -588,17 +588,17 @@ public class DriverLecture {
 			// Etape 5: Extraction data du ResultSet
 			while (rs.next()) {
 				// Retrieve par colonne
-				String perpaie = rs.getString("Période de paie");
-				float salaireMensuel = rs.getInt("Salaire mensuel");
-				float salaireFixe = rs.getInt("Salaire fixe");
-				float salaireVariable = rs.getInt("Salaire variable");
+				String perpaie = rs.getString("perpaie");
+				float salaireMensuel = rs.getInt("salaireMensuel");
+				float salaireFixe = rs.getInt("salaireFixe");
+				float salaireVariable = rs.getInt("salaireVariable");
 
 				// affichage des valeurs de la BDD
 				System.out.print("idEmp: " + idrech);
 				System.out.print(", période de paie : " + perpaie);
 				System.out.print(", salaire mensuel:" + salaireMensuel);
 				System.out.print(", salaire fixe:" + salaireFixe);
-				System.out.print(", salaire variable :" + salaireVariable);
+				System.out.println(", salaire variable :" + salaireVariable);
 				return new Paie(idrech, perpaie, salaireMensuel, salaireFixe, salaireVariable);
 			}
 
@@ -794,17 +794,17 @@ public class DriverLecture {
 			// Etape 5: Extraction data du ResultSet
 			while (rs.next()) {
 				// Retrieve par colonne
-				String perpaie = rs.getString("Période de paie");
-				float salaireMensuel = rs.getInt("Salaire mensuel");
-				float salaireFixe = rs.getInt("Salaire fixe");
-				float salaireVariable = rs.getInt("Salaire variable");
+				String perpaie = rs.getString("perpaie");
+				float salaireMensuel = rs.getInt("salaireMensuel");
+				float salaireFixe = rs.getInt("salaireFixe");
+				float salaireVariable = rs.getInt("salaireVariable");
 
 				// affichage des valeurs de la BDD
 				System.out.print("idEmp: " + idrech);
 				System.out.print(", période de paie : " + perpaie);
 				System.out.print(", salaire mensuel:" + salaireMensuel);
 				System.out.print(", salaire fixe:" + salaireFixe);
-				System.out.print(", salaire variable :" + salaireVariable);
+				System.out.println(", salaire variable :" + salaireVariable);
 				return new Paie(idrech, perpaie, salaireMensuel, salaireFixe, salaireVariable);
 			}
 
