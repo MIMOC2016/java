@@ -1245,11 +1245,13 @@ public class MenuPrincipal {
 						System.out.println("Saisir le taux journalier à appliquer: ");
 						int tauxJour = sc.nextInt();
 						sc.nextLine();
-						c1.calculPaie(idrech, perpaie, jourPresence, tauxJour);// on appelle la méthode pour créer une paie pour un cadre
+						System.out.println("Saisir le montant du variable: ");
+						float salaireVariable = sc.nextInt();
+						sc.nextLine();
+						c1.calculPaie(idrech, perpaie, jourPresence, tauxJour, salaireVariable);// on appelle la méthode pour créer une paie pour un cadre
 						c1.toString();
 						float salaireMensuel = c1.getSalaireMensuel();
 						float salaireFixe = c1.getSalaireFixe();
-						float salaireVariable = c1.getSalaireVariable();
 						paieCadre = DriverAjout.AjoutPaieCadre(idrech,perpaie, salaireMensuel,salaireFixe,salaireVariable);// on renvoie tout à la BDD
 
 						break;
