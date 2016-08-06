@@ -65,12 +65,16 @@ public class MenuPrincipal {
 						String email = sc.nextLine();
 						System.out.print("Taux journalier : ");
 						float tauxJour = sc.nextFloat();
+						sc.nextLine();
+						System.out.print("SalaireVariable: ");
+						float salaireVariable = sc.nextFloat();
+						sc.nextLine();
 
 						Cadre C1 = new Cadre(nom, prenom, dateEmbauche, etabAffectation, dateNaissance, tel, email,
-								tauxJour);
+								tauxJour, salaireVariable);
 						employes.ajoutEmploye(C1);
 						DriverAjout.ConnAjoutCadre(idEmp, nom, prenom, dateEmbauche, etabAffectation, dateNaissance,
-								tel, email, tauxJour, false, false);
+								tel, email, tauxJour, salaireVariable, false, false);
 						System.out.println("Cadre créé");
 
 						break;
@@ -218,7 +222,7 @@ public class MenuPrincipal {
 					switch (choix) {
 					case 1: {
 						// CDI nul qu'on va utiliser par la suite
-						Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0);
+						Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0,0);
 
 						System.out.println("Modifier les informations personnelles d'un cadre CDI: ");
 						DriverLecture.afficheCadre();
@@ -240,6 +244,7 @@ public class MenuPrincipal {
 						System.out.println("-6- Modifier le tel");
 						System.out.println("-7- Modifier l'Email");
 						System.out.println("-8- Modifier le taux jour");
+						System.out.println("-9- Modifier le salaire variable");
 						System.out.println("-0- Retour");
 						System.out.print("Choix : ");
 
@@ -327,6 +332,17 @@ public class MenuPrincipal {
 							id.setTauxJour(tauxJour);
 							System.out.println("Modification effectuée");
 							DriverModifier.idCadreTauxJour(id.idEmp, tauxJour);
+							break;
+						}
+						case 9: {
+							sc.nextLine();
+							System.out.println("Modifier le salaire variable ");
+							System.out.print("Salaire variable : ");
+							float salaireVariable = sc.nextFloat();
+							sc.nextLine();
+							id.setTauxJour(salaireVariable);
+							System.out.println("Modification effectuée");
+							DriverModifier.idCadreTauxJour(id.idEmp, salaireVariable);
 							break;
 						}
 						case 0: {
@@ -804,7 +820,7 @@ public class MenuPrincipal {
 					switch (choix) {
 					case 1: {
 						// CDI nul qu'on va utiliser par la suite
-						Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0);
+						Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0,0);
 
 						System.out.println("Clôturer le dossier d'un cadre CDI: ");
 						DriverLecture.afficheCadre();
@@ -929,7 +945,7 @@ public class MenuPrincipal {
 					switch (choix) {
 					case 1: {
 						// CDI nul qu'on va utiliser par la suite
-						Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0);
+						Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0,0);
 
 						System.out.println("Mettre en congé un cadre CDI: ");
 						DriverLecture.afficheCadre();
@@ -1015,7 +1031,7 @@ public class MenuPrincipal {
 					switch (choix) {
 					case 1: {
 						// CDI nul qu'on va utiliser par la suite
-						Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0);
+						Cadre id = new Cadre(null, null, null, 0, null, 0, null, 0,0);
 
 						System.out.println("Retour de congé d'un cadre CDI: ");
 						DriverLecture.afficheCadre();
@@ -1130,10 +1146,8 @@ public class MenuPrincipal {
 						// CDI nul qu'on va utiliser par la suite
 						Paie paiecadre = new Paie(0, null, 0, 0, 0);
 						System.out.println("Consulter la paie d'un cadre CDI ");
-						sc.nextLine();
 						//on affiche tous les cadres
 						DriverLecture.afficheCadre();
-						sc.nextLine();
 						System.out.print("Id de l'employé : ");
 						int idrech = sc.nextInt();
 						paiecadre = DriverLecture.idPaieCadre(idrech); // Retrouve le salaire du CDI dans la BDD
@@ -1194,8 +1208,8 @@ public class MenuPrincipal {
 					default: {
 						System.out.println("Choix invalide");
 					}
-					}
-					// FIN switch CONSULTER PAIE
+					
+					}// FIN switch CONSULTER PAIE
 					break;
 				}
 				case 2: {
@@ -1215,20 +1229,22 @@ public class MenuPrincipal {
 						System.out.println("Créer un bulletin de paie d'un cadre CDI: ");
 						sc.nextLine();
 						// CDI nul qu'on va utiliser par la suite
-						Cadre c1 = new Cadre(null, null, null, 0, null, 0, null, 0);
+						Cadre c1 = new Cadre(null, null, null, 0, null, 0, null, 0, 0);
 						//on affiche tous les cadres
 						DriverLecture.afficheCadre();
-						sc.nextLine();
 						Paie paieCadre = new Paie (0, null, 0, 0, 0);						
 						System.out.println("Saisir l'idEmp du Cadre");
 						System.out.print("Choix : ");
 						int idrech = sc.nextInt();
+						sc.nextLine();
 						System.out.println("Saisir une période de paie: ");
 						String perpaie = sc.nextLine();
 						System.out.println("Saisir le nombre de jour de présence: ");
 						int jourPresence = sc.nextInt();
+						sc.nextLine();
 						System.out.println("Saisir le taux journalier à appliquer: ");
 						int tauxJour = sc.nextInt();
+						sc.nextLine();
 						c1.calculPaie(idrech, perpaie, jourPresence, tauxJour);// on appelle la méthode pour créer une paie pour un cadre
 						c1.toString();
 						float salaireMensuel = c1.getSalaireMensuel();
@@ -1302,6 +1318,7 @@ public class MenuPrincipal {
 
 						break;
 					}
+					
 					case 0: {
 						break;
 					}
@@ -1332,7 +1349,6 @@ public class MenuPrincipal {
 						sc.nextLine();
 						//on affiche tous les cadres
 						DriverLecture.afficheCadre();
-						sc.nextLine();
 						System.out.print("Id de l'employé : ");
 						int idrech = sc.nextInt();
 						paiecadre = DriverLecture.idPaieCadre(idrech); // Retrouve le salaire du CDI dans la BDD
@@ -1344,6 +1360,7 @@ public class MenuPrincipal {
 						System.out.print("Choix : ");
 
 						c = sc.nextInt();
+						
 						switch (c) {
 						case 1: {
 							sc.nextLine();
@@ -1374,6 +1391,7 @@ public class MenuPrincipal {
 						}
 
 						} // Fin du Switch(c) : choix de l'info à modifier
+						break;
 					} /* fin du case 1 : modifier la paie d'un cadre CDI */
 
 					case 2: {
@@ -1435,8 +1453,9 @@ public class MenuPrincipal {
 						default: {
 							System.out.println("Choix invalide");
 						}
-
+						
 						} // Fin du Switch(c) : choix de l'info à modifier
+						break;
 					} /* fin du case 2 : modifier la paie d'un CDD */
 
 					case 3: {
@@ -1489,7 +1508,8 @@ public class MenuPrincipal {
 							System.out.println("Choix invalide");
 						}
 
-						} // Fin du Switch(c) : choix de l'info à modifier
+						} // Fin du Switch(c) : choix de l'info à modifier						
+						break;
 					} /* fin du case 2 : modifier la paie d'un alternant */
 
 					case 4: {
@@ -1553,15 +1573,26 @@ public class MenuPrincipal {
 						break;
 					}
 
-					default: {
+					default: 
+					{
 						System.out.println("Choix invalide");
 					}
 					}
+					
 				} /* fin du switch(sousmenu2) gestion des congés */
+				case 0: 
+				{
 					break;
-				}/* fin case 2 : Gestion des congés */
+				}
+				default:
+				{ 
+					System.out.println("Choix invalide");
+				}
+				}
+				break;
+				}/* fin case 3 : gestion de la paie */
 
-			}
+			
 
 				// ----------------------------------------FIN GESTION
 				// PAIE-----------------------------------------//
