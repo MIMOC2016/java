@@ -1245,13 +1245,11 @@ public class MenuPrincipal {
 						System.out.println("Saisir le taux journalier à appliquer: ");
 						int tauxJour = sc.nextInt();
 						sc.nextLine();
-						System.out.println("Saisir le montant du variable: ");
-						float salaireVariable = sc.nextInt();
-						sc.nextLine();
-						c1.calculPaie(idrech, perpaie, jourPresence, tauxJour, salaireVariable);// on appelle la méthode pour créer une paie pour un cadre
+						c1.calculPaie(idrech, perpaie, jourPresence, tauxJour);// on appelle la méthode pour créer une paie pour un cadre
 						c1.toString();
 						float salaireMensuel = c1.getSalaireMensuel();
 						float salaireFixe = c1.getSalaireFixe();
+						float salaireVariable = c1.getSalaireVariable();
 						paieCadre = DriverAjout.AjoutPaieCadre(idrech,perpaie, salaireMensuel,salaireFixe,salaireVariable);// on renvoie tout à la BDD
 
 						break;
@@ -1354,7 +1352,6 @@ public class MenuPrincipal {
 						System.out.print("Id de l'employé : ");
 						int idrech = sc.nextInt();
 						paiecadre = DriverLecture.idPaieCadre(idrech); // Retrouve le salaire du CDI dans la BDD
-
 						int c = 0;
 						System.out.println("-1- Modifier la période de paie ");
 						System.out.println("-2- Modifier le taux jour");
