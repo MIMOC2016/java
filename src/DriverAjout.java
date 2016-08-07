@@ -62,7 +62,7 @@ public class DriverAjout {
 		System.out.println("Fin connexion BDD...");
 	}
 
-	// AJOUT PAIE CADRE
+	//----------------------------------------- AJOUT PAIE CADRE----------------------------------------------
 
 	public static Paie AjoutPaieCadre(int idEmp, String perpaie, float salaireMensuel, float salaireFixe, float salaireVariable) 
 	{
@@ -268,7 +268,7 @@ public class DriverAjout {
 		System.out.println("Fin connexion BDD...");
 	}
 	
-	// -------------------------------------------------AJOUT STAGIAIRE----------------------------------------------------------//
+	// -------------------------------------------------AJOUT paie STAGIAIRE----------------------------------------------------------//
 
 	
 	public static Paie AjoutPaieStagiaire(int idEmp, String perpaie, float salaireFixe) 

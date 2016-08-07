@@ -15,8 +15,7 @@ public class Cadre extends EmployeConge {
 		this.salaireVariable= salaireVariable;
 	}
 
-	// ---------------------------------------METHODES
-	// PAIE------------------------------------------//
+	// ---------------------------------------METHODES PAIE------------------------------------------//
 
 	public String toString() {
 		return super.toString() + "\n" + "Période de paie : " + perpaie + "salaire Mensuel (Fixe: " + salaireFixe

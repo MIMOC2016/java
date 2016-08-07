@@ -1349,7 +1349,7 @@ public class MenuPrincipal {
 					System.out.println("-1- Modifier un bulletin de paie pour un cadre CDI");
 					System.out.println("-2- Modifier un bulletin de paie pour un CDD");
 					System.out.println("-3- Modifier un bulletin de paie pour un alternant");
-					System.out.println("-3- Modifier un bulletin de paie pour un stagiaire");
+					System.out.println("-4- Modifier un bulletin de paie pour un stagiaire");
 					System.out.println("-0- Retour ");
 					System.out.print("Choix : ");
 
@@ -1382,17 +1382,17 @@ public class MenuPrincipal {
 							String perpaie = sc.nextLine();
 							paiecadre.setperpaie(perpaie);
 							System.out.println("Modification effectuée");
-							DriverModifier.modifPerpaie(paiecadre.idEmp, perpaie);
+							DriverModifier.modifPerpaieCadre(paiecadre.idEmp, perpaie);
 							break;
 						}
 						case 2: {
 							sc.nextLine();
-							System.out.println("Modifier le taux jour ");
-							System.out.print("Nouveau taux jour : ");
-							float tauxJour = sc.nextInt();
-							//id.setTauxJour(tauxJour);
+							System.out.println("Modifier le taux journalier ");
+							System.out.print("Nouveau taux : ");
+							float tauxJour= sc.nextInt();
+							paiecadre.setTauxJour(tauxJour);
 							System.out.println("Modification effectuée");
-							//DriverModifier.idCadreTauxJour(id.idEmp, tauxJour);
+							DriverModifier.modifTauxJour(paiecadre.idEmp, tauxJour);
 							break;
 						}
 
@@ -1409,7 +1409,7 @@ public class MenuPrincipal {
 
 					case 2: {
 						// CDD nul qu'on va utiliser par la suite
-						Cdd id = new Cdd(null, null, null, 0, null, 0, null, null, 0, 0);
+						Cdd paieCdd = new Cdd(null, null, null, 0, null, 0, null, null, 0, 0);
 
 						System.out.println("Modifier un bulletin de paie d'un CDD: ");
 						DriverLecture.afficheCdd();
@@ -1417,7 +1417,7 @@ public class MenuPrincipal {
 						System.out.println("Saisir l'idEmp du Cdd");
 						System.out.print("Choix : ");
 						int idrech = sc.nextInt();
-						id = DriverLecture.idCDD(idrech); // Retrouve le CDI
+						paieCdd = DriverLecture.idCDD(idrech); // Retrouve le CDI
 															// dans la Bdd
 
 						int c = 0;
@@ -1434,9 +1434,9 @@ public class MenuPrincipal {
 							System.out.println("Modifier la période de paie ");
 							System.out.print("Nouvelle période : ");
 							String perpaie = sc.nextLine();
-							// id.setPerpaie(perpaie);
+							paieCdd.setperpaie(perpaie);
 							System.out.println("Modification effectuée");
-							// DriverModifier.idCadrePerpaie(id.idEmp, perpaie);
+							DriverModifier.modifPerpaieCdd(paieCdd.idEmp, perpaie);
 							break;
 						}
 						case 2: {
@@ -1444,9 +1444,9 @@ public class MenuPrincipal {
 							System.out.println("Modifier le salaire fixe ");
 							System.out.print("Nouveau salaire fixe : ");
 							float salaireFixe = sc.nextInt();
-							id.setSalaireFixe(salaireFixe);
+							paieCdd.setSalaireFixe(salaireFixe);
 							System.out.println("Modification effectuée");
-							DriverModifier.idCddSalaireFixe(id.idEmp, salaireFixe);
+							DriverModifier.modifSalaireFixeCdd(paieCdd.idEmp, salaireFixe);
 							break;
 						}
 						case 3: {
@@ -1454,9 +1454,9 @@ public class MenuPrincipal {
 							System.out.println("Modifier le salaire variable ");
 							System.out.print("Nouveau salaire variable : ");
 							float salaireVariable = sc.nextInt();
-							id.setSalaireVariable(salaireVariable);
+							paieCdd.setSalaireVariable(salaireVariable);
 							System.out.println("Modification effectuée");
-							DriverModifier.idCddSalaireVariable(id.idEmp, salaireVariable);
+							DriverModifier.modifSalaireVariableCdd(paieCdd.idEmp, salaireVariable);
 							break;
 						}
 
@@ -1473,7 +1473,7 @@ public class MenuPrincipal {
 
 					case 3: {
 						// ALTERNANT nul qu'on va utiliser par la suite
-						Alternant id = new Alternant(null, null, null, 0, null, 0, null, null, null, null, 0);
+						Alternant paieAlternant = new Alternant(null, null, null, 0, null, 0, null, null, null, null, 0);
 
 						System.out.println("Modifier un bulletin de paie d'un alternant: ");
 						DriverLecture.afficheAlternant();
@@ -1481,7 +1481,7 @@ public class MenuPrincipal {
 						System.out.println("Saisir l'idEmp de l'alternant");
 						System.out.print("Choix : ");
 						int idrech = sc.nextInt();
-						id = DriverLecture.idAlternant(idrech); // Retrouve
+						paieAlternant = DriverLecture.idAlternant(idrech); // Retrouve
 																// l'alternant
 																// dans la Bdd
 
@@ -1498,9 +1498,9 @@ public class MenuPrincipal {
 							System.out.println("Modifier la période de paie ");
 							System.out.print("Nouvelle période : ");
 							String perpaie = sc.nextLine();
-							// id.setPerpaie(perpaie);
+							paieAlternant.setPerpaie(perpaie);
 							System.out.println("Modification effectuée");
-							// DriverModifier.idCadrePerpaie(id.idEmp, perpaie);
+						    DriverModifier.modifPerpaieAlternant(paieAlternant.idEmp, perpaie);
 							break;
 						}
 						case 2: {
@@ -1508,9 +1508,9 @@ public class MenuPrincipal {
 							System.out.println("Modifier le salaire fixe ");
 							System.out.print("Nouveau salaire fixe : ");
 							float salaireFixe = sc.nextInt();
-							id.setSalaireFixe(salaireFixe);
+							paieAlternant.setSalaireFixe(salaireFixe);
 							System.out.println("Modification effectuée");
-							DriverModifier.idAlternantSalaireFixe(id.idEmp, salaireFixe);
+							DriverModifier.idAlternantSalaireFixe(paieAlternant.idEmp, salaireFixe);
 							break;
 						}
 
@@ -1527,7 +1527,7 @@ public class MenuPrincipal {
 
 					case 4: {
 						// Stagiaire null créé qu'on va utiliser par la suite
-						Stagiaire id = new Stagiaire(null, null, null, 0, null, 0, null, null, null, null, 0);
+						Stagiaire paieStagiaire = new Stagiaire(null, null, null, 0, null, 0, null, null, null, null, 0);
 
 						System.out.println("Modifier un bulletin de paie d'un stagiaire: ");
 						DriverLecture.afficheStagiaire();
@@ -1535,7 +1535,7 @@ public class MenuPrincipal {
 						System.out.println("Saisir l'idEmp du stagiaire");
 						System.out.print("Choix : ");
 						int idrech = sc.nextInt();
-						id = DriverLecture.idStagiaire(idrech); // Retrouve
+						paieStagiaire = DriverLecture.idStagiaire(idrech); // Retrouve
 																// l'alternant
 																// dans la Bdd
 
@@ -1552,10 +1552,9 @@ public class MenuPrincipal {
 							System.out.println("Modifier la période de paie ");
 							System.out.print("Nouvelle période : ");
 							String perpaie = sc.nextLine();
-							// id.setPerpaie(perpaie);
+							paieStagiaire.setPerpaie(perpaie);
 							System.out.println("Modification effectuée");
-							// DriverModifier.idStagiairePerpaie(id.idEmp,
-							// perpaie);
+						    DriverModifier.modifPerpaieStagiaire(paieStagiaire.idEmp, perpaie);
 							break;
 						}
 						case 2: {
@@ -1563,9 +1562,9 @@ public class MenuPrincipal {
 							System.out.println("Modifier la gratification ");
 							System.out.print("Nouvelle gratification: ");
 							float salaireFixe = sc.nextInt();
-							id.setSalaireFixe(salaireFixe);
+							paieStagiaire.setSalaireFixe(salaireFixe);
 							System.out.println("Modification effectuée");
-							DriverModifier.idStagiaireSalaireFixe(id.idEmp, salaireFixe);
+							DriverModifier.idStagiaireSalaireFixe(paieStagiaire.idEmp, salaireFixe);
 							break;
 						}
 
@@ -1607,8 +1606,7 @@ public class MenuPrincipal {
 
 			
 
-				// ----------------------------------------FIN GESTION
-				// PAIE-----------------------------------------//
+				// ----------------------------------------FIN GESTION PAIE-----------------------------------------//
 
 			case 4: {
 				System.out.println("Consultation des informations relatives au groupe ");

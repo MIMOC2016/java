@@ -447,6 +447,7 @@ import java.sql.*;
 							    	}
 							    }	
 						}
+					
 						
 						// CADRE : modifier salaire Variable 
 						public static void idCadreSalaireVariable (int idrech, float salaireVariable){
@@ -2568,7 +2569,61 @@ import java.sql.*;
 															
 															
 //-----------------------------------MODIFIER ATTRIBUTS OBJETS PAIE-----------------------------//
-															public static void modifPerpaie (int idrech, String perpaie){
+															// CADRE : modifier le taux jour dans la table PaieCadres
+															public static void modifTauxJour (int idrech, float tauxJour){
+																Connection conn = null;
+																Statement stmt = null;
+																    try {
+																    //Etape 2: Enregistrement JDBC Driver
+																      Class.forName("com.mysql.jdbc.Driver");
+																      System.out.println("Driver O.K.");
+																      
+																    //Etape 3: Ouverture connexion
+																      System.out.println("Connexion à la BDD...");
+																      conn = DriverManager.getConnection(DB_URL,USER, PASS);
+																	  System.out.println("Connexion établie...");
+																      
+																    //Etape 4: Execution de la requête
+																      System.out.println("Création de la requête...");
+																      stmt = conn.createStatement();
+																      String sql = "UPDATE PaieCadres SET tauxJour=? WHERE idEmp=?";
+																      PreparedStatement preparedStmt = conn.prepareStatement(sql);
+																      preparedStmt.setFloat(1,tauxJour);
+																      preparedStmt.setInt(2,idrech);
+																      preparedStmt.executeUpdate();
+
+																    //Etape 5: Nettoyage de l'environnement
+																      preparedStmt.close();
+																      stmt.close();
+																      conn.close();		         
+																    } 
+																    catch (SQLException se) {
+																    	//Gestion erreurs pour JDBC
+																      se.printStackTrace();
+																    }
+																    catch (Exception e){
+																    	//Gestion erreurs pour Class.forName
+																    	e.printStackTrace();
+																    }
+																    finally{
+																    	//bloc finally utilisé pour fermer les ressources
+																    	try{
+																    		if(stmt != null)
+																    			stmt.close();
+																    	}
+																    	catch (SQLException se2){
+																    	}//rien à faire
+																    	try{
+																    		if(conn != null)
+																    			conn.close();
+																    	}
+																    	catch (SQLException se){
+																    		se.printStackTrace();
+																    	}
+																    }	
+															}	
+															//perpaie modifier CADRE
+															public static void modifPerpaieCadre (int idrech, String perpaie){
 																Connection conn = null;
 																Statement stmt = null;
 																    try {
@@ -2619,7 +2674,393 @@ import java.sql.*;
 																    		se.printStackTrace();
 																    	}
 																    }	
-															}													
+															}	
+															
+															
+															//CDD
+															
+															
+															//modif perpaie cdd
+															public static void modifPerpaieCdd (int idrech, String perpaie){
+																Connection conn = null;
+																Statement stmt = null;
+																    try {
+																    //Etape 2: Enregistrement JDBC Driver
+																      Class.forName("com.mysql.jdbc.Driver");
+																      System.out.println("Driver O.K.");
+																      
+																    //Etape 3: Ouverture connexion
+																      System.out.println("Connexion à la BDD...");
+																      conn = DriverManager.getConnection(DB_URL,USER, PASS);
+																	  System.out.println("Connexion établie...");
+																      
+																    //Etape 4: Execution de la requête
+																      System.out.println("Création de la requête...");
+																      stmt = conn.createStatement();
+																      String sql = "UPDATE PaieCdd SET perpaie=? WHERE idEmp=?";
+																      PreparedStatement preparedStmt = conn.prepareStatement(sql);
+																      preparedStmt.setString(1,perpaie);
+																      preparedStmt.setInt(2,idrech);
+																      preparedStmt.executeUpdate();
+
+																    //Etape 5: Nettoyage de l'environnement
+																      preparedStmt.close();
+																      stmt.close();
+																      conn.close();		         
+																    } 
+																    catch (SQLException se) {
+																    	//Gestion erreurs pour JDBC
+																      se.printStackTrace();
+																    }
+																    catch (Exception e){
+																    	//Gestion erreurs pour Class.forName
+																    	e.printStackTrace();
+																    }
+																    finally{
+																    	//bloc finally utilisé pour fermer les ressources
+																    	try{
+																    		if(stmt != null)
+																    			stmt.close();
+																    	}
+																    	catch (SQLException se2){
+																    	}//rien à faire
+																    	try{
+																    		if(conn != null)
+																    			conn.close();
+																    	}
+																    	catch (SQLException se){
+																    		se.printStackTrace();
+																    	}
+																    }	
+															}	
+															//modif salaire fixe CDD
+															
+															public static void modifSalaireFixeCdd (int idrech, float salaireFixe){
+																Connection conn = null;
+																Statement stmt = null;
+																    try {
+																    //Etape 2: Enregistrement JDBC Driver
+																      Class.forName("com.mysql.jdbc.Driver");
+																      System.out.println("Driver O.K.");
+																      
+																    //Etape 3: Ouverture connexion
+																      System.out.println("Connexion à la BDD...");
+																      conn = DriverManager.getConnection(DB_URL,USER, PASS);
+																	  System.out.println("Connexion établie...");
+																      
+																    //Etape 4: Execution de la requête
+																      System.out.println("Création de la requête...");
+																      stmt = conn.createStatement();
+																      String sql = "UPDATE PaieCdd SET salaireFixe=? WHERE idEmp=?";
+																      PreparedStatement preparedStmt = conn.prepareStatement(sql);
+																      preparedStmt.setFloat(1,salaireFixe);
+																      preparedStmt.setInt(2,idrech);
+																      preparedStmt.executeUpdate();
+
+																    //Etape 5: Nettoyage de l'environnement
+																      preparedStmt.close();
+																      stmt.close();
+																      conn.close();		         
+																    } 
+																    catch (SQLException se) {
+																    	//Gestion erreurs pour JDBC
+																      se.printStackTrace();
+																    }
+																    catch (Exception e){
+																    	//Gestion erreurs pour Class.forName
+																    	e.printStackTrace();
+																    }
+																    finally{
+																    	//bloc finally utilisé pour fermer les ressources
+																    	try{
+																    		if(stmt != null)
+																    			stmt.close();
+																    	}
+																    	catch (SQLException se2){
+																    	}//rien à faire
+																    	try{
+																    		if(conn != null)
+																    			conn.close();
+																    	}
+																    	catch (SQLException se){
+																    		se.printStackTrace();
+																    	}
+																    }	
+															}	
+															
+															public static void modifSalaireVariableCdd (int idrech, float salaireVariable){
+																Connection conn = null;
+																Statement stmt = null;
+																    try {
+																    //Etape 2: Enregistrement JDBC Driver
+																      Class.forName("com.mysql.jdbc.Driver");
+																      System.out.println("Driver O.K.");
+																      
+																    //Etape 3: Ouverture connexion
+																      System.out.println("Connexion à la BDD...");
+																      conn = DriverManager.getConnection(DB_URL,USER, PASS);
+																	  System.out.println("Connexion établie...");
+																      
+																    //Etape 4: Execution de la requête
+																      System.out.println("Création de la requête...");
+																      stmt = conn.createStatement();
+																      String sql = "UPDATE PaieCdd SET salaireVariable=? WHERE idEmp=?";
+																      PreparedStatement preparedStmt = conn.prepareStatement(sql);
+																      preparedStmt.setFloat(1,salaireVariable);
+																      preparedStmt.setInt(2,idrech);
+																      preparedStmt.executeUpdate();
+
+																    //Etape 5: Nettoyage de l'environnement
+																      preparedStmt.close();
+																      stmt.close();
+																      conn.close();		         
+																    } 
+																    catch (SQLException se) {
+																    	//Gestion erreurs pour JDBC
+																      se.printStackTrace();
+																    }
+																    catch (Exception e){
+																    	//Gestion erreurs pour Class.forName
+																    	e.printStackTrace();
+																    }
+																    finally{
+																    	//bloc finally utilisé pour fermer les ressources
+																    	try{
+																    		if(stmt != null)
+																    			stmt.close();
+																    	}
+																    	catch (SQLException se2){
+																    	}//rien à faire
+																    	try{
+																    		if(conn != null)
+																    			conn.close();
+																    	}
+																    	catch (SQLException se){
+																    		se.printStackTrace();
+																    	}
+																    }	
+															}	
+															
+															
+															//alternant
+															
+															//perpaie modifier CADRE
+															public static void modifPerpaieAlternant (int idrech, String perpaie){
+																Connection conn = null;
+																Statement stmt = null;
+																    try {
+																    //Etape 2: Enregistrement JDBC Driver
+																      Class.forName("com.mysql.jdbc.Driver");
+																      System.out.println("Driver O.K.");
+																      
+																    //Etape 3: Ouverture connexion
+																      System.out.println("Connexion à la BDD...");
+																      conn = DriverManager.getConnection(DB_URL,USER, PASS);
+																	  System.out.println("Connexion établie...");
+																      
+																    //Etape 4: Execution de la requête
+																      System.out.println("Création de la requête...");
+																      stmt = conn.createStatement();
+																      String sql = "UPDATE PaieAlternant SET perpaie=? WHERE idEmp=?";
+																      PreparedStatement preparedStmt = conn.prepareStatement(sql);
+																      preparedStmt.setString(1,perpaie);
+																      preparedStmt.setInt(2,idrech);
+																      preparedStmt.executeUpdate();
+
+																    //Etape 5: Nettoyage de l'environnement
+																      preparedStmt.close();
+																      stmt.close();
+																      conn.close();		         
+																    } 
+																    catch (SQLException se) {
+																    	//Gestion erreurs pour JDBC
+																      se.printStackTrace();
+																    }
+																    catch (Exception e){
+																    	//Gestion erreurs pour Class.forName
+																    	e.printStackTrace();
+																    }
+																    finally{
+																    	//bloc finally utilisé pour fermer les ressources
+																    	try{
+																    		if(stmt != null)
+																    			stmt.close();
+																    	}
+																    	catch (SQLException se2){
+																    	}//rien à faire
+																    	try{
+																    		if(conn != null)
+																    			conn.close();
+																    	}
+																    	catch (SQLException se){
+																    		se.printStackTrace();
+																    	}
+																    }	
+															}
+															
+															//modif salaire fixe alternant
+															
+															public static void modifSalaireFixeAlternant (int idrech, float salaireFixe){
+																Connection conn = null;
+																Statement stmt = null;
+																    try {
+																    //Etape 2: Enregistrement JDBC Driver
+																      Class.forName("com.mysql.jdbc.Driver");
+																      System.out.println("Driver O.K.");
+																      
+																    //Etape 3: Ouverture connexion
+																      System.out.println("Connexion à la BDD...");
+																      conn = DriverManager.getConnection(DB_URL,USER, PASS);
+																	  System.out.println("Connexion établie...");
+																      
+																    //Etape 4: Execution de la requête
+																      System.out.println("Création de la requête...");
+																      stmt = conn.createStatement();
+																      String sql = "UPDATE PaieAlternant SET salaireFixe=? WHERE idEmp=?";
+																      PreparedStatement preparedStmt = conn.prepareStatement(sql);
+																      preparedStmt.setFloat(1,salaireFixe);
+																      preparedStmt.setInt(2,idrech);
+																      preparedStmt.executeUpdate();
+
+																    //Etape 5: Nettoyage de l'environnement
+																      preparedStmt.close();
+																      stmt.close();
+																      conn.close();		         
+																    } 
+																    catch (SQLException se) {
+																    	//Gestion erreurs pour JDBC
+																      se.printStackTrace();
+																    }
+																    catch (Exception e){
+																    	//Gestion erreurs pour Class.forName
+																    	e.printStackTrace();
+																    }
+																    finally{
+																    	//bloc finally utilisé pour fermer les ressources
+																    	try{
+																    		if(stmt != null)
+																    			stmt.close();
+																    	}
+																    	catch (SQLException se2){
+																    	}//rien à faire
+																    	try{
+																    		if(conn != null)
+																    			conn.close();
+																    	}
+																    	catch (SQLException se){
+																    		se.printStackTrace();
+																    	}
+																    }	
+															}	
+															
+															//stagiaire
+															
+															//modif perpaie stagiaire
+															public static void modifPerpaieStagiaire (int idrech, String perpaie){
+																Connection conn = null;
+																Statement stmt = null;
+																    try {
+																    //Etape 2: Enregistrement JDBC Driver
+																      Class.forName("com.mysql.jdbc.Driver");
+																      System.out.println("Driver O.K.");
+																      
+																    //Etape 3: Ouverture connexion
+																      System.out.println("Connexion à la BDD...");
+																      conn = DriverManager.getConnection(DB_URL,USER, PASS);
+																	  System.out.println("Connexion établie...");
+																      
+																    //Etape 4: Execution de la requête
+																      System.out.println("Création de la requête...");
+																      stmt = conn.createStatement();
+																      String sql = "UPDATE PaieStagiaire SET perpaie=? WHERE idEmp=?";
+																      PreparedStatement preparedStmt = conn.prepareStatement(sql);
+																      preparedStmt.setString(1,perpaie);
+																      preparedStmt.setInt(2,idrech);
+																      preparedStmt.executeUpdate();
+
+																    //Etape 5: Nettoyage de l'environnement
+																      preparedStmt.close();
+																      stmt.close();
+																      conn.close();		         
+																    } 
+																    catch (SQLException se) {
+																    	//Gestion erreurs pour JDBC
+																      se.printStackTrace();
+																    }
+																    catch (Exception e){
+																    	//Gestion erreurs pour Class.forName
+																    	e.printStackTrace();
+																    }
+																    finally{
+																    	//bloc finally utilisé pour fermer les ressources
+																    	try{
+																    		if(stmt != null)
+																    			stmt.close();
+																    	}
+																    	catch (SQLException se2){
+																    	}//rien à faire
+																    	try{
+																    		if(conn != null)
+																    			conn.close();
+																    	}
+																    	catch (SQLException se){
+																    		se.printStackTrace();
+																    	}
+																    }	
+															}	
+															
+															public static void modifSalaireFixeStagiaire (int idrech, float salaireFixe){
+																Connection conn = null;
+																Statement stmt = null;
+																    try {
+																    //Etape 2: Enregistrement JDBC Driver
+																      Class.forName("com.mysql.jdbc.Driver");
+																      System.out.println("Driver O.K.");
+																      
+																    //Etape 3: Ouverture connexion
+																      System.out.println("Connexion à la BDD...");
+																      conn = DriverManager.getConnection(DB_URL,USER, PASS);
+																	  System.out.println("Connexion établie...");
+																      
+																    //Etape 4: Execution de la requête
+																      System.out.println("Création de la requête...");
+																      stmt = conn.createStatement();
+																      String sql = "UPDATE PaieStagiaire SET salaireFixe=? WHERE idEmp=?";
+																      PreparedStatement preparedStmt = conn.prepareStatement(sql);
+																      preparedStmt.setFloat(1,salaireFixe);
+																      preparedStmt.setInt(2,idrech);
+																      preparedStmt.executeUpdate();
+
+																    //Etape 5: Nettoyage de l'environnement
+																      preparedStmt.close();
+																      stmt.close();
+																      conn.close();		         
+																    } 
+																    catch (SQLException se) {
+																    	//Gestion erreurs pour JDBC
+																      se.printStackTrace();
+																    }
+																    catch (Exception e){
+																    	//Gestion erreurs pour Class.forName
+																    	e.printStackTrace();
+																    }
+																    finally{
+																    	//bloc finally utilisé pour fermer les ressources
+																    	try{
+																    		if(stmt != null)
+																    			stmt.close();
+																    	}
+																    	catch (SQLException se2){
+																    	}//rien à faire
+																    	try{
+																    		if(conn != null)
+																    			conn.close();
+																    	}
+																    	catch (SQLException se){
+																    		se.printStackTrace();
+																    	}
+																    }	
+															}	
 															
 	}
 		
