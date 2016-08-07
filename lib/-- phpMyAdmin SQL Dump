@@ -1,0 +1,67 @@
+-- phpMyAdmin SQL Dump
+-- version 4.4.10
+-- http://www.phpmyadmin.net
+--
+-- Client :  localhost:8889
+-- Généré le :  Dim 07 Août 2016 à 18:10
+-- Version du serveur :  5.5.42
+-- Version de PHP :  5.6.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Base de données :  `Paie`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `PaieAlternant`
+--
+
+CREATE TABLE `PaieAlternant` (
+  `idEmp` int(20) NOT NULL,
+  `perpaie` varchar(20) NOT NULL,
+  `salaireFixe` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `PaieCadres`
+--
+
+CREATE TABLE `PaieCadres` (
+  `idEmp` int(20) NOT NULL,
+  `perpaie` varchar(20) NOT NULL,
+  `salaireMensuel` float NOT NULL,
+  `salaireFixe` float NOT NULL,
+  `salaireVariable` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `PaieCdd`
+--
+
+CREATE TABLE `PaieCdd` (
+  `idEmp` int(20) NOT NULL,
+  `perpaie` varchar(20) NOT NULL,
+  `salaireMensuel` float NOT NULL,
+  `salaireFixe` float NOT NULL,
+  `salaireVariable` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `PaieStagiaire`
+--
+
+CREATE TABLE `PaieStagiaire` (
+  `idEmp` int(20) NOT NULL,
+  `perpaie` varchar(20) NOT NULL,
+  `salaireFixe` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
